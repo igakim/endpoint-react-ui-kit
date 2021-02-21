@@ -1,0 +1,67 @@
+@import "./theme";
+
+@mixin theme-aware($key, $color) {
+  @each $theme-name, $theme-color in $themes {
+    .theme-#{$theme-name} & {
+      #{$key}: map-get(map-get($themes, $theme-name), $color)
+    }
+  }
+}
+
+@mixin get-sizes($element) {
+  @each $size-name, $size-value in map-get($sizes, $element) {
+    &.#{$size-name} {
+      @each $name, $value in $size-value {
+        #{$name}: $value
+      }
+    }
+    &.#{$size-name} .append-icon{
+      width: map-get($size-value, 'icon-width');
+      margin-left: 5px;
+    }
+    &.#{$size-name} .prepend-icon{
+      width: map-get($size-value, 'icon-width');
+      margin-right: 5px;
+    }
+  }
+}
+
+@mixin get-buttons(){
+  @each $theme-name, $theme-elements in $themes {
+    @each $button-type, $button-value in map-get($theme-elements, 'buttons') {
+      // FILLED BUTTON
+      .theme-#{$theme-name} &-#{$button-type} {
+        background-color: $button-value;
+        border-color: $button-value;
+        color: $contrast-text;
+        &:hover {
+          background-color: transparent;
+          color: $button-value;
+        }
+      }
+
+      // OUTLINED BUTTON
+      .theme-#{$theme-name} &-outline-#{$button-type} {
+        background-color: transparent;
+        border-color: $button-value;
+        color: $button-value;
+        &:hover {
+          background-color: $button-value;
+          border-color: $button-value;
+          color: $contrast-text;
+        }
+      }
+
+      // CONTRASTED BUTTON
+      .theme-#{$theme-name} &-contrasted-#{$button-type} {
+        background-color: lighten($button-value, 40%);
+        border-color: lighten($button-value, 40%);
+        color: lighten($button-value, 10%);
+        &:hover {
+          background-color: lighten($button-value, 20%);
+          color: $contrast-text;
+        }
+      }
+    }
+  }
+}

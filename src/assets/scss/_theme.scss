@@ -1,0 +1,94 @@
+// LIGHT THEME
+$primaryLight: blue;
+$secondaryLight: purple;
+$dangerLight: red;
+$successLight: green;
+$infoLight: aqua;
+$contrast-text: #fff;
+
+
+// DARK THEME
+$primaryDark: black;
+$secondaryDark: grey;
+$dangerDark: darkgrey;
+$successDark: lightgrey;
+$infoDark: #ffc;
+$contrast-text: #fff;
+
+
+// THEMES
+$themes: (
+  light: (
+    buttons: (
+      primary: $primaryLight,
+      secondary: $secondaryLight,
+      danger: $dangerLight,
+      success: $successLight,
+      info: $infoLight,
+    ),
+  ),
+  dark: (
+    buttons: (
+      primary: $primaryDark,
+      secondary: $secondaryDark,
+      danger: $dangerDark,
+      success: $successDark,
+      info: $infoDark,
+    ),
+  ),
+);
+
+$sizes: (
+  buttons: (
+    extra-small: (
+      padding: 5px 12px,
+      border-radius: 4px,
+      font-size: 14px,
+      icon-width: 16px,
+    ),
+    small: (
+      padding: 6px 14px,
+      border-radius: 5px,
+      font-size: 15px,
+      icon-width: 18px,
+    ),
+    medium: (
+      padding: 8px 15px,
+      border-radius: 6px,
+      font-size: 17px,
+      icon-width: 20px,
+    ),
+    large: (
+      padding: 8px 16px,
+      border-radius: 7px,
+      font-size: 18px,
+      icon-width: 26px,
+    ),
+  ),
+  iconButtons: (
+    extra-small: (
+      width: 25px,
+      height: 25px,
+      font-size: 15px,
+      icon-width: 18px,
+    ),
+    small: (
+      width: 30px,
+      height: 30px,
+      font-size: 15px,
+      icon-width: 18px,
+    ),
+    medium: (
+      width: 35px,
+      height: 35px,
+      font-size: 15px,
+      icon-width: 18px,
+    ),
+    large: (
+      width: 40px,
+      height: 40px,
+      font-size: 18px,
+      icon-width: 26px,
+    ),
+  ),
+);

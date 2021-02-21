@@ -1,0 +1,25 @@
+parser: babel-eslint
+
+extends:
+  - 'airbnb-base'
+  - 'plugin:react/recommended'
+
+settings:
+  react:
+    version: 17.0.1
+
+env:
+  node: true
+  browser: true
+
+plugins:
+  - 'react'
+  - 'react-hooks'
+
+rules:
+  import/no-unresolved: 0
+  import/extensions: 0
+  react/prop-types: 0
+  no-console: 0
+  react-hooks/rules-of-hooks: 'error'
+  react-hooks/exhaustive-deps: 'warn'

@@ -1,0 +1,101 @@
+$justify-contents: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly,
+);
+$align-items: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+);
+
+$spacings: (
+  0: 0,
+  1: 4px,
+  2: 6px,
+  3: 8px,
+  4: 10px,
+  5: 12px,
+  6: 15px,
+  /**
+   *
+   * Максимальное должно оставаться 6. Если нужно будет добавить еше отступы, то обязательно нужно
+   * поменять padding у .container на максимальный. Это нужно для того чтобы контейнер не вываливался за body
+   * Потому что добавляя отступы у колонок, мы устанавливаем минусовой margin у .row, для того, чтобы все
+   * колонки были на одной линии слева и справа экрана
+   */
+);
+
+.container {
+  padding: map-get($spacings, 6);
+};
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  @each $spacing, $space in $spacings {
+    &.spacing-#{$spacing} {
+      margin-left: -$space;
+      margin-right: -$space;
+      .col {
+        padding: $space;
+      }
+    }
+  }
+  &.justify {
+    @each $name, $value in $justify-contents {
+      &-#{$name} {
+        justify-content: $value;
+      }
+    }
+  }
+  &.align {
+    @each $name, $value in $align-items {
+      &-#{$name} {
+        align-items: $value;
+      }
+    }
+  }
+  > * {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+$breakpoints: (
+  xxs: 0px,
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1800px,
+);
+$max-cols: 12;
+
+.col {
+  box-sizing: border-box;
+  @each $breakpoint, $width in $breakpoints {
+    @for $i from 1 through $max-cols {
+      @media (min-width: $width) {
+        &-#{$breakpoint}-#{$i} {
+          max-width: $i * 100% / $max-cols;
+          width: $i * 100% / $max-cols;
+          flex: 1 1 auto;
+        }
+      }
+    }
+  }
+  width: auto;
+  flex: 1 1 auto;
+  &.self {
+    @each $name, $value in $align-items {
+      &-#{$name} {
+        align-self: $value;
+      }
+    }
+  }
+}

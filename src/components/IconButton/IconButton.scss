@@ -1,0 +1,13 @@
+@import "../../assets/scss/mixins";
+
+.btn-icon {
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: .2s;
+  border-width: 1px;
+  border-style: solid;
+  @include get-sizes('iconButtons');
+  @include get-buttons();
+}
