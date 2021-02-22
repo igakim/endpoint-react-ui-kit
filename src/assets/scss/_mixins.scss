@@ -8,7 +8,7 @@
   }
 }
 
-@mixin get-sizes($element) {
+@mixin get-btn-sizes($element) {
   @each $size-name, $size-value in map-get($sizes, $element) {
     &.#{$size-name} {
       @each $name, $value in $size-value {
@@ -71,6 +71,103 @@
     @each $typography, $typography-value in map-get($theme-elements, 'typography') {
       .theme-#{$theme-name} &-#{$typography} {
         color: $typography-value;
+      }
+    }
+  }
+}
+
+@mixin get-input-base {
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  width: 100%;
+  &:focus {
+    outline: none;
+    border-width: 1px;
+    border-style: solid;
+  }
+  &:disabled {
+    background-color: lighten($muted, 20%) !important;
+    border-color: $muted !important;
+    &::placeholder {
+      color: $muted !important;
+    }
+  }
+}
+
+@mixin get-input-sizes() {
+  @each $size-name, $size-value in map-get($sizes, 'inputs') {
+    &.#{$size-name} .input-base {
+      @each $name, $value in $size-value {
+        #{$name}: $value
+      }
+    }
+  }
+  @each $size-name, $size-value in map-get($sizes, 'inputTips') {
+    &.#{$size-name} .input-tip {
+      @each $name, $value in $size-value {
+        #{$name}: $value
+      }
+    }
+  }
+}
+
+@mixin get-input-types() {
+  @each $theme-name, $theme-elements in $themes {
+    @each $input-type, $input-value in map-get($theme-elements, 'inputs') {
+      // FILLED INPUT
+      .theme-#{$theme-name} &-#{$input-type} {
+        background-color: lighten($input-value, 40%);
+        border-color: lighten($input-value, 40%);
+        color: $input-value;
+        &:focus {
+          border-color: $input-value;
+        }
+        &::placeholder {
+          color: lighten($input-value, 10%);
+        }
+      }
+
+      // OUTLINED INPUT
+      .theme-#{$theme-name} &-outline-#{$input-type} {
+        background-color: transparent;
+        border-color: lighten($input-value, 20%);
+        &:focus {
+          border-color: $input-value;
+        }
+        &::placeholder {
+          color: lighten($input-value, 30%);
+        }
+      }
+
+    }
+  }
+}
+
+@mixin get-input-states() {
+  @each $theme-name, $theme-elements in $themes {
+    @each $input-type, $input-value in map-get($theme-elements, 'inputStates') {
+      .theme-#{$theme-name} &-#{$input-type} .input-base {
+        border-color: map-get($input-value, 'color');
+        color: map-get($input-value, 'color');
+        &::placeholder {
+          color: map-get($input-value, 'color');
+        }
+        &:focus {
+          border-color: map-get($input-value, 'color');
+        }
+      }
+     .theme-#{$theme-name} &-#{$input-type} .input-base.input-filled {
+       background-color: lighten(map-get($input-value, 'color'), 40%);
+       &::placeholder {
+         color: map-get($input-value, 'color');
+       }
+       &:focus {
+         border-color: map-get($input-value, 'color');
+       }
+     }
+      .theme-#{$theme-name} &-#{$input-type} .input-tip {
+        color: map-get($input-value, 'color');
       }
     }
   }

@@ -55,17 +55,10 @@ module.exports = {
         ],
       },
       {
-        test: /index.scss/i,
+        test: /\.css$/i,
         use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-            },
-          },
-          'postcss-loader',
-          'sass-loader',
+          'style-loader',
+          'css-loader',
         ],
       },
     ],

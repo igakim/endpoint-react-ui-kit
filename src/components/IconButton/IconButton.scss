@@ -8,6 +8,6 @@
   transition: .2s;
   border-width: 1px;
   border-style: solid;
-  @include get-sizes('iconButtons');
+  @include get-btn-sizes('iconButtons');
   @include get-buttons();
 }

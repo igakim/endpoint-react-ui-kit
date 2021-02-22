@@ -10,7 +10,7 @@
   transition: .2s;
   // @include theme-aware('background', 'color-background');
   // @include theme-aware('color', 'color-text');
-  @include get-sizes('buttons');
+  @include get-btn-sizes('buttons');
   @include get-buttons();
   &.full-width {
     width: 100%;

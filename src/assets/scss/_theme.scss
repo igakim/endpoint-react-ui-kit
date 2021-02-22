@@ -4,6 +4,8 @@ $secondaryLight: purple;
 $dangerLight: red;
 $successLight: green;
 $infoLight: aqua;
+$plainLight: grey;
+$muted: grey;
 
   // Texts color
 $contrast-text: #fff;
@@ -18,6 +20,8 @@ $dangerDark: darkgrey;
 $successDark: lightgrey;
 $infoDark: #ffc;
 $contrast-text-dark: #fff;
+$plainDark: grey;
+$muted: grey;
 
   // Texts color
 $contrast-text-dark: #fff;
@@ -35,12 +39,25 @@ $themes: (
       danger: $dangerLight,
       success: $successLight,
       info: $infoLight,
+      plain: $plainLight,
     ),
     typography: (
       main: $main-text,
       secondary: $secondary-text,
       alter: $alter-text,
       contrast: $contrast-text,
+    ),
+    inputs: (
+      primary: $primaryLight,
+      secondary: $secondaryLight,
+    ),
+    inputStates: (
+      error: (
+        color: $dangerLight,
+      ),
+      success: (
+        color: $successLight
+      ),
     ),
   ),
   dark: (
@@ -50,12 +67,25 @@ $themes: (
       danger: $dangerDark,
       success: $successDark,
       info: $infoDark,
+      plain: $plainDark,
     ),
     typography: (
       main: $main-text-dark,
       secondary: $secondary-text-dark,
       alter: $alter-text-dark,
       contrast: $contrast-text-dark,
+    ),
+    inputs: (
+      primary: $primaryDark,
+      secondary: $secondaryDark,
+    ),
+    inputStates: (
+      error: (
+        color: $dangerDark,
+      ),
+      success: (
+        color: $successDark,
+      ),
     ),
   ),
 );
@@ -111,6 +141,37 @@ $sizes: (
       height: 40px,
       font-size: 18px,
       icon-width: 26px,
+    ),
+  ),
+  inputs: (
+    small: (
+      border-radius: 5px,
+      padding: 4px 8px,
+      font-size: 12px,
+    ),
+    medium: (
+      border-radius: 5px,
+      padding: 6px 10px,
+      font-size: 14px,
+    ),
+    large: (
+      border-radius: 5px,
+      padding: 8px 12px,
+      font-size: 16px,
+    ),
+  ),
+  inputTips: (
+    small: (
+      padding: 4px 0,
+      font-size: 12px,
+    ),
+    medium: (
+      padding: 6px 0,
+      font-size: 14px,
+    ),
+    large: (
+      padding: 8px 0,
+      font-size: 16px,
     ),
   ),
 );
