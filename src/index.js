@@ -1,3 +1,5 @@
+import './assets/scss/index.scss';
+
 export { default as Button } from './components/Button';
 export { default as IconButton } from './components/IconButton';
 export { default as Container } from './components/Container';

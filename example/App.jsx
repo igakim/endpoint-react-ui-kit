@@ -19,7 +19,7 @@ const App = () => {
   return (
     <div>
       <div>
-        <h2>Theme switcher</h2>
+        <Text component="h1" color="main" variant="h1">THEME SWITCHER</Text>
         <Button
           color="secondary"
           size="extra-small"
@@ -38,7 +38,7 @@ const App = () => {
         </Button>
       </div>
       <div>
-        <h2>BUTTONS</h2>
+        <Text component="h1" color="main" variant="h1">BUTTONS</Text>
       </div>
       <div>
         <Button
@@ -81,7 +81,7 @@ const App = () => {
         <Button color="info" size="large" appendIcon={<AlertCircle />} prependIcon={<AlertCircle />} fullWidth>Button</Button>
       </div>
       <div>
-        <h2>ICON BUTTONS</h2>
+        <Text component="h1" color="main" variant="h1">ICON BUTTONS</Text>
       </div>
       <div>
         <IconButton icon={<AlertCircle />} color="primary" size="small" />
@@ -112,7 +112,7 @@ const App = () => {
       </div>
 
       <div>
-        <h2>Layouts</h2>
+        <Text component="h1" color="main" variant="h1">LAYOUTS</Text>
       </div>
       <div>
         <Container>
@@ -134,9 +134,7 @@ const App = () => {
         <Container>test 2</Container>
       </div>
 
-      <div>
-        TYPOGRAPHY
-      </div>
+      <Text component="h1" color="main" variant="h1">TYPOGRAPHY</Text>
       <div>
         <Text component="h1" color="main">H1</Text>
         <Text component="h2" color="secondary">H2</Text>
