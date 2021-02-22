@@ -2,7 +2,7 @@
   "name": "endpoint-react-ui-kit",
   "version": "0.0.1a",
   "description": "React UI Kit by Endpoint team",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "npx webpack --mode production",
     "dev": "npx webpack serve --mode development",
