@@ -4,8 +4,12 @@ $secondaryLight: purple;
 $dangerLight: red;
 $successLight: green;
 $infoLight: aqua;
-$contrast-text: #fff;
 
+  // Texts color
+$contrast-text: #fff;
+$main-text: #000;
+$secondary-text: #ccc;
+$alter-text: #f00;
 
 // DARK THEME
 $primaryDark: black;
@@ -13,7 +17,13 @@ $secondaryDark: grey;
 $dangerDark: darkgrey;
 $successDark: lightgrey;
 $infoDark: #ffc;
-$contrast-text: #fff;
+$contrast-text-dark: #fff;
+
+  // Texts color
+$contrast-text-dark: #fff;
+$main-text-dark: #000;
+$secondary-text-dark: #ccc;
+$alter-text-dark: #f00;
 
 
 // THEMES
@@ -26,6 +36,12 @@ $themes: (
       success: $successLight,
       info: $infoLight,
     ),
+    typography: (
+      main: $main-text,
+      secondary: $secondary-text,
+      alter: $alter-text,
+      contrast: $contrast-text,
+    ),
   ),
   dark: (
     buttons: (
@@ -34,6 +50,12 @@ $themes: (
       danger: $dangerDark,
       success: $successDark,
       info: $infoDark,
+    ),
+    typography: (
+      main: $main-text-dark,
+      secondary: $secondary-text-dark,
+      alter: $alter-text-dark,
+      contrast: $contrast-text-dark,
     ),
   ),
 );

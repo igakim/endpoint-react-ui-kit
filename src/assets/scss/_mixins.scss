@@ -26,7 +26,7 @@
   }
 }
 
-@mixin get-buttons(){
+@mixin get-buttons() {
   @each $theme-name, $theme-elements in $themes {
     @each $button-type, $button-value in map-get($theme-elements, 'buttons') {
       // FILLED BUTTON
@@ -61,6 +61,16 @@
           background-color: lighten($button-value, 20%);
           color: $contrast-text;
         }
+      }
+    }
+  }
+}
+
+@mixin get-typography() {
+  @each $theme-name, $theme-elements in $themes {
+    @each $typography, $typography-value in map-get($theme-elements, 'typography') {
+      .theme-#{$theme-name} &-#{$typography} {
+        color: $typography-value;
       }
     }
   }

@@ -5,6 +5,7 @@ import {
   useThemeSwitcher,
   AlertCircle,
   Container,
+  Text,
 } from '../src';
 import '../src/assets/scss/_reset.scss';
 
@@ -19,8 +20,22 @@ const App = () => {
     <div>
       <div>
         <h2>Theme switcher</h2>
-        <button onClick={switchThemeTo('light')}>LIGHT</button>
-        <button onClick={switchThemeTo('dark')}>DARK</button>
+        <Button
+          color="secondary"
+          size="extra-small"
+          variant="filled"
+          onClick={switchThemeTo('light')}
+        >
+          LIGHT
+        </Button>
+        <Button
+          color="primary"
+          size="extra-small"
+          variant="filled"
+          onClick={switchThemeTo('dark')}
+        >
+          DARK
+        </Button>
       </div>
       <div>
         <h2>BUTTONS</h2>
@@ -103,7 +118,10 @@ const App = () => {
         <Container>
           <Container.Row justify="center" align="center" spacing={6}>
             <Container.Item alignSelf="end" xxs={12} xs={4} sm={6} md={4}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis cum dicta dignissimos dolor dolorum facilis in labore laudantium magnam, molestias nemo nobis nulla porro quae quis saepe sapiente sed sit suscipit tenetur ullam, voluptates. Ab accusamus corporis dolores, ducimus earum error exercitationem hic ipsam laboriosam minima modi molestias numquam odio optio perferendis, quibusdam quidem quisquam ratione sed veritatis. Asperiores atque nam, nisi repudiandae sed sequi similique sit. Ab cumque eveniet maxime nisi optio, possimus quae. Dolorum, ea exercitationem maiores molestiae necessitatibus non quasi quibusdam reiciendis sequi soluta, vel veritatis voluptatem voluptatibus. Accusamus dolor enim illo ipsa placeat quas quasi!
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              At corporis cum dicta dignissimos dolor dolorum facilis in
+              labore laudantium magnam, molestias nemo nobis nulla porro
+              quae quis saepe sapiente sed sit suscipit tenetur ullam, voluptates. Ab accusamus corporis dolores, ducimus earum error exercitationem hic ipsam laboriosam minima modi molestias numquam odio optio perferendis, quibusdam quidem quisquam ratione sed veritatis. Asperiores atque nam, nisi repudiandae sed sequi similique sit. Ab cumque eveniet maxime nisi optio, possimus quae. Dolorum, ea exercitationem maiores molestiae necessitatibus non quasi quibusdam reiciendis sequi soluta, vel veritatis voluptatem voluptatibus. Accusamus dolor enim illo ipsa placeat quas quasi!
             </Container.Item>
             <Container.Item alignSelf="end" xxs={12} xs={4} sm={6} md={4}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis cum dicta dignissimos dolor dolorum facilis in labore laudantium magnam, molestias nemo nobis nulla porro quae quis saepe sapiente sed sit suscipit tenetur ullam, voluptates. Ab accusamus corporis dolores, ducimus earum error exercitationem hic ipsam laboriosam minima modi molestias numquam odio optio perferendis, quibusdam quidem quisquam ratione sed veritatis. Asperiores atque nam, nisi repudiandae sed sequi similique sit. Ab cumque eveniet maxime nisi optio, possimus quae. Dolorum, ea exercitationem maiores molestiae necessitatibus non quasi quibusdam reiciendis sequi soluta, vel veritatis voluptatem voluptatibus. Accusamus dolor enim illo ipsa placeat quas quasi!
@@ -114,6 +132,38 @@ const App = () => {
           </Container.Row>
         </Container>
         <Container>test 2</Container>
+      </div>
+
+      <div>
+        TYPOGRAPHY
+      </div>
+      <div>
+        <Text component="h1" color="main">H1</Text>
+        <Text component="h2" color="secondary">H2</Text>
+        <Text component="h3" color="alter">H3</Text>
+        <Text component="h4" color="contrast" style={{ background: 'black' }}>H4</Text>
+        <Text component="h5">H5</Text>
+        <Text component="h6">H6</Text>
+      </div>
+      <div>
+        <Text component="span" variant="body1">inline </Text>
+        <Text component="span" variant="body2">inline </Text>
+        <Text component="span" variant="body3">inline </Text>
+        <Text component="span" variant="h1">inline </Text>
+      </div>
+      <div>
+        <Text variant="body1">body1</Text>
+        <Text variant="body2">body2</Text>
+        <Text variant="body3">body3</Text>
+        <Text variant="h1">h1</Text>
+        <Text variant="h2">h2</Text>
+        <Text variant="h3">h3</Text>
+        <Text variant="h4">h4</Text>
+        <Text variant="h5">h5</Text>
+        <Text variant="h6">h6</Text>
+        <Text variant="subtitle1">subtitle1</Text>
+        <Text variant="subtitle2">subtitle2</Text>
+        <Text variant="subtitle3">subtitle3</Text>
       </div>
     </div>
   );
