@@ -4,10 +4,9 @@
   "description": "React UI Kit by Endpoint team",
   "main": "dist/index.js",
   "scripts": {
-    "build": "npx webpack --mode production",
     "dev": "npx webpack serve --mode development",
-    "transpile": "npx webpack --config ./webpack.prod.config.js --mode production",
-    "transpile-styles": "test"
+    "build": "npx webpack --config ./webpack.prod.config.js --mode production",
+    "prepublishOnly": "npm run build"
   },
   "author": "Igor Kim",
   "license": "ISC",
