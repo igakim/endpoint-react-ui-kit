@@ -1,6 +1,6 @@
 {
   "name": "endpoint-react-ui-kit",
-  "version": "0.0.1c",
+  "version": "0.0.1d",
   "description": "React UI Kit by Endpoint team",
   "main": "dist/index.js",
   "scripts": {
