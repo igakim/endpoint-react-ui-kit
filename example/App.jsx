@@ -7,7 +7,6 @@ import {
   Container,
   Text,
 } from '../src';
-import '../src/assets/scss/_reset.scss';
 
 const App = () => {
   const switchTheme = useThemeSwitcher();
