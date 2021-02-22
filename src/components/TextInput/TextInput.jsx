@@ -30,7 +30,7 @@ const TextInput = ({
   showTip = false,
   disabled = false,
   className = '',
-  type = '',
+  type = 'text',
   containerProps = {},
   ...rest
 }) => {

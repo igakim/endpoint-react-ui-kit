@@ -7,6 +7,7 @@ import {
   Container,
   Text,
   TextInput,
+  InputLabel,
 } from '../src';
 import '../src/assets/scss/index.scss';
 import 'fontsource-roboto';
@@ -182,18 +183,38 @@ const App = () => {
 
           <Container.Row>
             <Container.Item xs={6}>
-              <TextInput size="small" color="secondary" type="filled" tipText="Required" state="success" showTip />
+              <TextInput size="small" color="secondary" variant="filled" tipText="Required" state="success" showTip />
             </Container.Item>
             <Container.Item xs={6}>
-              <TextInput size="large" color="primary" type="filled" tipText="Required" state="error" />
+              <TextInput size="large" color="primary" variant="filled" tipText="Required" state="error" />
             </Container.Item>
           </Container.Row>
           <Container.Row>
             <Container.Item xs={6}>
-              <TextInput size="small" color="secondary" type="outlined" disabled />
+              <TextInput size="small" color="secondary" variant="outlined" disabled />
             </Container.Item>
             <Container.Item xs={6}>
-              <TextInput size="large" color="primary" type="filled" tipText="Required" state="error" disabled />
+              <TextInput size="large" color="primary" variant="filled" tipText="Required" state="error" disabled />
+            </Container.Item>
+          </Container.Row>
+        </Container>
+      </div>
+      <div>
+        <Container>
+          <Container.Row align="center" spacing={2}>
+            <Container.Item xs={12} md={5} className="pb-md-2 pb-xs-0">
+              <InputLabel htmlFor="username" size="small">Username</InputLabel>
+            </Container.Item>
+            <Container.Item xs={12} md={7} className="pt-md-2 pt-xs-0">
+              <TextInput type="text" size="small" color="primary" tipText="Required" id="username" variant="filled" />
+            </Container.Item>
+          </Container.Row>
+          <Container.Row align="center" spacing={2}>
+            <Container.Item xs={12} md={5}>
+              <InputLabel htmlFor="username" size="small">Password</InputLabel>
+            </Container.Item>
+            <Container.Item xs={12} md={7}>
+              <TextInput type="password" size="small" color="primary" tipText="Required" id="username" variant="filled" />
             </Container.Item>
           </Container.Row>
         </Container>

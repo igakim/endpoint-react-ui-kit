@@ -1,0 +1,11 @@
+@import "../../assets/scss/theme";
+@import "../../assets/scss/mixins";
+
+.label {
+  @each $size-name, $size-value in map-get($sizes, 'inputs') {
+    &.#{$size-name} {
+      font-size: map-get($size-value, 'font-size');
+      @include theme-aware('color', 'color', 'label');
+    }
+  }
+}

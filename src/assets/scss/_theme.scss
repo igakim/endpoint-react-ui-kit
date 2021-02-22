@@ -30,6 +30,50 @@ $secondary-text-dark: #00f;
 $alter-text-dark: #fc0;
 
 
+$justify-contents: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly,
+);
+$align-items: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+);
+
+$spacings: (
+  0: 0,
+  1: 4px,
+  2: 6px,
+  3: 8px,
+  4: 10px,
+  5: 12px,
+  6: 15px,
+  /**
+   *
+   * Максимальное должно оставаться 6. Если нужно будет добавить еше отступы, то обязательно нужно
+   * поменять padding у .container на максимальный. Это нужно для того чтобы контейнер не вываливался за body
+   * Потому что добавляя отступы у колонок, мы устанавливаем минусовой margin у .row, для того, чтобы все
+   * колонки были на одной линии слева и справа экрана
+   */
+);
+
+$breakpoints: (
+  xxs: 0px,
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1800px,
+);
+$max-cols: 12;
+$max-size: 5;
+
+
 // THEMES
 $themes: (
   light: (
@@ -59,6 +103,9 @@ $themes: (
         color: $successLight
       ),
     ),
+    label: (
+      color: $plainLight
+    ),
   ),
   dark: (
     buttons: (
@@ -86,6 +133,9 @@ $themes: (
       success: (
         color: $successDark,
       ),
+    ),
+    label: (
+      color: $plainDark,
     ),
   ),
 );

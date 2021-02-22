@@ -1,7 +1,38 @@
-@import './reset';
+@import "./reset";
+@import "./theme";
 
 html, body {
   font-family: "Roboto", monospace;
   font-size: 16px;
   font-weight: normal;
+}
+
+@each $breakpoint, $width in $breakpoints {
+  @each $i, $value in $spacings {
+    @media (min-width: $width) {
+      .p-#{$breakpoint}-#{$i} {
+        padding: $value !important;;
+      }
+      .py-#{$breakpoint}-#{$i} {
+        padding-top: $value !important;;
+        padding-bottom: $value !important;;
+      }
+      .px-#{$breakpoint}-#{$i} {
+        padding-left: $value !important;;
+        padding-right: $value !important;;
+      }
+      .pl-#{$breakpoint}-#{$i} {
+        padding-left: $value !important;;
+      }
+      .pr-#{$breakpoint}-#{$i} {
+        padding-right: $value !important;;
+      }
+      .pb-#{$breakpoint}-#{$i} {
+        padding-bottom: $value !important;;
+      }
+      .pt-#{$breakpoint}-#{$i} {
+        padding-top: $value !important;
+      }
+    }
+  }
 }
