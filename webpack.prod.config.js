@@ -30,7 +30,7 @@ module.exports = {
         },
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /(^(?!^index).*scss)/i,
         use: [
           'style-loader',
           'css-loader',
@@ -42,12 +42,7 @@ module.exports = {
         test: /index.scss/i,
         use: [
           MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-            },
-          },
+          'css-loader',
           'postcss-loader',
           'sass-loader',
         ],
