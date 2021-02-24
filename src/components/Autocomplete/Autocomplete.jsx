@@ -15,6 +15,7 @@ import { ChevronDown, Close } from '../icons';
  * @param {boolean} props.showTip
  * @param {boolean} props.disabled
  * @param {string} props.className
+ * @param {array} props.options
 */
 const Autocomplete = ({
   size = 'medium',

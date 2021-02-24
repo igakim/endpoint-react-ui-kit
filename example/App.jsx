@@ -3,13 +3,13 @@ import {
   Button,
   useThemeSwitcher,
   Text,
-  Autocomplete,
 } from '../src';
 import Buttons from './Buttons';
 import Layouts from './Layouts';
 import Typographies from './Typographies';
 import Inputs from './Inputs';
 import Autocompletes from './Autocompletes';
+import DateInputs from './DateInputs';
 
 import '../src/assets/scss/index.scss';
 import 'fontsource-roboto';
@@ -47,6 +47,7 @@ const App = () => {
       <Typographies />
       <Inputs />
       <Autocompletes />
+      <DateInputs />
     </div>
   );
 };

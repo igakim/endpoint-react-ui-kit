@@ -134,6 +134,10 @@
       top: 0;
       right: 0;
       display: inline-block;
+      z-index: 9;
+      &.input-calendar {
+        z-index: 10;
+      }
       & button {
         border: none;
         width: 100%;

@@ -1,0 +1,29 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/theme';
+
+.date {
+  &-input {
+    @include get-input-sizes();
+    @include get-input-states();
+    & .input {
+      &-base {
+        @include get-input-base;
+      }
+    }
+    &-wrapper {
+      position: relative;
+    }
+    &-calendar {
+      border: none;
+      position: absolute;
+      right: 0px;
+      height: 100%;
+      font-size: 24px;
+      opacity: 0;
+    }
+    .input-calendar {
+      overflow: hidden;
+    }
+  }
+
+}

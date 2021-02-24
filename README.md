@@ -7,3 +7,10 @@
 - Container (Row, Item) - for layout
 - IconButton
 - Icons
+
+
+## Dependencies recommended
+
+- `Downshift` - for autocompletes
+- `React-final-form` - for form handling
+- `React-number-format` - for masking and formatting numbers
