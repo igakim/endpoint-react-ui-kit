@@ -1,0 +1,73 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/theme';
+
+.autocomplete {
+  &-wrapper {
+    @include get-input-sizes();
+    @include get-input-states();
+    @each $size-name, $size-value in map-get($sizes, 'inputs') {
+      &.#{$size-name} {
+        .input-base {
+          padding-right: map-get($size-value, 'font-size') * 2.2;
+        }
+      }
+    }
+  }
+
+  & .input {
+    &-base {
+      @include get-input-base;
+    }
+    @include get-input-types();
+  }
+
+  &-container {
+    position: relative;
+    @each $size-name, $size-value in map-get($sizes, 'inputs') {
+      .append-icon.#{$size-name} {
+        height: 100%;
+        width: map-get($size-value, 'font-size') * 1.8;
+        position: absolute;
+        top: 0;
+        right: map-get($size-value, 'font-size') / 3;
+        svg {
+          margin-top: map-get($size-value, 'font-size') - 12;
+        }
+      }
+    }
+  }
+  &-dropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: none;
+    &.show {
+      display: block;
+    }
+    @include theme-aware('background-color', 'bg-color', 'dropdown');
+    @include theme-aware('box-shadow', 'shadow', 'dropdown');
+    @each $size-name, $size-value in map-get($sizes, 'inputs') {
+      .autocomplete-wrapper.#{$size-name} & {
+        padding: map-get($size-value, 'font-size') / 1.5;
+        font-size: map-get($size-value, 'font-size');
+      }
+      &-option {
+        padding-top: map-get($size-value, 'font-size') / 1.5;
+        padding-bottom: map-get($size-value, 'font-size') / 1.5;
+        padding-left: map-get($size-value, 'font-size') / 1.2;
+        padding-right: map-get($size-value, 'font-size') / 1.2;
+        cursor: pointer;
+        &:hover {
+          @include theme-aware('background-color', 'opt-bg-color', 'dropdown');
+        }
+        &.active {
+          @include theme-aware('background-color', 'opt-bg-color', 'dropdown');
+        }
+      }
+    }
+  }
+}

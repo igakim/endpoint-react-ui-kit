@@ -24,29 +24,29 @@ $secondary-text-light: #645D6A;
 $alter-text-light: #BBB5C7;
 
 // DARK THEME
-$primary-dark: #3266D5;
-$secondary-dark: #1BC5BD;
-$danger-dark: #C62828;
-$success-dark: #1F8B24;
-$info-dark: aqua;
-$plain-dark: #F3F2FF;
-$muted-text-dark: #B5B5C3;
-$muted-bg-dark: #E4E6EF;
+$primary-dark: #062a77;
+$secondary-dark: #05625e;
+$danger-dark: #5a0202;
+$success-dark: #074e0a;
+$info-dark: #094343;
+$plain-dark: #1d1d1f;
+$muted-text-dark: #37373c;
+$muted-bg-dark: #242323;
 $plain-dark-dark: #000028;
-$dark-dark: #222D59;
-$darkblue-dark: #222D59;
-$darkblue2-dark: #18203F;
-$darkgrey-dark: #645D6A;
-$grey-dark: #66667F;
-$light-grey-dark: #D9D5E0;
-$light-dark: #EBEDF3;
-$light2-dark: #F3F2FF;
+$dark-dark: #0f1428;
+$darkblue-dark: #080b15;
+$darkblue2-dark: #080b16;
+$darkgrey-dark: #121113;
+$grey-dark: #2c2c37;
+$light-grey-dark: #525054;
+$light-dark: #515254;
+$light2-dark: #57565b;
 
   // Texts color
-$contrast-text-dark: #fff;
-$main-text-dark: #0f0;
-$secondary-text-dark: #00f;
-$alter-text-dark: #fc0;
+$contrast-text-dark: #a7a2a2;
+$main-text-dark: #c1c1c1;
+$secondary-text-dark: #626270;
+$alter-text-dark: #544f37;
 
 
 $justify-contents: (
@@ -132,6 +132,11 @@ $themes: (
       color: $plain-light,
       secondary-color: #181C32,
     ),
+    dropdown: (
+      bg-color: #FFF,
+      opt-bg-color: #F3F6F9,
+      shadow: 1px 6px 13px 6px rgba(0, 32, 51, 0.18),
+    ),
   ),
   dark: (
     buttons: (
@@ -169,6 +174,11 @@ $themes: (
     label: (
       color: $plain-dark,
       secondary-color: #181C32,
+    ),
+    dropdown: (
+      bg-color: #BBB5C7,
+      opt-bg-color: #F3F6F9,
+      shadow: 1px 6px 13px 6px rgba(0, 32, 51, 0.18),
     ),
   ),
 );
