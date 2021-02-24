@@ -1,27 +1,46 @@
 // LIGHT THEME
-$primaryLight: blue;
-$secondaryLight: purple;
-$dangerLight: red;
-$successLight: green;
-$infoLight: aqua;
-$plainLight: grey;
-$muted: grey;
+$primary-light: #3266D5;
+$secondary-light: #1BC5BD;
+$danger-light: #C62828;
+$success-light: #1F8B24;
+$info-light: aqua;
+$plain-light: #F3F2FF;
+$muted-text-light: #B5B5C3;
+$muted-bg-light: #E4E6EF;
+$plain-dark-light: #000028;
+$dark-light: #222D59;
+$darkblue-light: #222D59;
+$darkblue2-light: #18203F;
+$darkgrey-light: #645D6A;
+$grey-light: #66667F;
+$light-grey-light: #D9D5E0;
+$light-light: #EBEDF3;
+$light2-light: #F3F2FF;
 
   // Texts color
-$contrast-text: #fff;
-$main-text: #000;
-$secondary-text: #ccc;
-$alter-text: #f00;
+$contrast-text-light: #fff;
+$main-text-light: #222D59;
+$secondary-text-light: #645D6A;
+$alter-text-light: #BBB5C7;
 
 // DARK THEME
-$primaryDark: black;
-$secondaryDark: grey;
-$dangerDark: darkgrey;
-$successDark: lightgrey;
-$infoDark: #ffc;
-$contrast-text-dark: #fff;
-$plainDark: grey;
-$muted: grey;
+$primary-dark: #3266D5;
+$secondary-dark: #1BC5BD;
+$danger-dark: #C62828;
+$success-dark: #1F8B24;
+$info-dark: aqua;
+$plain-dark: #F3F2FF;
+$muted-text-dark: #B5B5C3;
+$muted-bg-dark: #E4E6EF;
+$plain-dark-dark: #000028;
+$dark-dark: #222D59;
+$darkblue-dark: #222D59;
+$darkblue2-dark: #18203F;
+$darkgrey-dark: #645D6A;
+$grey-dark: #66667F;
+$light-grey-dark: #D9D5E0;
+$light-dark: #EBEDF3;
+$light2-dark: #F3F2FF;
 
   // Texts color
 $contrast-text-dark: #fff;
@@ -78,43 +97,50 @@ $max-size: 5;
 $themes: (
   light: (
     buttons: (
-      primary: $primaryLight,
-      secondary: $secondaryLight,
-      danger: $dangerLight,
-      success: $successLight,
-      info: $infoLight,
-      plain: $plainLight,
+      primary: $primary-light,
+      secondary: $secondary-light,
+      danger: $danger-light,
+      success: $success-light,
+      info: $info-light,
+      plain: $plain-light,
     ),
     typography: (
-      main: $main-text,
-      secondary: $secondary-text,
-      alter: $alter-text,
-      contrast: $contrast-text,
+      main: $main-text-light,
+      secondary: $secondary-text-light,
+      alter: $alter-text-light,
+      contrast: $contrast-text-light,
     ),
     inputs: (
-      primary: $primaryLight,
-      secondary: $secondaryLight,
+      primary: (
+        bg-color: #F3F6F9,
+        text-color: #3F4254,
+      ),
+      secondary: (
+        bg-color: #BBB5C7,
+        text-color: #66667F,
+      )
     ),
     inputStates: (
       error: (
-        color: $dangerLight,
+        color: $danger-light,
       ),
       success: (
-        color: $successLight
+        color: $success-light,
       ),
     ),
     label: (
-      color: $plainLight
+      color: $plain-light,
+      secondary-color: #181C32,
     ),
   ),
   dark: (
     buttons: (
-      primary: $primaryDark,
-      secondary: $secondaryDark,
-      danger: $dangerDark,
-      success: $successDark,
-      info: $infoDark,
-      plain: $plainDark,
+      primary: $primary-dark,
+      secondary: $secondary-dark,
+      danger: $danger-dark,
+      success: $success-dark,
+      info: $info-dark,
+      plain: $plain-dark,
     ),
     typography: (
       main: $main-text-dark,
@@ -123,19 +149,26 @@ $themes: (
       contrast: $contrast-text-dark,
     ),
     inputs: (
-      primary: $primaryDark,
-      secondary: $secondaryDark,
+      primary: (
+        bg-color: #F3F6F9,
+        text-color: #3F4254,
+      ),
+      secondary: (
+        bg-color: #F3F6F9,
+        text-color: #3F4254,
+      )
     ),
     inputStates: (
       error: (
-        color: $dangerDark,
+        color: $danger-dark,
       ),
       success: (
-        color: $successDark,
+        color: $success-dark,
       ),
     ),
     label: (
-      color: $plainDark,
+      color: $plain-dark,
+      secondary-color: #181C32,
     ),
   ),
 );

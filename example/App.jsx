@@ -4,6 +4,8 @@ import {
   IconButton,
   useThemeSwitcher,
   AlertCircle,
+  User,
+  Lock,
   Container,
   Text,
   TextInput,
@@ -92,28 +94,28 @@ const App = () => {
       <div>
         <IconButton icon={<AlertCircle />} color="primary" size="small" />
         <IconButton icon={<AlertCircle />} color="secondary" size="small" />
-        <IconButton icon={<AlertCircle />} color="danger" size="small" />
-        <IconButton icon={<AlertCircle />} color="info" size="small" />
+        <IconButton icon={<Lock />} color="danger" size="small" />
+        <IconButton icon={<User />} color="info" size="small" />
         <IconButton icon={<AlertCircle />} color="success" size="small" />
       </div>
       <div>
         <IconButton icon={<AlertCircle />} color="primary" size="small" variant="outlined" />
         <IconButton icon={<AlertCircle />} color="secondary" size="small" variant="outlined" />
-        <IconButton icon={<AlertCircle />} color="danger" size="small" variant="outlined" />
-        <IconButton icon={<AlertCircle />} color="info" size="small" variant="outlined" />
+        <IconButton icon={<Lock />} color="danger" size="small" variant="outlined" />
+        <IconButton icon={<User />} color="info" size="small" variant="outlined" />
         <IconButton icon={<AlertCircle />} color="success" size="small" variant="outlined" />
       </div>
       <div>
         <IconButton icon={<AlertCircle />} color="primary" size="small" variant="contrasted" />
         <IconButton icon={<AlertCircle />} color="secondary" size="small" variant="contrasted" />
-        <IconButton icon={<AlertCircle />} color="danger" size="small" variant="contrasted" />
-        <IconButton icon={<AlertCircle />} color="info" size="small" variant="contrasted" />
+        <IconButton icon={<Lock />} color="danger" size="small" variant="contrasted" />
+        <IconButton icon={<User />} color="info" size="small" variant="contrasted" />
         <IconButton icon={<AlertCircle />} color="success" size="small" variant="contrasted" />
       </div>
       <div>
         <IconButton icon={<AlertCircle />} color="primary" size="extra-small" />
-        <IconButton icon={<AlertCircle />} color="secondary" size="small" />
-        <IconButton icon={<AlertCircle />} color="danger" size="medium" />
+        <IconButton icon={<Lock />} color="secondary" size="small" />
+        <IconButton icon={<User />} color="danger" size="medium" />
         <IconButton icon={<AlertCircle />} color="info" size="large" />
       </div>
 
@@ -172,29 +174,122 @@ const App = () => {
 
       <div>
         <Container>
-          <Container.Row>
+          <Container.Row spacing={2}>
             <Container.Item xs={6}>
-              <TextInput size="medium" color="secondary" tipText="Required" state="error" />
+              <TextInput size="medium" color="primary" placeholder="outlined primary" tipText="Required" appendButtonIcon={<User />} />
             </Container.Item>
             <Container.Item xs={6}>
-              <TextInput size="large" color="primary" tipText="Required" />
+              <TextInput size="medium" color="secondary" placeholder="outlined secondary" tipText="Required" />
             </Container.Item>
           </Container.Row>
 
-          <Container.Row>
+          <Container.Row spacing={2}>
             <Container.Item xs={6}>
-              <TextInput size="small" color="secondary" variant="filled" tipText="Required" state="success" showTip />
+              <TextInput size="medium" color="primary" variant="filled" placeholder="filled primary" tipText="Required" />
             </Container.Item>
             <Container.Item xs={6}>
-              <TextInput size="large" color="primary" variant="filled" tipText="Required" state="error" />
+              <TextInput size="medium" color="secondary" variant="filled" placeholder="filled secondary" tipText="Required" appendButtonIcon={<User />} />
             </Container.Item>
           </Container.Row>
-          <Container.Row>
+          <Container.Row spacing={2}>
             <Container.Item xs={6}>
-              <TextInput size="small" color="secondary" variant="outlined" disabled />
+              <TextInput size="medium" color="primary" variant="outlined" placeholder="disabled primary outlined" disabled appendButtonIcon={<User />} />
             </Container.Item>
             <Container.Item xs={6}>
-              <TextInput size="large" color="primary" variant="filled" tipText="Required" state="error" disabled />
+              <TextInput size="medium" color="secondary" variant="filled" placeholder="disabled secondary filled" tipText="Required" disabled />
+            </Container.Item>
+          </Container.Row>
+          <Container.Row spacing={2}>
+            <Container.Item xs={4}>
+              <TextInput size="small" color="primary" variant="outlined" placeholder="small" />
+            </Container.Item>
+            <Container.Item xs={4}>
+              <TextInput size="medium" color="primary" variant="outlined" placeholder="medium" />
+            </Container.Item>
+            <Container.Item xs={4}>
+              <TextInput size="large" color="primary" variant="outlined" placeholder="large" />
+            </Container.Item>
+          </Container.Row>
+          <Container.Row spacing={2}>
+            <Container.Item xs={6}>
+              <TextInput size="medium" color="secondary" variant="outlined" placeholder="Error outlined" state="error" tipText="Error" />
+            </Container.Item>
+            <Container.Item xs={6}>
+              <TextInput size="medium" color="primary" variant="filled" placeholder="Error filled" state="error" tipText="Error" />
+            </Container.Item>
+          </Container.Row>
+          <Container.Row spacing={2}>
+            <Container.Item xs={6}>
+              <TextInput size="medium" color="secondary" variant="outlined" placeholder="Success outlined" state="success" tipText="Success" showTip appendButtonIcon={<User />} />
+            </Container.Item>
+            <Container.Item xs={6}>
+              <TextInput size="medium" color="primary" variant="filled" placeholder="Success filled" state="success" tipText="Success" showTip />
+            </Container.Item>
+          </Container.Row>
+          <Container.Row spacing={2}>
+            <Container.Item xs={4}>
+              <TextInput size="small" color="secondary" variant="outlined" placeholder="with prepend icon" prependIcon={<User />} />
+            </Container.Item>
+            <Container.Item xs={4}>
+              <TextInput size="medium" color="secondary" variant="outlined" placeholder="with prepend icon" prependIcon={<User />} />
+            </Container.Item>
+            <Container.Item xs={4}>
+              <TextInput
+                size="large"
+                color="secondary"
+                variant="outlined"
+                placeholder="with prepend icon"
+                prependIcon={<Lock />}
+                state="error"
+                tipText="Error"
+                borderedPrepend
+                appendButtonIcon={<User />}
+                appendButtonProps={{
+                  onClick: () => console.log('test'),
+                }}
+              />
+            </Container.Item>
+          </Container.Row>
+          <Container.Row spacing={2}>
+            <Container.Item xs={4}>
+              <TextInput
+                size="small"
+                color="primary"
+                variant="filled"
+                placeholder="with prepend icon"
+                prependIcon={<User />}
+                borderedPrepend
+                appendButtonIcon={<User />}
+                appendButtonProps={{
+                  onClick: () => console.log('test'),
+                }}
+              />
+            </Container.Item>
+            <Container.Item xs={4}>
+              <TextInput
+                size="medium"
+                color="primary"
+                variant="filled"
+                placeholder="with prepend icon"
+                prependIcon={<User />}
+                appendButtonIcon={<User />}
+                appendButtonProps={{
+                  onClick: () => console.log('test'),
+                }}
+              />
+            </Container.Item>
+            <Container.Item xs={4}>
+              <TextInput
+                size="large"
+                color="primary"
+                variant="filled"
+                placeholder="with prepend icon"
+                prependIcon={<Lock />}
+                appendButtonIcon={<User />}
+                appendButtonProps={{
+                  onClick: () => console.log('test'),
+                }}
+              />
             </Container.Item>
           </Container.Row>
         </Container>
@@ -206,15 +301,15 @@ const App = () => {
               <InputLabel htmlFor="username" size="small">Username</InputLabel>
             </Container.Item>
             <Container.Item xs={12} md={7} className="pt-md-2 pt-xs-0">
-              <TextInput type="text" size="small" color="primary" tipText="Required" id="username" variant="filled" />
+              <TextInput type="text" size="large" color="primary" placeholder="with label" tipText="Required" id="username" variant="filled" />
             </Container.Item>
           </Container.Row>
           <Container.Row align="center" spacing={2}>
-            <Container.Item xs={12} md={5}>
+            <Container.Item xs={12} md={5} className="pb-md-2 pb-xs-0">
               <InputLabel htmlFor="username" size="small">Password</InputLabel>
             </Container.Item>
-            <Container.Item xs={12} md={7}>
-              <TextInput type="password" size="small" color="primary" tipText="Required" id="username" variant="filled" />
+            <Container.Item xs={12} md={7} className="pt-md-2 pt-xs-0">
+              <TextInput type="password" size="large" color="primary" placeholder="with label" id="username" variant="filled" />
             </Container.Item>
           </Container.Row>
         </Container>

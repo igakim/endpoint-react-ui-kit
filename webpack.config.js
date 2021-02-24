@@ -12,7 +12,8 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     compress: true,
-    port: 9000,
+    port: 3000,
+    host: '0.0.0.0',
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './example/template.html' }),

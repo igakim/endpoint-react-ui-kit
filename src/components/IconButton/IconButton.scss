@@ -1,13 +1,21 @@
 @import "../../assets/scss/mixins";
+@import "../../assets/scss/theme";
 
 .btn-icon {
   border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
+  vertical-align: middle;
   transition: .2s;
   border-width: 1px;
   border-style: solid;
   @include get-btn-sizes('iconButtons');
   @include get-buttons();
+
+  @each $size-name, $size-value in map-get($sizes, 'iconButtons') {
+    &.#{$size-name} {
+      svg {
+        margin-top: map-get($size-value, 'font-size') - 14;
+      }
+    }
+  }
 }

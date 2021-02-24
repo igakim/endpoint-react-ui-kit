@@ -15,6 +15,10 @@ import './TextInput.scss';
  * @param {boolean} props.disabled
  * @param {string} props.className
  * @param {string} props.type
+ * @param {(ReactNode|null)} props.prependIcon
+ * @param {boolean} props.borderedPrepend
+ * @param {(ReactNode|null)} props.appendButtonIcon
+ * @param {Object} props.appendButtonProps
  * @param {Object} props.containerProps
  * @param {string} props.containerProps.className
  * @param rest
@@ -31,7 +35,11 @@ const TextInput = ({
   disabled = false,
   className = '',
   type = 'text',
+  prependIcon = null,
+  borderedPrepend = false,
   containerProps = {},
+  appendButtonIcon = null,
+  appendButtonProps = {},
   ...rest
 }) => {
   const { className: containerClassName = '', ...restContainerProps } = containerProps;
@@ -52,13 +60,37 @@ const TextInput = ({
     {
       [`input-${color} input-filled`]: variant === 'filled',
       [`input-outline-${color} input-outline`]: variant === 'outlined',
+      'input-with-prepend': Boolean(prependIcon),
+      'input-with-append': Boolean(appendButtonIcon),
     },
     className,
+  );
+  const prependIconClasses = cn(
+    Boolean(prependIcon) && 'show',
+    'prepend-icon',
+    borderedPrepend && 'bordered',
+  );
+  const appendButtonClasses = cn(
+    Boolean(appendButtonIcon) && 'show',
+    'append-button',
+  );
+  const inputContainerClass = cn(
+    'input-container-wrapper',
   );
 
   return (
     <div className={containerClasses} {...restContainerProps}>
-      <input className={inputClasses} type={type} placeholder="test placeholder" disabled={disabled} {...rest} />
+      <div className={inputContainerClass}>
+        <div className={prependIconClasses}>
+          {prependIcon}
+        </div>
+        <input className={inputClasses} type={type} disabled={disabled} {...rest} />
+        <div className={appendButtonClasses}>
+          <button type="button" {...appendButtonProps} disabled={disabled}>
+            {appendButtonIcon}
+          </button>
+        </div>
+      </div>
       <div className={tipClasses}>
         {tipText}
       </div>

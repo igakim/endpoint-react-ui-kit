@@ -3,8 +3,12 @@
 .input {
   &-container {
     width: 100%;
+    position: relative;
     @include get-input-sizes();
     @include get-input-states();
+    &-wrapper {
+      position: relative;
+    }
   }
   &-base {
     @include get-input-base;

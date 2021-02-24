@@ -5,7 +5,7 @@
   @each $size-name, $size-value in map-get($sizes, 'inputs') {
     &.#{$size-name} {
       font-size: map-get($size-value, 'font-size');
-      @include theme-aware('color', 'color', 'label');
+      @include theme-aware('color', 'secondary-color', 'label');
     }
   }
 }
