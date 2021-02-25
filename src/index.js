@@ -13,6 +13,7 @@ export { default as DateInput } from './components/DateInput';
 export { default as Steps } from './components/Steps';
 export { default as CheckboxInput } from './components/CheckboxInput';
 export { default as RadioInput } from './components/RadioInput';
+export { default as Navigation } from './components/Navigation';
 export * from './components/icons';
 export * from './hooks';
 

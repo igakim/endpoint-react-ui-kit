@@ -1,0 +1,23 @@
+@import '../../assets/scss/mixins';
+@import './variables';
+
+.actionbar {
+  &-toggler {
+    position: absolute;
+    bottom: $items-top-gap;
+    padding: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s;
+    .app-container & {
+      right: -13px;
+    }
+    .app-container.actionbar-show & {
+      right: -($actionbar-width + 13px);
+    }
+    @include theme-aware('background-color', 'secondary', 'buttons');
+    @include theme-aware('color', 'contrast', 'typography');
+  }
+}

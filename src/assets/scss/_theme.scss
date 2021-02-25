@@ -142,6 +142,15 @@ $themes: (
       item-border: $light-grey-light,
       item-active: $secondary-light,
     ),
+    navigation: (
+      sidebar-bg: $darkblue2-light,
+      item-bg: #FFF,
+      item-color: $primary-light,
+      actionbar-bg: $darkblue-light,
+      actionbar-active-item: rgba(255, 255, 255, 0.16),
+      actionbar-active-border: $primary-light,
+      actionbar-divider: $darkblue2-light,
+    ),
   ),
   dark: (
     buttons: (
@@ -189,6 +198,15 @@ $themes: (
       text: $muted-text-light,
       item-border: $light-grey-light,
       item-active: $secondary-light,
+    ),
+    navigation: (
+      sidebar-bg: $darkblue2-light,
+      item-bg: #FFF,
+      item-color: $primary-light,
+      actionbar-bg: $darkblue-light,
+      actionbar-active-item: rgba(255, 255, 255, 0.16),
+      actionbar-active-border: $primary-light,
+      actionbar-divider: $darkblue2-light,
     ),
   ),
 );

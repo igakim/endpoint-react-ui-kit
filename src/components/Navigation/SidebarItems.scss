@@ -1,0 +1,22 @@
+@import './variables';
+@import '../../assets/scss/mixins';
+
+.sidebar {
+  &-items {
+    margin-top: $items-top-gap;
+    display: flex;
+    flex-direction: column;
+    &-item {
+      box-sizing: border-box;
+      border-radius: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 18px;
+      cursor: pointer;
+      &.active {
+        @include theme-aware('background-color', 'item-bg', 'navigation');
+      }
+    }
+    &-icon {}
+  }
+}
