@@ -4,5 +4,6 @@ module.exports = {
   plugins: [
     combineSelectors({ removeDuplicatedProperties: true }),
     require('postcss-combine-media-query'),
+    require('postcss-discard-duplicates'),
   ],
 };

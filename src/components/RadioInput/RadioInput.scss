@@ -1,0 +1,16 @@
+@import '~pretty-checkbox/src/scss/variables';
+@import '~pretty-checkbox/src/scss/core';
+@import '~pretty-checkbox/src/scss/extras/round';
+@import '~pretty-checkbox/src/scss/elements/default/outline';
+@import '../../assets/scss/theme';
+@import '../../assets/scss/mixins';
+
+.pretty.p-default input:checked ~ .state label:after {
+  @include theme-aware('background-color', 'primary', 'buttons');
+}
+.radio {
+  font-size: 14px;
+  &-label {
+    @include theme-aware('color', 'secondary', 'typography');
+  }
+}

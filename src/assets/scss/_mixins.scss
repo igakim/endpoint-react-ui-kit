@@ -3,7 +3,7 @@
 @mixin theme-aware($key, $color, $element) {
   @each $theme-name, $theme-elements in $themes {
     .theme-#{$theme-name} & {
-      #{$key}: map-get(map-get($theme-elements, $element), $color)
+      #{$key}: map-get(map-get($theme-elements, $element), $color) !important
     }
   }
 }

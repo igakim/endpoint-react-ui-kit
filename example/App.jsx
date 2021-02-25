@@ -11,6 +11,8 @@ import Inputs from './Inputs';
 import Autocompletes from './Autocompletes';
 import DateInputs from './DateInputs';
 import StepsContainer from './Steps';
+import Checkboxes from './Checkboxes';
+import Radios from './Radios';
 
 import '../src/assets/scss/index.scss';
 import '@fontsource/roboto';
@@ -53,6 +55,8 @@ const App = () => {
       <Inputs />
       <Autocompletes />
       <DateInputs />
+      <Checkboxes />
+      <Radios />
       <StepsContainer />
     </div>
   );

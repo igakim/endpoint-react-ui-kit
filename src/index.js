@@ -11,6 +11,8 @@ export { default as InputLabel } from './components/InputLabel';
 export { default as Autocomplete } from './components/Autocomplete';
 export { default as DateInput } from './components/DateInput';
 export { default as Steps } from './components/Steps';
+export { default as CheckboxInput } from './components/CheckboxInput';
+export { default as RadioInput } from './components/RadioInput';
 export * from './components/icons';
 export * from './hooks';
 

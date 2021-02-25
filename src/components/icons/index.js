@@ -6,3 +6,4 @@ export { default as ChevronUp } from './ChevronUp';
 export { default as Close } from './Close';
 export { default as Calendar } from './Calendar';
 export { default as ArrowRight } from './ArrowRight';
+export { default as Check } from './Check';

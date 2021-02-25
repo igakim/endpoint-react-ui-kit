@@ -1,0 +1,20 @@
+@import '~pretty-checkbox/src/scss/variables';
+@import '~pretty-checkbox/src/scss/core';
+@import '~pretty-checkbox/src/scss/extras/round';
+@import '~pretty-checkbox/src/scss/elements/svg/general';
+@import '~pretty-checkbox/src/scss/extras/colors';
+//@import '~pretty-checkbox/src/pretty-checkbox.scss';
+@import '../../assets/scss/theme';
+@import '../../assets/scss/mixins';
+
+.pretty input:checked ~ .state.p-primary label:after, .pretty.p-toggle .state.p-primary label:after {
+  @include theme-aware('background-color', 'primary', 'buttons');
+}
+
+.checkbox {
+  font-size: 14px;
+  &-label {
+    //font-size: 14px;
+    @include theme-aware('color', 'secondary', 'typography');
+  }
+}
