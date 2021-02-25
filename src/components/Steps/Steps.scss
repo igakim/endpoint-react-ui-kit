@@ -1,0 +1,50 @@
+@import "../../assets/scss/theme";
+@import "../../assets/scss/mixins";
+
+.steps {
+  width: 100%;
+  &-wrapper {
+    display: flex;
+  }
+  &-item {
+    flex: 1 1 100%;
+    padding-bottom: 16px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    cursor: pointer;
+    transition: .1s;
+    @include theme-aware('border-bottom-color', 'item-border', 'steps');
+    &.active {
+      border-bottom-width: 2px;
+      @include theme-aware('border-bottom-color', 'item-active', 'steps');
+      .steps-content {
+        @include theme-aware('color', 'item-active', 'steps');
+        .steps-label {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    position: relative;
+    @include theme-aware('color', 'text', 'steps');
+  }
+  &-icon {
+    width: 36px;
+  }
+
+  &-label {
+
+  }
+
+  &-next-icon {
+    width: 22px;
+    position: absolute;
+    right: 0;
+  }
+}

@@ -10,6 +10,7 @@ export { default as TextInput } from './components/TextInput';
 export { default as InputLabel } from './components/InputLabel';
 export { default as Autocomplete } from './components/Autocomplete';
 export { default as DateInput } from './components/DateInput';
+export { default as Steps } from './components/Steps';
 export * from './components/icons';
 export * from './hooks';
 

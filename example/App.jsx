@@ -10,9 +10,14 @@ import Typographies from './Typographies';
 import Inputs from './Inputs';
 import Autocompletes from './Autocompletes';
 import DateInputs from './DateInputs';
+import StepsContainer from './Steps';
 
 import '../src/assets/scss/index.scss';
-import 'fontsource-roboto';
+import '@fontsource/roboto';
+import '@fontsource/roboto/700.css';
+import '@fontsource/roboto/700-italic.css';
+import '@fontsource/roboto/cyrillic-ext-400-italic.css';
+import '@fontsource/roboto/cyrillic-ext-700.css';
 
 const App = () => {
   const switchTheme = useThemeSwitcher();
@@ -48,6 +53,7 @@ const App = () => {
       <Inputs />
       <Autocompletes />
       <DateInputs />
+      <StepsContainer />
     </div>
   );
 };

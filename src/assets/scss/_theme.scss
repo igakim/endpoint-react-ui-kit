@@ -137,6 +137,11 @@ $themes: (
       opt-bg-color: #F3F6F9,
       shadow: 1px 6px 13px 6px rgba(0, 32, 51, 0.18),
     ),
+    steps: (
+      text: $muted-text-light,
+      item-border: $light-grey-light,
+      item-active: $secondary-light,
+    ),
   ),
   dark: (
     buttons: (
@@ -179,6 +184,11 @@ $themes: (
       bg-color: #BBB5C7,
       opt-bg-color: #F3F6F9,
       shadow: 1px 6px 13px 6px rgba(0, 32, 51, 0.18),
+    ),
+    steps: (
+      text: $muted-text-light,
+      item-border: $light-grey-light,
+      item-active: $secondary-light,
     ),
   ),
 );
