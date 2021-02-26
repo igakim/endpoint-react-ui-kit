@@ -1,11 +1,11 @@
 {
   "name": "endpoint-react-ui-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React UI Kit by Endpoint team",
   "main": "dist/index.js",
   "scripts": {
     "dev": "npx webpack serve --mode development",
-    "build": "npx webpack --config ./webpack.prod.config.js --mode production",
+    "build": "npx webpack --config ./webpack.prod.config.js --mode development",
     "prepublishOnly": "npm run build"
   },
   "author": "Igor Kim",
