@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import {
   Button,
   useThemeSwitcher,
@@ -33,6 +33,21 @@ const App = () => {
   const switchThemeTo = (name) => () => {
     switchTheme(name);
   };
+
+  const helperActions = useMemo(() => [
+    {
+      key: 1, icon: User, onClick: (e) => console.log(e), label: 'Add user',
+    },
+    {
+      key: 2, icon: Calendar, onClick: (e) => console.log(e), label: 'Remove user',
+    },
+    {
+      key: 3, icon: Lock, onClick: (e) => console.log(e), label: 'Edit user',
+    },
+    {
+      key: 4, icon: AlertCircle, onClick: (e) => console.log(e), label: 'Read user',
+    },
+  ], []);
 
   const sidebarItems = useMemo(() => [
     { key: 1, icon: User, onClick: (e) => console.log(e) },
@@ -80,20 +95,7 @@ const App = () => {
     },
   ], []);
 
-  const helperActions = useMemo(() => [
-    {
-      key: 1, icon: User, onClick: (e) => console.log(e), label: 'Add user',
-    },
-    {
-      key: 2, icon: Calendar, onClick: (e) => console.log(e), label: 'Remove user',
-    },
-    {
-      key: 3, icon: Lock, onClick: (e) => console.log(e), label: 'Edit user',
-    },
-    {
-      key: 4, icon: AlertCircle, onClick: (e) => console.log(e), label: 'Read user',
-    },
-  ], []);
+  const [show, setshow] = useState(false);
 
   return (
     <>
@@ -105,6 +107,8 @@ const App = () => {
         mainActionActiveKey={3}
         helperActions={helperActions}
         helperActionsLabel="ДеЙСТВИЯ"
+        isShowActionBar={show}
+        onTogglerClick={() => setshow(!show)}
         renderAdditionalActions={() => (
           <Text component="h1" color="main" variant="h1" style={{ whiteSpace: 'wrap' }}>
             Additional Rendered Components

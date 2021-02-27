@@ -15,6 +15,10 @@ import ActionsBarToggler from './ActionsBarToggler';
  */
 
 /**
+ * @callback onTogglerClick
+ */
+
+/**
  *
  * @param {Object} props
  * @param {null|ReactNode} props.Logo
@@ -23,9 +27,10 @@ import ActionsBarToggler from './ActionsBarToggler';
  * @param {(null|number|string)} props.activeSidebarItem
  * @param {Array.<{icon: ReactNode, onClick: onClick, key: (null|number|string), label: string}>} props.mainActions
  * @param {(null|string|number)} props.mainActionActiveKey
- * @param {string} props.mainActionsLabel
  * @param {Array.<{icon: ReactNode, onClick: onClick, key: (null|number|string), label: string}>} props.helperActions
  * @param {string} props.helperActionsLabel
+ * @param {boolean} props.isShowActionBar
+ * @param {onTogglerClick} props.onTogglerClick,
  * @param {(renderAdditionalActions|null)} props.renderAdditionalActions
  * @returns {JSX.Element}
  * @constructor
@@ -37,12 +42,12 @@ const Navigation = ({
   activeSidebarItem = null,
   mainActions = [],
   mainActionActiveKey = null,
-  mainActionsLabel = '',
   helperActions = [],
   helperActionsLabel = '',
   renderAdditionalActions = null,
+  isShowActionBar = false,
+  onTogglerClick = () => {},
 }) => {
-  const [isShowActionBar, setIsShowActionBar] = useState(false);
   const getAppContainerClasses = (show) => cn(
     'app-container',
     show && 'actionbar-show',
@@ -58,7 +63,7 @@ const Navigation = ({
   );
 
   const handleClickToggler = () => {
-    setIsShowActionBar(!isShowActionBar);
+    onTogglerClick();
   };
 
   return (
@@ -74,7 +79,6 @@ const Navigation = ({
         <ActionsBar
           isShowActionBar={isShowActionBar}
           mainActions={mainActions}
-          mainActionsLabel={mainActionsLabel}
           mainActionActiveKey={mainActionActiveKey}
           helperActions={helperActions}
           helperActionsLabel={helperActionsLabel}
