@@ -20,3 +20,4 @@ export { default as ThumbsUp } from './ThumbsUp';
 export { default as Key } from './Key';
 export { default as CheckedRadio } from './CheckedRadio';
 export { default as UncheckedRadio } from './UncheckedRadio';
+export { default as MoreHorizontal } from './MoreHorizontal';

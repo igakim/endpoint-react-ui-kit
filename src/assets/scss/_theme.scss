@@ -12,7 +12,7 @@ $dark-light: #222D59;
 $darkblue-light: #222D59;
 $darkblue2-light: #18203F;
 $darkgrey-light: #645D6A;
-$grey-light: #66667F;
+$grey-light: #aeaeae;
 $light-grey-light: #D9D5E0;
 $light-light: #EBEDF3;
 $light2-light: #F3F2FF;
@@ -152,6 +152,11 @@ $themes: (
       actionbar-active-border: $primary-light,
       actionbar-divider: $darkblue2-light,
     ),
+    backgrounds: (
+      primary: #F3F2FF,
+      secondary: #EBEDF3,
+      disabled: $grey-light,
+    ),
   ),
   dark: (
     buttons: (
@@ -209,6 +214,11 @@ $themes: (
       actionbar-active-item: rgba(255, 255, 255, 0.16),
       actionbar-active-border: $primary-light,
       actionbar-divider: $darkblue2-light,
+    ),
+    backgrounds: (
+      primary: #F3F2FF,
+      secondary: #EBEDF3,
+      disabled: $grey-light,
     ),
   ),
 );

@@ -1,0 +1,36 @@
+@import '../../assets/scss/mixins';
+
+.pagination {
+  display: inline-block;
+  &-wrapper {
+    display: inline-flex;
+  }
+  &-item {
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    margin-right: 4px;
+    cursor: pointer;
+    &.chevron {
+      @include theme-aware('background-color', 'primary', 'backgrounds');
+      @include theme-aware('color', 'primary', 'buttons');
+    }
+    &.active {
+      @include theme-aware('background-color', 'primary', 'buttons');
+      @include theme-aware('color', 'contrast', 'typography');
+    }
+    &.more {
+      cursor: default;
+    }
+    &.disabled {
+      cursor: not-allowed;
+      @include theme-aware('background-color', 'disabled', 'backgrounds');
+      @include theme-aware('color', 'secondary', 'typography');
+    }
+  }
+}

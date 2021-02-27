@@ -14,6 +14,7 @@ export { default as Steps } from './components/Steps';
 export { default as CheckboxInput } from './components/CheckboxInput';
 export { default as RadioInput } from './components/RadioInput';
 export { default as Navigation } from './components/Navigation';
+export { default as Pagination } from './components/Pagination';
 export * from './components/icons';
 export * from './hooks';
 

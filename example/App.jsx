@@ -28,6 +28,7 @@ import '@fontsource/roboto/700.css';
 import '@fontsource/roboto/700-italic.css';
 import '@fontsource/roboto/cyrillic-ext-400-italic.css';
 import '@fontsource/roboto/cyrillic-ext-700.css';
+import Paginations from './Paginations';
 
 const App = () => {
   const switchTheme = useThemeSwitcher();
@@ -152,6 +153,7 @@ const App = () => {
           <Checkboxes />
           <Radios />
           <StepsContainer />
+          <Paginations />
         </div>
       </Navigation>
     </>
