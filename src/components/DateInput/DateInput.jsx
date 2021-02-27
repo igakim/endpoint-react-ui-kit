@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import cn from 'classnames';
 import dayjs from 'dayjs';
 import NumberFormat from 'react-number-format';
@@ -20,6 +20,7 @@ import './DateInput.scss';
  * @param {boolean} props.withTime
  * @param {string} props.className
  * @param {Object} props.appendButtonProps
+ * @param {function} props.onChange
  */
 const DateInput = ({
   size = 'medium',
@@ -32,6 +33,7 @@ const DateInput = ({
   appendButtonProps = {},
   withTime = false,
   className = '',
+  onChange = () => {},
   ...rest
 }) => {
   const [date, setDate] = useState('pristine');
@@ -82,6 +84,10 @@ const DateInput = ({
     setDate({});
   };
 
+  useEffect(() => {
+    onChange(date);
+  }, [date]);
+
   return (
     <div className={containerClasses}>
       <div className={dateInputWrapperClasses}>
@@ -112,7 +118,7 @@ const DateInput = ({
             className={calendarInputClasses}
             value={
               dayjs(date).isValid()
-                ? dayjs(date).format(withTime ? 'YYYY-MM-DD (HH:mm)' : 'YYYY-MM-DD')
+                ? dayjs(date).format(withTime ? 'YYYY-MM-DD[T]HH:mm' : 'YYYY-MM-DD')
                 : ''
             }
             onChange={(e) => {

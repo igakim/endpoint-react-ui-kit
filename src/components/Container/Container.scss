@@ -11,7 +11,7 @@
     &.spacing-#{$spacing} {
       margin-left: -$space;
       margin-right: -$space;
-      .col {
+      & > .col {
         padding: $space;
       }
     }

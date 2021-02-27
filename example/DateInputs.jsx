@@ -77,7 +77,7 @@ const DateInputs = () => (
       </Container.Row>
       <Container.Row spacing={2}>
         <Container.Item xss={12} md={4}>
-          <DateInput size="small" variant="outlined" color="secondary" withTime />
+          <DateInput size="small" variant="outlined" color="secondary" withTime onChange={(date) => console.log(date)} />
         </Container.Item>
         <Container.Item xss={12} md={4}>
           <DateInput size="medium" variant="outlined" color="secondary" withTime />

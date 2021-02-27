@@ -1,8 +1,8 @@
 import React from 'react';
 import Icon from './icon.svg';
 
-const Shield = (props) => (
+const Pocket = (props) => (
   <Icon {...props} />
 );
 
-export default Shield;
+export default Pocket;
