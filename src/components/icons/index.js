@@ -18,3 +18,5 @@ export { default as Plus } from './Plus';
 export { default as Sliders } from './Sliders';
 export { default as ThumbsUp } from './ThumbsUp';
 export { default as Key } from './Key';
+export { default as CheckedRadio } from './CheckedRadio';
+export { default as UncheckedRadio } from './UncheckedRadio';

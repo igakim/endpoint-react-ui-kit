@@ -36,7 +36,7 @@ const DateInput = ({
   onChange = () => {},
   ...rest
 }) => {
-  const [date, setDate] = useState('pristine');
+  const [date, setDate] = useState(null);
 
   const containerClasses = cn(
     'date-input',
@@ -79,14 +79,12 @@ const DateInput = ({
 
     if (newDate.isValid()) {
       setDate(newDate);
+      onChange(newDate);
       return;
     }
+    onChange(null);
     setDate({});
   };
-
-  useEffect(() => {
-    onChange(date);
-  }, [date]);
 
   return (
     <div className={containerClasses}>
@@ -123,7 +121,10 @@ const DateInput = ({
             }
             onChange={(e) => {
               const newDate = dayjs(e.target.value);
-              if (newDate.isValid()) setDate(newDate);
+              if (newDate.isValid()) {
+                setDate(newDate);
+                onChange(newDate);
+              }
             }}
           />
         </div>

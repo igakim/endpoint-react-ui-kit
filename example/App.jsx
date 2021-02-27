@@ -9,6 +9,8 @@ import {
   Lock,
   AlertCircle,
   EmiLogo,
+  UncheckedRadio,
+  CheckedRadio,
 } from '../src';
 import Buttons from './Buttons';
 import Layouts from './Layouts';
@@ -137,6 +139,9 @@ const App = () => {
             >
               DARK
             </Button>
+          </div>
+          <div>
+            <CheckedRadio />
           </div>
           <Buttons />
           <Layouts />
