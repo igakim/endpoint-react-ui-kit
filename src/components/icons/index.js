@@ -9,3 +9,4 @@ export { default as ArrowRight } from './ArrowRight';
 export { default as Check } from './Check';
 export { default as ChevronRight } from './ChevronRight';
 export { default as ChevronLeft } from './ChevronLeft';
+export { default as EmiLogo } from './EmiLogo';

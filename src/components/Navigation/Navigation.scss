@@ -17,6 +17,7 @@
   &-logo {
     width: 100%;
     height: $logo-height;
+    @include theme-aware('color', 'item-bg', 'navigation');
     img {
       width: 100%;
     }

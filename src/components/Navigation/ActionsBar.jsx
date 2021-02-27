@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import './ActionsBar.scss';
 
-import ActionsBarMainActions from './ActionsBarMainActions';
+import ActionsBarNav from './ActionsBarNav';
 import ActionsBarHelperActions from './ActionsBarHelperActions';
 import ActionsBarRenderAdditional from './ActionsBarRenderAdditional';
 /**
@@ -17,8 +17,7 @@ import ActionsBarRenderAdditional from './ActionsBarRenderAdditional';
 /**
  * @param {Object} props
  * @param {boolean} props.isShowActionBar
- * @param {Array.<{icon: ReactNode, onClick: onClick, key: (null|number|string), label: string}>} props.mainActions
- * @param {string} props.mainActionsLabel
+ * @param {Array.<{moduleLabel: string, key: (number|string), navs: Array.<{icon: ReactNode, onClick: onClick, key: (null|number|string), label: string}>}>} props.mainActions
  * @param {(null|string|number)} props.mainActionActiveKey
  * @param {Array.<{icon: ReactNode, onClick: onClick, key: (null|number|string), label: string}>} props.helperActions
  * @param {string} props.helperActionsLabel
@@ -29,7 +28,6 @@ import ActionsBarRenderAdditional from './ActionsBarRenderAdditional';
 const ActionsBar = ({
   isShowActionBar = false,
   mainActions = [],
-  mainActionsLabel = '',
   mainActionActiveKey = null,
   helperActions = [],
   helperActionsLabel = '',
@@ -42,23 +40,20 @@ const ActionsBar = ({
   const actionBarContainer = cn(
     'actionbar-container',
   );
-  const actionBarNav = cn(
-    'actionbar-nav',
-  );
-  const actionBarNavLabel = cn(
-    'actionbar-nav-label',
-  );
 
   return (
     <div className={getActionBarClasses(isShowActionBar)}>
       <div className={actionBarContainer}>
-        <div className={actionBarNav}>
-          <div className={actionBarNavLabel}>{mainActionsLabel}</div>
-          <ActionsBarMainActions
-            actions={mainActions}
-            activeKey={mainActionActiveKey}
-          />
-        </div>
+        {
+          mainActions.map((nav) => (
+            <ActionsBarNav
+              actions={nav.navs}
+              activeKey={mainActionActiveKey}
+              actionLabel={nav.moduleLabel}
+              key={nav.key}
+            />
+          ))
+        }
         <ActionsBarHelperActions
           actions={helperActions}
           helperActionsLabel={helperActionsLabel}

@@ -1,11 +1,11 @@
 {
   "name": "endpoint-react-ui-kit",
-  "version": "0.1.1",
+  "version": "0.1.6-c",
   "description": "React UI Kit by Endpoint team",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
     "dev": "npx webpack serve --mode development",
-    "build": "npx webpack --config ./webpack.prod.config.js --mode development",
+    "build": "npx webpack --config ./webpack.prod.config.js --mode production",
     "prepublishOnly": "npm run build"
   },
   "author": "Igor Kim",
@@ -59,6 +59,7 @@
     "postcss-merge-rules": "^4.0.3",
     "postcss-preset-env": "^6.7.0",
     "pretty-checkbox": "^3.0.3",
+    "prop-types": "^15.7.2",
     "ramda": "^0.27.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

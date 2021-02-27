@@ -38,6 +38,11 @@
           background-color: transparent;
           color: $button-value;
         }
+        &:disabled {
+          background-color: lighten($button-value, 20%);
+          border-color: lighten($button-value, 20%);
+          color: lighten($contrast-text-light, 20%);
+        }
       }
 
       // OUTLINED BUTTON
@@ -50,6 +55,11 @@
           border-color: $button-value;
           color: $contrast-text-light;
         }
+        &:disabled {
+          background-color: transparent;
+          border-color: lighten($button-value, 20%);
+          color: lighten($button-value, 20%);
+        }
       }
 
       // CONTRASTED BUTTON
@@ -61,7 +71,27 @@
           background-color: lighten($button-value, 20%);
           color: $contrast-text-light;
         }
+        &:disabled {
+          background-color: lighten($button-value, 52%);
+          border-color: lighten($button-value, 30%);
+          color: lighten($button-value, 30%);
+        }
       }
+
+      // TEXT BUTTON
+      .theme-#{$theme-name} &-text-#{$button-type} {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        color: $button-value;
+        &:hover {
+          background-color: lighten($button-value, 40%);
+          color: darken($button-value, 40%);
+        }
+        &:disabled {
+          color: lighten($button-value, 20%);
+        }
+      }
+
     }
   }
 }

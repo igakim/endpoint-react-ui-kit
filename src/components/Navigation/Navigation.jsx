@@ -17,7 +17,7 @@ import ActionsBarToggler from './ActionsBarToggler';
 /**
  *
  * @param {Object} props
- * @param {string} props.logoSrc
+ * @param {null|ReactNode} props.Logo
  * @param {array<ReactNode>} props.children
  * @param {Array.<{icon: ReactNode, onClick: onClick, key: (null|number|string)}>} props.sidebarItems
  * @param {(null|number|string)} props.activeSidebarItem
@@ -31,7 +31,7 @@ import ActionsBarToggler from './ActionsBarToggler';
  * @constructor
  */
 const Navigation = ({
-  logoSrc = '',
+  Logo = null,
   children = [],
   sidebarItems = [],
   activeSidebarItem = null,
@@ -65,7 +65,7 @@ const Navigation = ({
     <div className={getAppContainerClasses(isShowActionBar)}>
       <div className={sidebarClasses}>
         <div className={logoClasses}>
-          <img src={logoSrc} alt="" />
+          <Logo />
         </div>
         <SidebarItems
           items={sidebarItems}

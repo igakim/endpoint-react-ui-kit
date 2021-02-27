@@ -16,4 +16,7 @@
     width: 100%;
     justify-content: center;
   }
+  &:disabled {
+    cursor: not-allowed;
+  }
 }

@@ -7,7 +7,7 @@ import './Button.scss';
  * @param {Object} props
  * @param {('primary'|'secondary'|'info'|'danger'|'success'|'plain')} props.color
  * @param {('extra-small'|'small'|'medium'|'large')} props.size
- * @param {('filled'|'outlined'|'contrasted')} props.variant
+ * @param {('filled'|'outlined'|'contrasted'|'text')} props.variant
  * @param {boolean} props.fullWidth
  * @param {string} props.className
  * @param {ReactNode} props.prependIcon
@@ -34,6 +34,7 @@ const Button = ({
       [`btn-${color}`]: variant === 'filled',
       [`btn-outline-${color}`]: variant === 'outlined',
       [`btn-contrasted-${color}`]: variant === 'contrasted',
+      [`btn-text-${color}`]: variant === 'text',
       'full-width': fullWidth,
     },
     className,

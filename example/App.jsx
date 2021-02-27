@@ -8,6 +8,7 @@ import {
   Calendar,
   Lock,
   AlertCircle,
+  EmiLogo,
 } from '../src';
 import Buttons from './Buttons';
 import Layouts from './Layouts';
@@ -42,16 +43,40 @@ const App = () => {
 
   const mainActions = useMemo(() => [
     {
-      key: 1, icon: User, onClick: (e) => console.log(e), label: 'Add user',
+      moduleLabel: 'Пользователи',
+      key: 1,
+      navs: [
+        {
+          key: 1, icon: User, onClick: (e) => console.log(e), label: 'Add user',
+        },
+        {
+          key: 2, icon: Calendar, onClick: (e) => console.log(e), label: 'Remove user',
+        },
+        {
+          key: 3, icon: Lock, onClick: (e) => console.log(e), label: 'Edit user',
+        },
+        {
+          key: 4, icon: AlertCircle, onClick: (e) => console.log(e), label: 'Read user',
+        },
+      ],
     },
     {
-      key: 2, icon: Calendar, onClick: (e) => console.log(e), label: 'Remove user',
-    },
-    {
-      key: 3, icon: Lock, onClick: (e) => console.log(e), label: 'Edit user',
-    },
-    {
-      key: 4, icon: AlertCircle, onClick: (e) => console.log(e), label: 'Read user',
+      moduleLabel: 'Пользователи 2',
+      key: 2,
+      navs: [
+        {
+          key: 1, icon: User, onClick: (e) => console.log(e), label: 'Add user',
+        },
+        {
+          key: 2, icon: Calendar, onClick: (e) => console.log(e), label: 'Remove user',
+        },
+        {
+          key: 3, icon: Lock, onClick: (e) => console.log(e), label: 'Edit user',
+        },
+        {
+          key: 4, icon: AlertCircle, onClick: (e) => console.log(e), label: 'Read user',
+        },
+      ],
     },
   ], []);
 
@@ -73,11 +98,10 @@ const App = () => {
   return (
     <>
       <Navigation
-        logoSrc="https://seeklogo.com/images/P/pornhub-logo-739358CF45-seeklogo.com.png"
+        Logo={EmiLogo}
         sidebarItems={sidebarItems}
         activeSidebarItem={3}
         mainActions={mainActions}
-        mainActionsLabel="ПОЛЬЗОВАТЕЛИ"
         mainActionActiveKey={3}
         helperActions={helperActions}
         helperActionsLabel="ДеЙСТВИЯ"
@@ -88,6 +112,9 @@ const App = () => {
         )}
       >
         <div style={{ paddingBottom: 200 }}>
+          <div style={{ width: 80, color: 'red' }}>
+            <EmiLogo />
+          </div>
           <div>
             <Text component="h1" color="main" variant="h1">THEME SWITCHER</Text>
             <Button

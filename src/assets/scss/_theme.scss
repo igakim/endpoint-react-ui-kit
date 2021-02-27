@@ -102,7 +102,8 @@ $themes: (
       danger: $danger-light,
       success: $success-light,
       info: $info-light,
-      plain: $plain-light,
+      plain: $darkgrey-light,
+      muted: $grey-light,
     ),
     typography: (
       main: $darkgrey-light,
@@ -159,7 +160,8 @@ $themes: (
       danger: $danger-dark,
       success: $success-dark,
       info: $info-dark,
-      plain: $plain-dark,
+      plain: $darkgrey-light,
+      muted: $grey-light,
     ),
     typography: (
       main: $main-text-dark,

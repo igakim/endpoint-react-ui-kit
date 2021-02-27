@@ -1,0 +1,51 @@
+@import '../../assets/scss/mixins';
+
+.actionbar {
+  &-nav {
+    margin-top: 16px;
+    &-label {
+      text-transform: uppercase;
+      font-size: 14px;
+      padding-left: 32px;
+      padding-right: 20px;
+      padding-bottom: 10px;
+      @include theme-aware('color', 'alter', 'typography');
+    }
+    &-item {
+      display: flex;
+      box-sizing: border-box;
+      padding: 15px 32px;
+      align-items: center;
+      cursor: pointer;
+      &:hover {
+        @include theme-aware('background-color', 'actionbar-active-item', 'navigation');
+      }
+      &.active {
+        @include theme-aware('background-color', 'actionbar-active-item', 'navigation');
+        position: relative;
+        //border-left-width: 4px;
+        //border-left-style: solid;
+        //@include theme-aware('border-left-color', 'actionbar-active-border', 'navigation');
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 4px;
+          @include theme-aware('background-color', 'actionbar-active-border', 'navigation');
+        }
+      }
+      @include theme-aware('color', 'contrast', 'typography');
+      &-icon {
+        width: 14px;
+        margin-right: 15px;
+      }
+      &-label {
+        font-size: 12px;
+        margin-top: -3px;
+      }
+    }
+  }
+
+}

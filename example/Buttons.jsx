@@ -24,6 +24,7 @@ const Buttons = () => (
             <Button color="info" size="extra-small" variant="filled">Button</Button>
             <Button color="success" size="extra-small" variant="filled">Button</Button>
             <Button color="plain" size="extra-small" variant="filled">Button</Button>
+            <Button color="primary" size="extra-small" variant="filled" disabled>Button</Button>
           </div>
           <div>
             <Button color="primary" size="extra-small" variant="outlined">Button</Button>
@@ -32,6 +33,7 @@ const Buttons = () => (
             <Button color="info" size="extra-small" variant="outlined">Button</Button>
             <Button color="success" size="extra-small" variant="outlined">Button</Button>
             <Button color="plain" size="extra-small" variant="outlined">Button</Button>
+            <Button color="primary" size="extra-small" variant="outlined" disabled>Button</Button>
           </div>
           <div>
             <Button color="primary" size="extra-small" variant="contrasted">Button</Button>
