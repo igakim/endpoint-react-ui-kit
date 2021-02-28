@@ -1,0 +1,8 @@
+@import '../../assets/scss/mixins';
+
+.paper {
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 0 40px rgba(219, 225, 230, 0.5);
+  @include theme-aware('background-color', 'page', 'backgrounds');
+}

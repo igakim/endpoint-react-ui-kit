@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 import {
-  Container, Steps, User, Calendar, Lock,
+  Container, Steps, User, Calendar, Lock, Key,
 } from '../src';
 
 const steps = [
   { label: 'Step One', key: 1, icon: User },
   { label: 'Step Two', key: 2, icon: Calendar },
-  { label: 'Step Three', key: 3, icon: Lock },
+  { label: 'Step Three', key: 3, icon: Key },
   { label: 'Step Four', key: 4, icon: User },
 ];
 

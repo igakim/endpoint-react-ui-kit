@@ -11,6 +11,7 @@ import {
   EmiLogo,
   UncheckedRadio,
   CheckedRadio,
+  Paper,
 } from '../src';
 import Buttons from './Buttons';
 import Layouts from './Layouts';
@@ -154,6 +155,11 @@ const App = () => {
           <Radios />
           <StepsContainer />
           <Paginations />
+          <div style={{ backgroundColor: 'grey', padding: 10 }}>
+            <Paper>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolores earum enim mollitia natus nihil quidem repellendus tempora, vero? Accusantium architecto doloremque, eligendi hic itaque nesciunt nihil provident quos suscipit!
+            </Paper>
+          </div>
         </div>
       </Navigation>
     </>

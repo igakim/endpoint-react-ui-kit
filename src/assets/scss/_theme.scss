@@ -106,7 +106,7 @@ $themes: (
       muted: $grey-light,
     ),
     typography: (
-      main: $darkgrey-light,
+      main: $main-text-light,
       secondary: $secondary-text-light,
       alter: $alter-text-light,
       contrast: $contrast-text-light,
@@ -156,6 +156,7 @@ $themes: (
       primary: #F3F2FF,
       secondary: #EBEDF3,
       disabled: $grey-light,
+      page: #FFF,
     ),
   ),
   dark: (
@@ -219,6 +220,7 @@ $themes: (
       primary: #F3F2FF,
       secondary: #EBEDF3,
       disabled: $grey-light,
+      page: #1d1d1d,
     ),
   ),
 );

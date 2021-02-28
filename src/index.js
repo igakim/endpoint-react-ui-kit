@@ -15,6 +15,7 @@ export { default as CheckboxInput } from './components/CheckboxInput';
 export { default as RadioInput } from './components/RadioInput';
 export { default as Navigation } from './components/Navigation';
 export { default as Pagination } from './components/Pagination';
+export { default as Paper } from './components/Paper';
 export * from './components/icons';
 export * from './hooks';
 
