@@ -21,3 +21,7 @@ export { default as Key } from './Key';
 export { default as CheckedRadio } from './CheckedRadio';
 export { default as UncheckedRadio } from './UncheckedRadio';
 export { default as MoreHorizontal } from './MoreHorizontal';
+export { default as Eye } from './Eye';
+export { default as EyeOff } from './EyeOff';
+export { default as Minus } from './Minus';
+export { default as Edit2 } from './Edit2';

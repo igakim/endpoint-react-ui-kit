@@ -12,6 +12,8 @@ import {
   UncheckedRadio,
   CheckedRadio,
   Paper,
+  Eye,
+  EyeOff,
 } from '../src';
 import Buttons from './Buttons';
 import Layouts from './Layouts';
@@ -22,6 +24,7 @@ import DateInputs from './DateInputs';
 import StepsContainer from './Steps';
 import Checkboxes from './Checkboxes';
 import Radios from './Radios';
+import Dialogs from './Dialogs';
 
 import '../src/assets/scss/index.scss';
 import '@fontsource/roboto';
@@ -30,6 +33,8 @@ import '@fontsource/roboto/700-italic.css';
 import '@fontsource/roboto/cyrillic-ext-400-italic.css';
 import '@fontsource/roboto/cyrillic-ext-700.css';
 import Paginations from './Paginations';
+import Loader from '../src/components/Loader';
+import Chip from '../src/components/Chip/Chip';
 
 const App = () => {
   const switchTheme = useThemeSwitcher();
@@ -156,10 +161,16 @@ const App = () => {
           <StepsContainer />
           <Paginations />
           <div style={{ backgroundColor: 'grey', padding: 10 }}>
+            <Eye color="red" />
+            <EyeOff color="red" />
             <Paper>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolores earum enim mollitia natus nihil quidem repellendus tempora, vero? Accusantium architecto doloremque, eligendi hic itaque nesciunt nihil provident quos suscipit!
+              <Chip>test</Chip>
+              <Chip>test</Chip>
+              <Chip>test</Chip>
             </Paper>
           </div>
+          {/* <Loader show text="text" /> */}
+          <Dialogs />
         </div>
       </Navigation>
     </>

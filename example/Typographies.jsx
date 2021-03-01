@@ -27,14 +27,14 @@ const Typographies = () => (
           <Text variant="body1">body1</Text>
           <Text variant="body2">body2</Text>
           <Text variant="body3">body3</Text>
-          <Text variant="h1">h1</Text>
+          <Text variant="h1" color="success">h1</Text>
           <Text variant="h2">h2</Text>
           <Text variant="h3">h3</Text>
           <Text variant="h4">h4</Text>
           <Text variant="h5">h5</Text>
           <Text variant="h6">h6</Text>
-          <Text variant="subtitle1">subtitle1</Text>
-          <Text variant="subtitle2">subtitle2</Text>
+          <Text variant="subtitle1" color="warning">subtitle1</Text>
+          <Text variant="subtitle2" color="success">subtitle2</Text>
           <Text variant="subtitle3">subtitle3</Text>
         </div>
       </Container.Row>

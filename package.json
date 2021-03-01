@@ -1,6 +1,6 @@
 {
   "name": "endpoint-react-ui-kit",
-  "version": "0.1.7-c",
+  "version": "0.1.8-k",
   "description": "React UI Kit by Endpoint team",
   "main": "src/index.js",
   "scripts": {
@@ -50,6 +50,8 @@
   },
   "dependencies": {
     "@fontsource/roboto": "^4.2.1",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "classnames": "^2.2.6",
     "cssnano": "^4.1.10",
     "dayjs": "^1.10.4",

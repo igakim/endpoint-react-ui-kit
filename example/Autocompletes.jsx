@@ -56,6 +56,8 @@ const Autocompletes = () => (
           tipText="test"
           state="error"
           placeholder="Error State"
+          selectedItem={1}
+          id="new-test"
           options={[
             { id: 1, label: 'Opt1' },
             { id: 2, label: 'Opt2' },

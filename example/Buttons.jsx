@@ -25,6 +25,7 @@ const Buttons = () => (
             <Button color="success" size="extra-small" variant="filled">Button</Button>
             <Button color="plain" size="extra-small" variant="filled">Button</Button>
             <Button color="primary" size="extra-small" variant="filled" disabled>Button</Button>
+            <Button color="warning" size="extra-small" variant="filled" disabled>Button</Button>
           </div>
           <div>
             <Button color="primary" size="extra-small" variant="outlined">Button</Button>
@@ -42,6 +43,14 @@ const Buttons = () => (
             <Button color="info" size="extra-small" variant="contrasted">Button</Button>
             <Button color="success" size="extra-small" variant="contrasted">Button</Button>
             <Button color="plain" size="extra-small" variant="contrasted">Button</Button>
+          </div>
+          <div>
+            <Button color="primary" size="extra-small" variant="text">Button</Button>
+            <Button color="secondary" size="extra-small" variant="text">Button</Button>
+            <Button color="danger" size="extra-small" variant="text">Button</Button>
+            <Button color="info" size="extra-small" variant="text">Button</Button>
+            <Button color="success" size="extra-small" variant="text">Button</Button>
+            <Button color="plain" size="extra-small" variant="text">Button</Button>
           </div>
           <div>
             <Button color="primary" size="extra-small" appendIcon={<AlertCircle />} prependIcon={<AlertCircle />}>Button</Button>

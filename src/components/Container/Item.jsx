@@ -13,6 +13,7 @@ import React from 'react';
  * @param {number|null} props.xxl
  * @param {number|null} props.xxxl
  * @param {string} props.className
+ * @param {('left'|'right'|'center'|'justify')} props.textAlign
  * @param {array<ReactNode>} props.children
  * @returns {JSX.Element}
  * @constructor
@@ -27,6 +28,7 @@ const Item = ({
   xxl = null,
   xxxl = null,
   className = '',
+  textAlign = 'left',
   children,
   ...rest
 }) => {
@@ -42,6 +44,7 @@ const Item = ({
       [`col-xxxl-${xxxl}`]: Boolean(xxxl),
       [`self-${alignSelf}`]: Boolean(alignSelf),
     },
+    `text-${textAlign}`,
     className,
   );
 

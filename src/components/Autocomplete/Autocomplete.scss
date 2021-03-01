@@ -67,6 +67,9 @@
         &.active {
           @include theme-aware('background-color', 'opt-bg-color', 'dropdown');
         }
+        &[data-focus="true"] {
+          @include theme-aware('background-color', 'opt-bg-color', 'dropdown');
+        }
       }
     }
   }

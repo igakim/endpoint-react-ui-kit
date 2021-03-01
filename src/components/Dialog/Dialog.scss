@@ -1,0 +1,87 @@
+@import '../../assets/scss/mixins';
+
+body.noscroll {
+  overflow: hidden;
+}
+
+.dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, .7);
+  &.show {
+    display: flex;
+  }
+  &-wrapper {
+    $min-widths: (
+      xxs: 95%,
+      xs: 95%,
+      sm: 400px,
+      md: 500px,
+      xl: 600px,
+      xxl: 600px,
+      xxxl: 600px,
+    );
+    $max-width: (
+      xxs: 95%,
+      xs: 95%,
+      sm: 700px,
+      md: 900px,
+      xl: 1100px,
+      xxl: 1200px,
+      xxxl: 1200px,
+    );
+    border-radius: 5px;
+    overflow: hidden;
+    position: static;
+    max-height: calc(100% - 64px);
+    display: flex;
+    flex-direction: column;
+    @each $size-name, $size-value in $breakpoints {
+      @media (min-width: $size-value) {
+        min-width: map-get($min-widths, $size-name);
+        max-width: map-get($max-width, $size-name);
+      }
+    }
+    @include theme-aware('background-color', 'page', 'backgrounds');
+  }
+  &-container {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100% - 64px);
+  }
+  &-header {
+    box-sizing: border-box;
+    padding: 30px 24px 14px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 auto;
+    @include theme-aware('border-bottom-color', 'alter', 'typography');
+    &-close {
+      background: none;
+      border: none;
+      width: 38px;
+      cursor: pointer;
+    }
+  }
+  &-body {
+    padding: 24px;
+    overflow-y: auto;
+    flex: 1 1 auto;
+  }
+  &-footer {
+    padding: 14px 24px 30px;
+    flex: 0 0 auto;
+    text-align: right;
+  }
+}

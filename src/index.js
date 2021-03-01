@@ -16,6 +16,11 @@ export { default as RadioInput } from './components/RadioInput';
 export { default as Navigation } from './components/Navigation';
 export { default as Pagination } from './components/Pagination';
 export { default as Paper } from './components/Paper';
+export { default as Condition } from './components/Condition';
+export { default as Loader } from './components/Loader';
+export { default as Chip } from './components/Chip';
+export { default as Divider } from './components/Divider';
+export { default as Dialog } from './components/Dialog';
 export * from './components/icons';
 export * from './hooks';
 

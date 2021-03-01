@@ -1,0 +1,7 @@
+@import '../../assets/scss/mixins';
+
+.divider {
+  height: 1px;
+  width: 100%;
+  @include theme-aware('background-color', 'alter', 'typography');
+}

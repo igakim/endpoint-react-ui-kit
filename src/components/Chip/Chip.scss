@@ -1,0 +1,40 @@
+@import '../../assets/scss/theme';
+
+$chips: (
+  sizes: (
+    small: (
+      font-size: 11px,
+      padding: 6px 8px,
+      margin-right: 4px,
+    ),
+    medium: (
+      font-size: 13px,
+      padding: 6px 8px,
+      margin-right: 5px,
+    ),
+    large: (
+      font-size: 16px,
+      padding: 6px 8px,
+      margin-right: 6px,
+    ),
+  )
+);
+
+.chip {
+  display: inline-block;
+  border-radius: 2px;
+  @each $size-name, $size-values in map-get($chips, 'sizes') {
+    &-#{$size-name} {
+      @each $key, $value in $size-values {
+        #{$key}: #{$value}
+      }
+    }
+  }
+  @each $theme-name, $theme-elements in $themes {
+    @each $chip-type, $chip-value in map-get($theme-elements, 'chips') {
+      .theme-#{$theme-name} &-#{$chip-type} {
+        background-color: $chip-value;
+      }
+    }
+  }
+}

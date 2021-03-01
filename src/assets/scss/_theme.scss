@@ -100,6 +100,7 @@ $themes: (
       primary: $primary-light,
       secondary: $secondary-light,
       danger: $danger-light,
+      warning: #f6ae4f,
       success: $success-light,
       info: $info-light,
       plain: $darkgrey-light,
@@ -110,6 +111,10 @@ $themes: (
       secondary: $secondary-text-light,
       alter: $alter-text-light,
       contrast: $contrast-text-light,
+      danger: $danger-light,
+      success: $success-light,
+      info: $info-light,
+      warning: #f6ae4f,
     ),
     inputs: (
       primary: (
@@ -158,12 +163,18 @@ $themes: (
       disabled: $grey-light,
       page: #FFF,
     ),
+    chips: (
+      primary: #F3F2FF,
+      secondary: $primary-light,
+      alter: $secondary-light,
+    ),
   ),
   dark: (
     buttons: (
       primary: $primary-dark,
       secondary: $secondary-dark,
       danger: $danger-dark,
+      warning: #f6ae4f,
       success: $success-dark,
       info: $info-dark,
       plain: $darkgrey-light,
@@ -174,6 +185,10 @@ $themes: (
       secondary: $secondary-text-dark,
       alter: $alter-text-dark,
       contrast: $contrast-text-dark,
+      danger: $danger-dark,
+      success: $success-dark,
+      info: $info-dark,
+      warning: #f6ae4f,
     ),
     inputs: (
       primary: (
@@ -221,6 +236,11 @@ $themes: (
       secondary: #EBEDF3,
       disabled: $grey-light,
       page: #1d1d1d,
+    ),
+    chips: (
+      primary: #F3F2FF,
+      secondary: $primary-light,
+      alter: $secondary-light,
     ),
   ),
 );

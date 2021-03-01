@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import cn from 'classnames';
-import { useCombobox } from 'downshift';
+// import { useCombobox } from 'downshift';
+import useAutocomplete from '@material-ui/lab/useAutocomplete';
 import './Autocomplete.scss';
+import {
+  equals, find, identity, propEq,
+} from 'ramda';
 import { ChevronDown, Close } from '../icons';
 
 /**
@@ -14,8 +18,10 @@ import { ChevronDown, Close } from '../icons';
  * @param {string|null} props.state
  * @param {boolean} props.showTip
  * @param {boolean} props.disabled
+ * @param {any} props.defaultSelected
  * @param {string} props.className
  * @param {array} props.options
+ * @param {string} props.id
 */
 const Autocomplete = ({
   size = 'medium',
@@ -26,32 +32,49 @@ const Autocomplete = ({
   showTip = false,
   disabled = false,
   className = '',
+  defaultSelected = null,
   options = [],
+  id = '',
+  onChange = identity,
   ...rest
 }) => {
-  const [inputItems, setInputItems] = useState(options);
+  const [inputItems, setInputItems] = useState([]);
+  const [prevOptions, setPrevOptions] = useState([]);
+  const [selectedOption, setSelected] = useState(null);
+
+  if (!equals(options, prevOptions)) {
+    setPrevOptions(options);
+    setInputItems(options);
+    setSelected(null);
+  }
+
+  const activeItem = find(propEq('id', defaultSelected), options);
+
+  if (activeItem && !equals(activeItem, selectedOption) && !selectedOption) {
+    setSelected(activeItem);
+  }
 
   const {
-    isOpen,
-    getToggleButtonProps,
-    getMenuProps,
+    getTagProps,
+    getRootProps,
     getInputProps,
-    getComboboxProps,
-    highlightedIndex,
-    getItemProps,
-    selectItem,
-    openMenu,
-  } = useCombobox({
-    items: inputItems,
-    itemToString: (value) => (value ? value.label : ''),
-    onInputValueChange: ({ inputValue }) => {
-      setInputItems(
-        options.filter(
-          (item) => item.label.toLowerCase().startsWith(inputValue.toLowerCase()),
-        ),
-      );
+    getClearProps,
+    getPopupIndicatorProps,
+    getListboxProps,
+    getOptionProps,
+    groupedOptions,
+    popupOpen,
+    focusedTag,
+  } = useAutocomplete({
+    id,
+    options: inputItems,
+    value: selectedOption,
+    getOptionSelected: (opt, val) => (val ? opt.id === val.id : val),
+    getOptionLabel: (value) => (value ? value.label : ''),
+    onChange: (ev, value) => {
+      setSelected(value);
+      onChange(value);
     },
-    onSelectedItemChange: (value) => console.log(value.selectedItem),
   });
 
   const wrapperClasses = cn(
@@ -107,47 +130,39 @@ const Autocomplete = ({
 
   return (
     <div className={wrapperClasses}>
-      <div className={containerWrapper} {...getComboboxProps()}>
+      <div className={containerWrapper} {...getRootProps()}>
         <input
           type="text"
           className={inputClasses}
           {...rest}
-          {...getInputProps({
-            onFocus: () => {
-              if (!isOpen) {
-                openMenu();
-              }
-            },
-          })}
+          {...getInputProps()}
           disabled={disabled}
         />
         {
-          isOpen
+          popupOpen
             ? (
-              <div className={appendIconClasses} onClick={() => {
-                selectItem(null);
-              }}>
+              <div className={appendIconClasses} {...getClearProps()}>
                 <Close />
               </div>
             ) : (
-              <div className={appendIconClasses} {...getToggleButtonProps()}>
+              <div className={appendIconClasses} {...getPopupIndicatorProps()}>
                 <ChevronDown />
               </div>
             )
         }
-        <div className={getDropdownClasses(isOpen)} {...getMenuProps()}>
+        <div className={getDropdownClasses(popupOpen)}>
           {
-            isOpen
+            popupOpen
               ? (
-                <div className={dropdownWrapperClasses}>
+                <div className={dropdownWrapperClasses} {...getListboxProps()}>
                   {
-                    inputItems.length > 0
+                    groupedOptions.length > 0
                       ? (
-                        inputItems.map((opt, i) => (
+                        groupedOptions.map((opt, i) => (
                           <div
-                            className={getDropdownOptionClasses(highlightedIndex === i)}
+                            className={getDropdownOptionClasses(focusedTag === i)}
                             key={opt.id}
-                            {...getItemProps({ item: opt.label, index: i })}
+                            {...getOptionProps({ option: opt, index: i })}
                           >
                             {opt.label}
                           </div>

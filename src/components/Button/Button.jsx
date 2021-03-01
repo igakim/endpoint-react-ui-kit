@@ -5,7 +5,7 @@ import './Button.scss';
 /**
  *
  * @param {Object} props
- * @param {('primary'|'secondary'|'info'|'danger'|'success'|'plain')} props.color
+ * @param {('primary'|'secondary'|'info'|'danger'|'success'|'plain'|'warning')} props.color
  * @param {('extra-small'|'small'|'medium'|'large')} props.size
  * @param {('filled'|'outlined'|'contrasted'|'text')} props.variant
  * @param {boolean} props.fullWidth
