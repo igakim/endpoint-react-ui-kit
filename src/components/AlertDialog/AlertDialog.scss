@@ -4,7 +4,7 @@ body.noscroll {
   overflow: hidden;
 }
 
-.dialog {
+.alert-dialog {
   display: none;
   position: fixed;
   top: 0;
@@ -51,37 +51,41 @@ body.noscroll {
     }
     @include theme-aware('background-color', 'page', 'backgrounds');
   }
-  &-container {
+  &-header {
     display: flex;
     flex-direction: column;
-    max-height: calc(100% - 64px);
-  }
-  &-header {
-    box-sizing: border-box;
-    padding: 30px 24px 14px;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    flex: 0 0 auto;
-    @include theme-aware('border-bottom-color', 'alter', 'typography');
-    &-close {
-      background: none;
-      border: none;
-      width: 38px;
-      cursor: pointer;
+    padding: 45px 60px 10px;
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 30px;
+  }
+  &-icon {
+    width: 80px;
+    margin-bottom: 30px;
+    &.error {
+      @include theme-aware('color', 'danger', 'buttons');
+    }
+    &.info {
+      @include theme-aware('color', 'primary', 'buttons');
+    }
+    &.warning {
+      @include theme-aware('color', 'warning', 'buttons');
     }
   }
   &-body {
-    padding: 24px;
-    overflow-y: auto;
-    flex: 1 1 auto;
+    max-width: 408px;
+    margin: 0 auto 30px;
+    &.text-center {
+      text-align: center;
+    }
   }
   &-footer {
-    padding: 14px 24px 30px;
-    flex: 0 0 auto;
-    text-align: right;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-bottom: 45px;
   }
 }

@@ -19,7 +19,7 @@ const CheckboxInput = ({
 }) => {
   const { className: labelClassName, ...restLabelProps } = labelProps;
   const containerProps = cn(
-    'pretty', 'p-svg', 'p-round', 'checkbox',
+    'pretty', 'p-svg', 'p-round', 'p-has-focus', 'checkbox',
   );
 
   const iconClasses = cn('state', 'p-primary');

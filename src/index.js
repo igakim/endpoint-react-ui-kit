@@ -21,6 +21,7 @@ export { default as Loader } from './components/Loader';
 export { default as Chip } from './components/Chip';
 export { default as Divider } from './components/Divider';
 export { default as Dialog } from './components/Dialog';
+export { default as AlertDialog } from './components/AlertDialog';
 export * from './components/icons';
 export * from './hooks';
 

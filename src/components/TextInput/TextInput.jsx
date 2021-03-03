@@ -85,11 +85,16 @@ const TextInput = ({
           {prependIcon}
         </div>
         <input className={inputClasses} type={type} disabled={disabled} {...rest} />
-        <div className={appendButtonClasses}>
-          <button type="button" {...appendButtonProps} disabled={disabled}>
-            {appendButtonIcon}
-          </button>
-        </div>
+        {
+          appendButtonIcon
+            ? (
+              <div className={appendButtonClasses}>
+                <button type="button" {...appendButtonProps} disabled={disabled} tabIndex={-1}>
+                  {appendButtonIcon}
+                </button>
+              </div>
+            ) : null
+        }
       </div>
       <div className={tipClasses}>
         {tipText}

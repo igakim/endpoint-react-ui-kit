@@ -126,6 +126,7 @@ const DateInput = ({
                 onChange(newDate);
               }
             }}
+            tabIndex={-1}
           />
         </div>
       </div>

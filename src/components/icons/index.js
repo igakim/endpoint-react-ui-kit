@@ -25,3 +25,6 @@ export { default as Eye } from './Eye';
 export { default as EyeOff } from './EyeOff';
 export { default as Minus } from './Minus';
 export { default as Edit2 } from './Edit2';
+export { default as Info } from './Info';
+export { default as Warning } from './Warning';
+export { default as Error } from './Error';

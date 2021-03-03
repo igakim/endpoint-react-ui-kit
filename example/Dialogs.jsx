@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { Container, Button, Dialog } from '../src';
+import {
+  Container, Button, Dialog, AlertDialog, Text,
+} from '../src';
 
 const Dialogs = () => {
   const [open, setOpen] = useState(false);
+  const [openWarning, setWarnignOpen] = useState(false);
 
   return (
     <Container>
@@ -21,6 +24,41 @@ const Dialogs = () => {
             renderFooter={() => (
               <div>aaaaa</div>
             )}
+          />
+        </Container.Item>
+        <Container.Item>
+          <Button
+            onClick={() => setWarnignOpen(true)}
+          >Dialog open</Button>
+          <AlertDialog
+            title="Внимание! После этого действия нельзя будет вернуться назад!"
+            open={openWarning}
+            onClose={() => setWarnignOpen(false)}
+            renderBody={() => (
+              <Text variant="body2" color="secondary">Сохраняя протокол Вы подтверждаете что он заполнен верно. В случае несоответствия данных, ответственность лежит на должностном лице составившем протокол.</Text>
+            )}
+            renderFooter={() => (
+              <div>
+                <Button
+                  variant="contrasted"
+                  color="plain"
+                  size="large"
+                  style={{ marginRight: 30 }}
+                  onClick={() => setWarnignOpen(false)}
+                >
+                  Отменить
+                </Button>
+                <Button
+                  variant="filled"
+                  color="primary"
+                  size="large"
+                  onClick={() => setWarnignOpen(false)}
+                >
+                  Подтвердить
+                </Button>
+              </div>
+            )}
+            type="warning"
           />
         </Container.Item>
       </Container.Row>

@@ -14,6 +14,9 @@ import {
   Paper,
   Eye,
   EyeOff,
+  Info,
+  Error,
+  Warning,
 } from '../src';
 import Buttons from './Buttons';
 import Layouts from './Layouts';
@@ -161,8 +164,15 @@ const App = () => {
           <StepsContainer />
           <Paginations />
           <div style={{ backgroundColor: 'grey', padding: 10 }}>
-            <Eye color="red" />
-            <EyeOff color="red" />
+            <div style={{ width: 30 }}>
+              <Warning color="red" />
+            </div>
+            <div style={{ width: 50 }}>
+              <Error color="red" />
+            </div>
+            <div style={{ width: 100 }}>
+              <Info color="red" />
+            </div>
             <Paper>
               <Chip>test</Chip>
               <Chip>test</Chip>

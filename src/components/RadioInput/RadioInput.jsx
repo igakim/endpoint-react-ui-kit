@@ -21,7 +21,7 @@ const RadioInput = ({
 }) => {
   const { className: labelClassName, ...restLabelProps } = labelProps;
   const containerClasses = cn(
-    'pretty', 'p-default', 'p-round', 'radio',
+    'pretty', 'p-default', 'p-round', 'p-has-focus', 'radio',
   );
 
   const iconClasses = cn('state');
