@@ -1,7 +1,7 @@
 @import "../../assets/scss/theme";
 @import "../../assets/scss/mixins";
 
-.steps {
+.steps-icons {
   width: 100%;
   &-wrapper {
     display: flex;
@@ -39,13 +39,70 @@
     width: 36px;
   }
 
-  &-label {
-
-  }
-
   &-next-icon {
     width: 22px;
     position: absolute;
     right: 0;
+  }
+}
+
+.steps-plain {
+  width: 100%;
+  &-wrapper {
+    display: flex;
+    padding-top: 16px;
+  }
+  &-item {
+    flex: 1 1 100%;
+    padding-bottom: 4px;
+    cursor: pointer;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    &:not(:last-child) {
+      margin-right: 14px;
+    }
+    @include theme-aware('color', 'alter', 'typography');
+    @include theme-aware('border-bottom-color', 'alter', 'typography');
+    &.active {
+      @include theme-aware('color', 'main', 'typography');
+      @include theme-aware('border-bottom-color', 'item-active', 'steps');
+      border-bottom-width: 2px;
+    }
+  }
+  &-icon {
+    display: none;
+    width: 36px;
+  }
+  &-next-icon {
+    display: none;
+  }
+  $height: 32px;
+  $padding: 5px;
+  &-label {
+    display: flex;
+  }
+  &-label-text {
+    box-sizing: border-box;
+    height: $height;
+    line-height: $height;
+  }
+  &-label-icon {
+    box-sizing: border-box;
+    padding: $padding;
+    width: 32px;
+    height: $height;
+    line-height: $height - $padding * 2;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 8px;
+    font-size: 16px;
+    .steps-plain-item & {
+      @include theme-aware('background-color', 'light', 'backgrounds');
+      @include theme-aware('color', 'secondary', 'typography');
+    }
+    .steps-plain-item.active & {
+      @include theme-aware('background-color', 'item-active', 'steps');
+      @include theme-aware('color', 'contrast', 'typography');
+    }
   }
 }

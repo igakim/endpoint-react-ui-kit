@@ -1,0 +1,52 @@
+@import '../../assets/scss/mixins';
+
+.scrollspy {
+  $dotSize: 16px;
+  $lineSpace: 20px;
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+
+  }
+  &-item {
+    display: flex;
+    cursor: pointer;
+    &-line {
+      height: 50px;
+      width: 2px;
+      @include theme-aware('background-color', 'alter', 'typography');
+      margin-right: $lineSpace;
+    }
+    &-label {
+      position: relative;
+    }
+    &-dot {
+      width: $dotSize;
+      height: $dotSize;
+      @include theme-aware('background-color', 'alter', 'typography');
+      border-radius: 50%;
+      position: absolute;
+      left: -$lineSpace - ($dotSize / 2) - 1;
+    }
+    &-text {
+      font-size: 18px;
+      @include theme-aware('color', 'alter', 'typography');
+    }
+    &.active {
+      .scrollspy-item-line {
+        @include theme-aware('background-color', 'secondary', 'buttons');
+      }
+      .scrollspy-item-dot {
+        @include theme-aware('background-color', 'secondary', 'buttons');
+      }
+      .scrollspy-item-text {
+        @include theme-aware('color', 'main', 'typography');
+      }
+    }
+    &:last-child {
+      .scrollspy-item-line {
+        opacity: 0;
+      }
+    }
+  }
+}

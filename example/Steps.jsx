@@ -5,14 +5,14 @@ import {
 } from '../src';
 
 const steps = [
-  { label: 'Step One', key: 1, icon: User },
-  { label: 'Step Two', key: 2, icon: Calendar },
-  { label: 'Step Three', key: 3, icon: Key },
-  { label: 'Step Four', key: 4, icon: User },
+  { label: 'Step One', key: 'a', icon: User },
+  { label: 'Step Two', key: 'b', icon: Calendar },
+  { label: 'Step Three', key: 'c', icon: Key },
+  { label: 'Step Four', key: 'd', icon: User },
 ];
 
 const StepsContainer = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState('a');
 
   return (
     <Container>
@@ -24,6 +24,15 @@ const StepsContainer = () => {
             onStepClick={(key) => {
               setStep(key);
             }}
+          />
+
+          <Steps
+            activeKey={step}
+            steps={steps}
+            onStepClick={(key) => {
+              setStep(key);
+            }}
+            variant="icons"
           />
         </Container.Item>
       </Container.Row>

@@ -38,9 +38,11 @@ import '@fontsource/roboto/cyrillic-ext-700.css';
 import Paginations from './Paginations';
 import Loader from '../src/components/Loader';
 import Chip from '../src/components/Chip/Chip';
+import ScrollSpyContainer from './ScrollSpy';
 
 const App = () => {
   const switchTheme = useThemeSwitcher();
+  const [open, setOpen] = useState();
 
   const switchThemeTo = (name) => () => {
     switchTheme(name);
@@ -180,7 +182,15 @@ const App = () => {
             </Paper>
           </div>
           {/* <Loader show text="text" /> */}
+          <Button onClick={() => setOpen(!open)}>
+            toggle
+          </Button>
           <Dialogs />
+          {
+            open
+              ? <ScrollSpyContainer />
+              : null
+          }
         </div>
       </Navigation>
     </>

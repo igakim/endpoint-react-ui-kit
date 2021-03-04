@@ -4,11 +4,9 @@ import { findIndex, prop, propEq } from 'ramda';
 import './Steps.scss';
 import Text from '../Text';
 
-import { User, ArrowRight } from '../icons';
+import { User, ArrowRight, Check } from '../icons';
 
-const getIndexOf = (steps, key) => {
-
-};
+const getIndexOf = (steps, key) => findIndex(propEq('key', key))(steps);
 
 /**
  * Callback onStepClick
@@ -22,6 +20,7 @@ const getIndexOf = (steps, key) => {
  * @param {(null|string|number)} props.activeKey
  * @param {Array.<{icon: ReactNode, label: string, key: (null|number|string)}>} props.steps
  * @param {onStepClick} props.onStepClick
+ * @param {('icons'|'plain')} props.variant
  * @returns {JSX.Element}
  * @constructor
  */
@@ -29,34 +28,45 @@ const Steps = ({
   activeKey = null,
   steps = [],
   onStepClick = () => {},
+  variant = 'plain',
 }) => {
   const stepsClasses = cn(
-    'steps',
+    `steps-${variant}`,
   );
 
   const stepsWrapperClasses = cn(
-    'steps-wrapper',
+    `steps-${variant}-wrapper`,
   );
 
   const getItemClasses = (active) => cn(
-    'steps-item',
+    `steps-${variant}-item`,
     active && 'active',
   );
 
   const stepsContentClasses = cn(
     'steps-content',
+    `steps-${variant}-content`,
   );
 
   const stepsIconClasses = cn(
-    'steps-icon',
+    `steps-${variant}-icon`,
   );
 
   const stepsLabelClasses = cn(
     'steps-label',
+    `steps-${variant}-label`,
   );
 
   const stepsNextIconClasses = cn(
-    'steps-next-icon',
+    `steps-${variant}-next-icon`,
+  );
+
+  const stepsLabelIcon = cn(
+    'steps-plain-label-icon',
+  );
+
+  const stepsLabelText = cn(
+    'steps-plain-label-text',
   );
 
   const handleStepClick = (key) => (e) => {
@@ -72,7 +82,7 @@ const Steps = ({
             <div
               className={
                 getItemClasses(
-                  findIndex(propEq('key', key))(steps) <= findIndex(propEq('key', activeKey))(steps),
+                  getIndexOf(steps, key) <= getIndexOf(steps, activeKey),
                 )
               }
               key={key}
@@ -83,7 +93,24 @@ const Steps = ({
                   <Icon />
                 </div>
                 <div className={stepsLabelClasses}>
-                  {i + 1}. {label}
+                  {
+                    variant === 'icons'
+                      ? `${i + 1}. ${label}`
+                      : (
+                        <>
+                          <div className={stepsLabelIcon}>
+                            {
+                              getIndexOf(steps, key) <= (getIndexOf(steps, activeKey) - 1)
+                                ? <Check />
+                                : i + 1
+                            }
+                          </div>
+                          <div className={stepsLabelText}>
+                            {label}
+                          </div>
+                        </>
+                      )
+                  }
                 </div>
                 {
                   !(findIndex(propEq('key', key))(steps) >= steps.length - 1)

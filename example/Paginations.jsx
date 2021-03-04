@@ -9,7 +9,7 @@ const Paginations = () => {
       <Container.Row spacing={2}>
         <Container.Item>
           <Pagination
-            totalObjects={22}
+            totalObjects={1000}
             activePage={currentPage}
             pageSize={10}
             onPrevClick={() => setCurrentPage(currentPage - 1)}
