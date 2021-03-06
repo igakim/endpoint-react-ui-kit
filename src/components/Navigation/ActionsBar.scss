@@ -13,6 +13,7 @@
   overflow-y: scroll;
   transition: .2s;
   white-space: nowrap;
+  will-change: width;
   &.show {
     width: $actionbar-width;
   }

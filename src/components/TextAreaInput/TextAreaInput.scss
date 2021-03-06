@@ -1,0 +1,27 @@
+@import '../../assets/scss/mixins';
+
+.input {
+  &-container {
+    width: 100%;
+    position: relative;
+    @include get-input-sizes();
+    @include get-input-states();
+    &-wrapper {
+      position: relative;
+    }
+  }
+  &-base {
+    @include get-input-base;
+    resize: none;
+    font-family: Roboto, sans-serif;
+    line-height: 21px;
+  }
+  @include get-input-types();
+
+  &-tip {
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
+}

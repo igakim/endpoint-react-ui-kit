@@ -1,0 +1,65 @@
+@import '../../assets/scss/theme';
+@import '../../assets/scss/mixins';
+
+.uploader {
+  &-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  &-input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: .1px;
+    height: .1px;
+    &:disabled {
+      & + .uploader-label {
+        @include theme-aware('background-color', 'plain', 'buttons');
+        @include theme-aware('color', 'muted', 'buttons');
+        cursor: not-allowed;
+      }
+    }
+  }
+  &-label {
+    box-sizing: border-box;
+    width: 100%;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+    display: inline-flex;
+    @each $theme-name, $theme-values in $themes {
+      @each $type, $color in map-get($theme-values, 'buttons') {
+        .theme-#{$theme-name} &-#{$type} {
+          background-color: lighten($color, 41%);
+          color: lighten($color, 10%);
+        }
+      }
+    }
+    @each $btn-name, $btn-values in map-get($sizes, 'buttons') {
+      &-#{$btn-name} {
+        padding: map-get($btn-values, 'padding');
+        border-radius: map-get($btn-values, 'border-radius');
+        font-size: map-get($btn-values, 'font-size');
+        .uploader-icon {
+          margin-left: 8px;
+          width: map-get($btn-values, 'icon-width') - 2;
+        }
+      }
+    }
+  }
+  &-tip {
+    margin-top: 4px;
+    @include theme-aware('color', 'primary', 'buttons');
+    @each $btn-name, $btn-values in map-get($sizes, 'buttons') {
+      &-#{$btn-name} {
+        font-size: map-get($btn-values, 'font-size');
+      }
+    }
+    &-error {
+      @include theme-aware('color', 'danger', 'buttons');
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@import '../../assets/scss/mixins';
+
+.switch {
+  &-wrapper {
+    &-medium {
+      height: 30px;
+      width: 54px;
+      padding: 3px;
+      border-radius: 15px;
+    }
+    &-small {
+      height: 26px;
+      width: 46px;
+      padding: 3px;
+      border-radius: 15px;
+    }
+    &-large {
+      height: 34px;
+      width: 60px;
+      padding: 3px;
+      border-radius: 18px;
+    }
+    box-sizing: border-box;
+    display: flex;
+    @include theme-aware('background-color', 'light', 'backgrounds');
+  }
+  &-dot {
+    will-change: transform, background;
+    .switch-wrapper-medium & {
+      width: 24px;
+      height: 24px;
+      padding: 3px;
+    }
+    .switch-wrapper-small & {
+      width: 20px;
+      height: 20px;
+      padding: 3px;
+    }
+    .switch-wrapper-large & {
+      width: 28px;
+      height: 28px;
+      padding: 3px;
+    }
+    box-sizing: border-box;
+    border-radius: 50%;
+    color: #fff;
+    transition: .4s;
+    .switch-wrapper.off & {
+      transform: translateX(0);
+      background-color: #fff;
+    }
+    .switch-wrapper.on & {
+      @include theme-aware('background-color', 'primary', 'buttons');
+    }
+    .switch-wrapper-small.on & {
+      transform: translateX(20px);
+    }
+    .switch-wrapper-medium.on & {
+      transform: translateX(24px);
+    }
+    .switch-wrapper-large.on & {
+      transform: translateX(26px);
+    }
+  }
+}

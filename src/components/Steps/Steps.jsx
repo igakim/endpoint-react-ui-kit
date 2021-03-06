@@ -89,9 +89,14 @@ const Steps = ({
               onClick={handleStepClick(key)}
             >
               <div className={stepsContentClasses}>
-                <div className={stepsIconClasses}>
-                  <Icon />
-                </div>
+                {
+                  variant === 'icons'
+                    ? (
+                      <div className={stepsIconClasses}>
+                        <Icon />
+                      </div>
+                    ) : null
+                }
                 <div className={stepsLabelClasses}>
                   {
                     variant === 'icons'

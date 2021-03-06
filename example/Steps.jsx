@@ -11,6 +11,13 @@ const steps = [
   { label: 'Step Four', key: 'd', icon: User },
 ];
 
+const stepsWithoutIcons = [
+  { label: 'Step One', key: 'a' },
+  { label: 'Step Two', key: 'b' },
+  { label: 'Step Three', key: 'c' },
+  { label: 'Step Four', key: 'd' },
+];
+
 const StepsContainer = () => {
   const [step, setStep] = useState('a');
 
@@ -20,7 +27,7 @@ const StepsContainer = () => {
         <Container.Item xxs={12}>
           <Steps
             activeKey={step}
-            steps={steps}
+            steps={stepsWithoutIcons}
             onStepClick={(key) => {
               setStep(key);
             }}

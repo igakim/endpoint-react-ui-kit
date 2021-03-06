@@ -23,6 +23,11 @@ export { default as Divider } from './components/Divider';
 export { default as Dialog } from './components/Dialog';
 export { default as AlertDialog } from './components/AlertDialog';
 export { default as ScrollSpy } from './components/ScrollSpy';
+export { default as SwitchInput } from './components/SwitchInput';
+export { default as TextAreaInput } from './components/TextAreaInput';
+export { default as BottomActionBar } from './components/BottomActionBar';
+export { default as FileUpload } from './components/FileUpload';
+
 export * from './components/icons';
 export * from './hooks';
 

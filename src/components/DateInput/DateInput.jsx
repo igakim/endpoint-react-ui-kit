@@ -18,6 +18,7 @@ import './DateInput.scss';
  * @param {boolean} props.showTip
  * @param {boolean} props.disabled
  * @param {boolean} props.withTime
+ * @param {boolean} props.allowEmptyFormatting
  * @param {string} props.className
  * @param {Object} props.appendButtonProps
  * @param {function} props.onChange
@@ -32,6 +33,7 @@ const DateInput = ({
   disabled = false,
   appendButtonProps = {},
   withTime = false,
+  allowEmptyFormatting = true,
   className = '',
   onChange = () => {},
   ...rest
@@ -93,7 +95,7 @@ const DateInput = ({
           customInput={TextInput}
           format={withTime ? '##.##.#### (##:##)' : '##.##.####'}
           mask="_"
-          allowEmptyFormatting
+          allowEmptyFormatting={allowEmptyFormatting}
           value={
             dayjs(
               date,

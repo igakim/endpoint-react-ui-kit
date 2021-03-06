@@ -28,7 +28,7 @@
         height: 100%;
         width: map-get($size-value, 'font-size') * 1.8;
         position: absolute;
-        top: 0;
+        top: map-get($size-value, 'fromTop');
         right: map-get($size-value, 'font-size') / 3;
         svg {
           margin-top: map-get($size-value, 'font-size') - 12;

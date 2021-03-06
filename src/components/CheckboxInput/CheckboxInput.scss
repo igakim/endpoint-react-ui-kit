@@ -23,3 +23,7 @@
 .pretty.p-has-focus input:focus ~ .state label:before {
   box-shadow: 0px 0px 6px 0px #0f2fae;
 }
+.pretty .state label:before, .pretty .state label:after {
+  @include theme-aware('background-color', 'light', 'backgrounds');
+}
+

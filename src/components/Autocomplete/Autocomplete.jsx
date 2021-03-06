@@ -18,7 +18,7 @@ import { ChevronDown, Close } from '../icons';
  * @param {string|null} props.state
  * @param {boolean} props.showTip
  * @param {boolean} props.disabled
- * @param {any} props.defaultSelected
+ * @param {any} props.inputValue
  * @param {string} props.className
  * @param {array} props.options
  * @param {string} props.id
@@ -32,7 +32,7 @@ const Autocomplete = ({
   showTip = false,
   disabled = false,
   className = '',
-  defaultSelected = null,
+  inputValue = null,
   options = [],
   id = '',
   onChange = identity,
@@ -48,10 +48,14 @@ const Autocomplete = ({
     setSelected(null);
   }
 
-  const activeItem = find(propEq('id', defaultSelected), options);
+  const activeItem = find(propEq('id', inputValue), options);
 
   if (activeItem && !equals(activeItem, selectedOption) && !selectedOption) {
     setSelected(activeItem);
+  }
+
+  if (!inputValue && Boolean(selectedOption)) {
+    setSelected(null);
   }
 
   const {
@@ -128,6 +132,9 @@ const Autocomplete = ({
     shouldBeActive && 'active',
   );
 
+  const popupIndicatorProps = disabled ? {} : getPopupIndicatorProps();
+  const clearProps = disabled ? {} : getClearProps();
+
   return (
     <div className={wrapperClasses}>
       <div className={containerWrapper} {...getRootProps()}>
@@ -141,11 +148,11 @@ const Autocomplete = ({
         {
           popupOpen
             ? (
-              <div className={appendIconClasses} {...getClearProps()}>
+              <div className={appendIconClasses} {...clearProps}>
                 <Close />
               </div>
             ) : (
-              <div className={appendIconClasses} {...getPopupIndicatorProps()}>
+              <div className={appendIconClasses} {...popupIndicatorProps}>
                 <ChevronDown />
               </div>
             )

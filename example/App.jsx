@@ -16,7 +16,7 @@ import {
   EyeOff,
   Info,
   Error,
-  Warning,
+  Warning, BottomActionBar,
 } from '../src';
 import Buttons from './Buttons';
 import Layouts from './Layouts';
@@ -39,6 +39,9 @@ import Paginations from './Paginations';
 import Loader from '../src/components/Loader';
 import Chip from '../src/components/Chip/Chip';
 import ScrollSpyContainer from './ScrollSpy';
+import SwitchContainer from './Switches';
+import TextAreas from './TextAreas';
+import FileUploadContainer from './FileUploadContainer';
 
 const App = () => {
   const switchTheme = useThemeSwitcher();
@@ -191,6 +194,27 @@ const App = () => {
               ? <ScrollSpyContainer />
               : null
           }
+
+          <SwitchContainer />
+          <TextAreas />
+          <FileUploadContainer />
+          <BottomActionBar>
+            <div>
+              <Chip>test</Chip>
+              <Chip>test</Chip>
+              <Chip>test</Chip>
+            </div>
+            <div>
+              <Chip>test</Chip>
+              <Chip>test</Chip>
+              <Chip>test</Chip>
+            </div>
+            <div>
+              <Chip>test</Chip>
+              <Chip>test</Chip>
+              <Chip>test</Chip>
+            </div>
+          </BottomActionBar>
         </div>
       </Navigation>
     </>

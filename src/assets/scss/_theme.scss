@@ -92,6 +92,11 @@ $breakpoints: (
 $max-cols: 12;
 $max-size: 5;
 
+$sidebar-width: 80px;
+$actionbar-width: 310px;
+$logo-height: 50px;
+$items-top-gap: 40px;
+$navigation-paddings: 10px;
 
 // THEMES
 $themes: (
@@ -252,25 +257,25 @@ $sizes: (
     extra-small: (
       padding: 5px 12px,
       border-radius: 4px,
-      font-size: 14px,
+      font-size: 10px,
       icon-width: 16px,
     ),
     small: (
       padding: 6px 14px,
       border-radius: 5px,
-      font-size: 15px,
+      font-size: 12px,
       icon-width: 18px,
     ),
     medium: (
       padding: 8px 15px,
       border-radius: 6px,
-      font-size: 17px,
+      font-size: 14px,
       icon-width: 20px,
     ),
     large: (
       padding: 8px 16px,
       border-radius: 7px,
-      font-size: 18px,
+      font-size: 16px,
       icon-width: 26px,
     ),
   ),
@@ -305,16 +310,19 @@ $sizes: (
       border-radius: 5px,
       padding: 4px 8px,
       font-size: 12px,
+      fromTop: 5px,
     ),
     medium: (
       border-radius: 5px,
       padding: 6px 10px,
       font-size: 14px,
+      fromTop: 4px,
     ),
     large: (
       border-radius: 5px,
       padding: 8px 12px,
       font-size: 16px,
+      fromTop: 2px,
     ),
   ),
   inputTips: (

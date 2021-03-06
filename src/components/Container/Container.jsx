@@ -15,6 +15,7 @@ import Item from './Item';
 const Container = ({
   className,
   children,
+  ...rest
 }) => {
   const classes = cn(
     'container',
@@ -22,7 +23,7 @@ const Container = ({
   );
 
   return (
-    <div className={classes}>
+    <div className={classes} {...rest}>
       {children}
     </div>
   );
