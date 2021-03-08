@@ -1,0 +1,29 @@
+@import '../../assets/scss/theme';
+@import '../../assets/scss/mixins';
+
+.chip-abs {
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  font-size: 12px;
+  padding: 6px;
+  @include theme-aware('color', 'contrast', 'typography');
+  @each $theme, $values in $themes {
+    @each $type, $color in map-get($values, 'buttons') {
+      .theme-#{$theme} &-#{$type} {
+        background: $color;
+      }
+    }
+  }
+  &-radius {
+    &-left {
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+    &-right {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+  }
+}
+

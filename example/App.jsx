@@ -16,7 +16,7 @@ import {
   EyeOff,
   Info,
   Error,
-  Warning, BottomActionBar, ProgressBar, Fingerprint,
+  Warning, BottomActionBar, ProgressBar, Fingerprint, ChipReach, FPSuccess, ChipAbsolute,
 } from '../src';
 import Buttons from './Buttons';
 import Layouts from './Layouts';
@@ -203,8 +203,38 @@ const App = () => {
           <FileItemViews />
           <ProgressBar progress={99} />
           <Tables />
-          <div style={{ width: 200, background: 'red' }}>
-            <Fingerprint />
+          <div style={{
+            width: 200, background: 'black', height: 200, position: 'relative',
+          }}>
+            <ChipAbsolute
+              top={0}
+              right={0}
+            >
+              test
+            </ChipAbsolute>
+            <ChipAbsolute
+              top="50%"
+              right={0}
+              color="danger"
+            >
+              test 2
+            </ChipAbsolute>
+            <ChipAbsolute
+              top="50%"
+              color="warning"
+              left={0}
+              radiusSide="right"
+            >
+              test 3
+            </ChipAbsolute>
+          </div>
+          <div style={{ marginTop: 20, marginBottom: 20 }}>
+            <ChipReach color="primary">PRIMary</ChipReach>
+            <ChipReach color="secondary">secondary</ChipReach>
+            <ChipReach color="danger">danger</ChipReach>
+            <ChipReach color="warning">warning</ChipReach>
+            <ChipReach color="success">success</ChipReach>
+            <ChipReach color="info">info</ChipReach>
           </div>
           <BottomActionBar>
             <div>

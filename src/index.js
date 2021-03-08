@@ -30,6 +30,8 @@ export { default as FileUpload } from './components/FileUpload';
 export { default as FileItemView } from './components/FileItemView';
 export { default as ProgressBar } from './components/ProgressBar';
 export { default as Table } from './components/Table';
+export { default as ChipReach } from './components/ChipReach';
+export { default as ChipAbsolute } from './components/ChipAbsolute';
 
 export * from './components/icons';
 export * from './hooks';

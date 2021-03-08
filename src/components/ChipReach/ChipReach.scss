@@ -1,0 +1,23 @@
+@import '../../assets/scss/theme';
+
+.chip-reach {
+  display: inline-block;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  margin: 4px 4px 4px 0;
+  font-size: 12px;
+  border-left-style: solid;
+  border-left-width: 4px;
+  padding: 8px;
+  border-radius: 4px;
+  @each $theme, $values in $themes {
+    @each $type, $color in map-get($values, 'buttons') {
+      .theme-#{$theme} &-#{$type} {
+        border-left-color: $color;
+        color: darken($color, 10%);
+        background: lighten($color, 28%);
+      }
+    }
+  }
+}
+
