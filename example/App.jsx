@@ -16,7 +16,7 @@ import {
   EyeOff,
   Info,
   Error,
-  Warning, BottomActionBar,
+  Warning, BottomActionBar, ProgressBar, Fingerprint,
 } from '../src';
 import Buttons from './Buttons';
 import Layouts from './Layouts';
@@ -42,6 +42,8 @@ import ScrollSpyContainer from './ScrollSpy';
 import SwitchContainer from './Switches';
 import TextAreas from './TextAreas';
 import FileUploadContainer from './FileUploadContainer';
+import FileItemViews from './FileItemViews';
+import Tables from './Tables';
 
 const App = () => {
   const switchTheme = useThemeSwitcher();
@@ -198,6 +200,12 @@ const App = () => {
           <SwitchContainer />
           <TextAreas />
           <FileUploadContainer />
+          <FileItemViews />
+          <ProgressBar progress={99} />
+          <Tables />
+          <div style={{ width: 200, background: 'red' }}>
+            <Fingerprint />
+          </div>
           <BottomActionBar>
             <div>
               <Chip>test</Chip>

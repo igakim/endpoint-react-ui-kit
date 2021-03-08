@@ -1,0 +1,17 @@
+@import '../../assets/scss/mixins';
+
+.progress {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 6px;
+  z-index: 110;
+  &-line {
+    height: 100%;
+    will-change: width;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    @include theme-aware('background-color', 'secondary', 'buttons');
+  }
+}

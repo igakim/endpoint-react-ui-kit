@@ -1,0 +1,49 @@
+@import "../../assets/scss/mixins";
+
+.file-item {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 5px;
+  @include theme-aware('background-color', 'light', 'backgrounds');
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
+  &-icon {
+    flex: 0 0 30px;
+    max-width: 30px;
+  }
+  &-name {
+    flex: 0 0 50%;
+    overflow: hidden;
+    font-size: 14px;
+    white-space: nowrap;
+    @media (min-width: 768px) {
+      flex: 0 0 80%;
+    }
+  }
+  &-remove {
+    flex: 0 0 15px;
+    max-width: 15px;
+    cursor: pointer;
+    &:hover {
+      @include theme-aware('color', 'danger', 'buttons');
+    }
+  }
+  &-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    &-fill {
+      width: 100%;
+      height: 100%;
+      will-change: width;
+      @include theme-aware('background-color', 'secondary', 'buttons');
+    }
+  }
+}

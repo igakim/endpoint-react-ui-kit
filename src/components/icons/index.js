@@ -35,3 +35,5 @@ export { default as Upload } from './Upload';
 export { default as AtSign } from './AtSign';
 export { default as Search } from './Search';
 export { default as File } from './File';
+export { default as Trash2 } from './Trash2';
+export { default as Fingerprint } from './Fingerprint';

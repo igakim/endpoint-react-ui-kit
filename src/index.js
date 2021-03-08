@@ -27,6 +27,9 @@ export { default as SwitchInput } from './components/SwitchInput';
 export { default as TextAreaInput } from './components/TextAreaInput';
 export { default as BottomActionBar } from './components/BottomActionBar';
 export { default as FileUpload } from './components/FileUpload';
+export { default as FileItemView } from './components/FileItemView';
+export { default as ProgressBar } from './components/ProgressBar';
+export { default as Table } from './components/Table';
 
 export * from './components/icons';
 export * from './hooks';

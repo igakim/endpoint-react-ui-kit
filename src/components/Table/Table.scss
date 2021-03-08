@@ -1,0 +1,30 @@
+@import "../../assets/scss/mixins";
+
+.table {
+  min-width: 100%;
+
+  &-wrapper {
+    border-radius: 6px;
+    min-width: 100%;
+    overflow-x: auto;
+  }
+  &-head {
+    @include theme-aware('background-color', 'light', 'backgrounds');
+  }
+  &-tr {
+    padding: 6px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    @include theme-aware('border-bottom-color', 'light', 'backgrounds');
+  }
+  &-th {
+    padding: 12px 6px;
+    font-size: 14px;
+    font-weight: 400;
+    @include theme-aware('color', 'secondary', 'typography');
+  }
+  &-td {
+    padding: 12px 6px;
+    font-size: 14px;
+  }
+}

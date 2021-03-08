@@ -45,6 +45,8 @@
     box-sizing: border-box;
     border-radius: 5px;
     display: none;
+    max-height: 400px;
+    overflow: auto;
     &.show {
       display: block;
     }
