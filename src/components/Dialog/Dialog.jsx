@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
+import { identity } from 'ramda';
 import cn from 'classnames';
 import { Close } from '../icons';
 import { Text } from '../../index';
 import './Dialog.scss';
-import { identity } from 'ramda';
 
 const Dialog = ({
   open = false,
   title = '',
   onClose = identity,
   renderBody = identity,
+  withoutFooter = false,
   renderFooter = identity,
 }) => {
   const dialogClasses = cn('dialog', open && 'show');
@@ -41,9 +42,15 @@ const Dialog = ({
         <div className={dialogBody}>
           {renderBody()}
         </div>
-        <div className={dialogFooter}>
-          {renderFooter()}
-        </div>
+        {
+          withoutFooter
+            ? null
+            : (
+              <div className={dialogFooter}>
+                {renderFooter()}
+              </div>
+            )
+        }
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import './assets/scss/index.scss';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
+import utc from 'dayjs/plugin/utc';
 
 export { default as Button } from './components/Button';
 export { default as IconButton } from './components/IconButton';
@@ -37,3 +38,4 @@ export * from './components/icons';
 export * from './hooks';
 
 dayjs.extend(customParseFormat);
+dayjs.extend(utc, {});

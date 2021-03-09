@@ -36,9 +36,11 @@ const DateInput = ({
   allowEmptyFormatting = true,
   className = '',
   onChange = () => {},
+  value = '',
+  onBlur,
   ...rest
 }) => {
-  const [date, setDate] = useState(null);
+  const [date, setDate] = useState(dayjs(value));
 
   const containerClasses = cn(
     'date-input',
@@ -77,8 +79,8 @@ const DateInput = ({
   );
 
   const handleSetValue = (e) => {
+    onBlur(e);
     const newDate = dayjs(e.target.value, withTime ? 'DD.MM.YYYY (HH:mm)' : 'DD.MM.YYYY');
-
     if (newDate.isValid()) {
       setDate(newDate);
       onChange(newDate);

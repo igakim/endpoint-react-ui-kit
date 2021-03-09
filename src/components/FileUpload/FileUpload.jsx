@@ -56,6 +56,7 @@ const FileUpload = ({
   const handleChange = (e) => {
     e.preventDefault();
     onChange(e.target.files);
+    e.target.value = null;
   };
 
   return (

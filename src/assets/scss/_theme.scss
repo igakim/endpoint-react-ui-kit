@@ -11,7 +11,7 @@ $plain-dark-light: #000028;
 $dark-light: #222D59;
 $darkblue-light: #222D59;
 $darkblue2-light: #18203F;
-$darkgrey-light: #645D6A;
+$darkgrey-light: #5d5d5d;
 $grey-light: #aeaeae;
 $light-grey-light: #D9D5E0;
 $light-light: #EBEDF3;
@@ -109,7 +109,7 @@ $themes: (
       success: $success-light,
       info: $info-light,
       plain: $darkgrey-light,
-      muted: $grey-light,
+      muted: $muted-bg-light,
     ),
     typography: (
       main: $main-text-light,

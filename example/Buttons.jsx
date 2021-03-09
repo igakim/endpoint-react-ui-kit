@@ -42,7 +42,8 @@ const Buttons = () => (
             <Button color="danger" size="extra-small" variant="contrasted">Button</Button>
             <Button color="info" size="extra-small" variant="contrasted">Button</Button>
             <Button color="success" size="extra-small" variant="contrasted">Button</Button>
-            <Button color="plain" size="extra-small" variant="contrasted">Button</Button>
+            <Button color="muted" size="extra-small" variant="contrasted">Button</Button>
+            <Button color="muted" size="extra-small" variant="contrasted" disabled>Button</Button>
           </div>
           <div>
             <Button color="primary" size="extra-small" variant="text">Button</Button>
@@ -51,6 +52,7 @@ const Buttons = () => (
             <Button color="info" size="extra-small" variant="text">Button</Button>
             <Button color="success" size="extra-small" variant="text">Button</Button>
             <Button color="plain" size="extra-small" variant="text">Button</Button>
+            <Button color="plain" size="extra-small" variant="text" disabled>Button</Button>
           </div>
           <div>
             <Button color="primary" size="extra-small" appendIcon={<AlertCircle />} prependIcon={<AlertCircle />}>Button</Button>
@@ -93,6 +95,12 @@ const Buttons = () => (
             <IconButton icon={<Lock />} color="secondary" size="small" />
             <IconButton icon={<User />} color="danger" size="medium" />
             <IconButton icon={<AlertCircle />} color="info" size="large" />
+          </div>
+          <div>
+            <IconButton icon={<AlertCircle />} color="primary" size="extra-small" variant="text" />
+            <IconButton icon={<Lock />} color="secondary" size="small" variant="text" />
+            <IconButton icon={<User />} color="danger" size="medium" variant="text" />
+            <IconButton icon={<AlertCircle />} color="info" size="large" variant="text" />
           </div>
         </Container.Item>
       </Container.Row>

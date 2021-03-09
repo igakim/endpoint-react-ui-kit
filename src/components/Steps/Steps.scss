@@ -3,6 +3,7 @@
 
 .steps-icons {
   width: 100%;
+  overflow-x: auto;
   &-wrapper {
     display: flex;
     padding-top: 16px;
@@ -48,6 +49,7 @@
 
 .steps-plain {
   width: 100%;
+  overflow-x: auto;
   &-wrapper {
     display: flex;
     padding-top: 16px;
@@ -83,6 +85,7 @@
   }
   &-label-text {
     box-sizing: border-box;
+    white-space: nowrap;
     height: $height;
     line-height: $height;
   }

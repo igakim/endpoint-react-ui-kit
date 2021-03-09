@@ -44,6 +44,7 @@ import TextAreas from './TextAreas';
 import FileUploadContainer from './FileUploadContainer';
 import FileItemViews from './FileItemViews';
 import Tables from './Tables';
+import RFFDate from './RFFDate';
 
 const App = () => {
   const switchTheme = useThemeSwitcher();
@@ -236,6 +237,7 @@ const App = () => {
             <ChipReach color="success">success</ChipReach>
             <ChipReach color="info">info</ChipReach>
           </div>
+          <RFFDate />
           <BottomActionBar>
             <div>
               <Chip>test</Chip>

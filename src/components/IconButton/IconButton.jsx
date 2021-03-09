@@ -7,7 +7,7 @@ import './IconButton.scss';
  * @param {ReactNode} props.icon
  * @param {('extra-small'|'small'|'medium'|'large')} props.size
  * @param {('primary'|'secondary'|'info'|'danger'|'success')} props.color
- * @param {('filled'|'outlined'|'contrasted')} props.variant
+ * @param {('filled'|'outlined'|'contrasted'|'text')} props.variant
  * @param {string} props.className
  * @constructor
  */
@@ -26,6 +26,7 @@ const IconButton = ({
       [`btn-icon-${color}`]: variant === 'filled',
       [`btn-icon-outline-${color}`]: variant === 'outlined',
       [`btn-icon-contrasted-${color}`]: variant === 'contrasted',
+      [`btn-icon-text-${color}`]: variant === 'text',
     },
     className,
   );
