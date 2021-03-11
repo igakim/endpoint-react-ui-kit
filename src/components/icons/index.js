@@ -41,3 +41,4 @@ export { default as FPSuccess } from './FPSuccess';
 export { default as Filter } from './Filter';
 export { default as FileText } from './FileText';
 export { default as Empty } from './Empty';
+export { default as ChevronDownDouble } from './ChevronDownDouble';

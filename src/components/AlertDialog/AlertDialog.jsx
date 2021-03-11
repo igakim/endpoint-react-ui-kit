@@ -1,11 +1,23 @@
 import React, { useEffect } from 'react';
 import cn from 'classnames';
+import { identity } from 'ramda';
 import {
   Warning, Error, Info, Close, Text,
 } from '../../index';
 import './AlertDialog.scss';
-import { identity } from 'ramda';
 
+/**
+ *
+ * @param {object} props
+ * @param {boolean} props.open
+ * @param {string} props.title
+ * @param {function} props.onClose
+ * @param {function} props.renderBody
+ * @param {function} props.renderFooter
+ * @param {('info'|'warning'|'error')} props.type
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const AlertDialog = ({
   open = false,
   title = '',
@@ -39,7 +51,7 @@ const AlertDialog = ({
   };
 
   return (
-    <div className={dialogClasses}>
+    <div className={dialogClasses} onClick={onClose}>
       <div className={dialogWrapper} onClick={(e) => e.stopPropagation()}>
         <div className={dialogHeader}>
           <div className={dialogIcon}>
