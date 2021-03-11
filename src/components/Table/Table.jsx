@@ -47,10 +47,17 @@ const Footer = ({
 
 const Tr = ({
   className = '',
+  selected = false,
   children,
   ...rest
 }) => {
-  const tableTrClasses = cn('table-tr', className);
+  const tableTrClasses = cn(
+    'table-tr',
+    className,
+    {
+      'table-tr-selected': selected,
+    },
+  );
 
   return (
     <tr className={tableTrClasses} {...rest}>

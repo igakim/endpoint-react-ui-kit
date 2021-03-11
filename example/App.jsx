@@ -16,7 +16,8 @@ import {
   EyeOff,
   Info,
   Error,
-  Warning, BottomActionBar, ProgressBar, Fingerprint, ChipReach, FPSuccess, ChipAbsolute,
+  Container,
+  Warning, BottomActionBar, ProgressBar, Fingerprint, ChipReach, FPSuccess, ChipAbsolute, PopoverToggler,
 } from '../src';
 import Buttons from './Buttons';
 import Layouts from './Layouts';
@@ -45,6 +46,7 @@ import FileUploadContainer from './FileUploadContainer';
 import FileItemViews from './FileItemViews';
 import Tables from './Tables';
 import RFFDate from './RFFDate';
+import TabsContainer from './TabsContainer';
 
 const App = () => {
   const switchTheme = useThemeSwitcher();
@@ -238,6 +240,18 @@ const App = () => {
             <ChipReach color="info">info</ChipReach>
           </div>
           <RFFDate />
+          <TabsContainer />
+          <PopoverToggler
+            buttonText="Popover"
+            label="TEST TEST TEST TEST TEST"
+          >
+            <Container>
+              <Container.Row spacing={3}>
+                <Container.Item md={6}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos laboriosam officiis optio perspiciatis possimus quibusdam quos reprehenderit veritatis vero?</Container.Item>
+                <Container.Item md={6}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dignissimos laboriosam officiis optio perspiciatis possimus quibusdam quos reprehenderit veritatis vero?</Container.Item>
+              </Container.Row>
+            </Container>
+          </PopoverToggler>
           <BottomActionBar>
             <div>
               <Chip>test</Chip>

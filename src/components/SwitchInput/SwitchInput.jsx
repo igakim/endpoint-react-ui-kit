@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import './SwitchInput.scss';
 import { identity } from 'ramda';
@@ -6,14 +6,14 @@ import { Check } from '../icons';
 
 const SwitchInput = ({
   size = 'medium',
-  value = false,
   onChange = identity,
+  checked = false,
 }) => {
-  const [currentValue, setCurrentValue] = useState(value);
+  const [currentValue, setCurrentValue] = useState(checked);
 
   useEffect(() => {
-    setCurrentValue(value);
-  }, [value]);
+    setCurrentValue(checked);
+  }, [checked]);
 
   const switchContainerClasses = cn('switch');
   const switchWrapper = cn(
@@ -22,15 +22,26 @@ const SwitchInput = ({
     { on: currentValue, off: !currentValue },
   );
   const switchDot = cn('switch-dot');
+  // const switchCheckbox = cn('switch-checkbox');
 
   const handleSwitch = (e) => {
-    setCurrentValue(!currentValue);
-    onChange(e, !currentValue);
+    // Это делайется для библиотеки React-Table,
+    // Свитч, который должен выключать все колонки или включать их
+    // Внутри библиотеки используется e.target.checked, чего нет в этом компоненте
+    const mockedEvent = {
+      target: {
+        checked: !currentValue,
+      },
+    };
+    onChange(mockedEvent, !currentValue);
   };
 
   return (
     <div className={switchContainerClasses}>
-      <div className={switchWrapper} onClick={handleSwitch}>
+      <div
+        className={switchWrapper}
+        onClick={handleSwitch}
+      >
         <div className={switchDot}>
           <Check />
         </div>

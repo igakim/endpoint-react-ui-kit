@@ -33,6 +33,8 @@ export { default as ProgressBar } from './components/ProgressBar';
 export { default as Table } from './components/Table';
 export { default as ChipReach } from './components/ChipReach';
 export { default as ChipAbsolute } from './components/ChipAbsolute';
+export { default as Tabs } from './components/Tabs';
+export { default as PopoverToggler } from './components/PopoverToggler';
 
 export * from './components/icons';
 export * from './hooks';

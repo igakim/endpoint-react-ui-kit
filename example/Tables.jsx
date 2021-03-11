@@ -8,79 +8,29 @@ const Tables = () => (
           <Table>
             <Table.Head>
               <Table.Tr>
-                <Table.Th>test1</Table.Th>
-                <Table.Th>test2</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>testdsadasdas asd asd asdasd3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
-                <Table.Th>test3</Table.Th>
+                <Table.Th>Dessert (100g serving)</Table.Th>
+                <Table.Th>Calories</Table.Th>
+                <Table.Th>Fat (g)</Table.Th>
+                <Table.Th>Carbs (g)</Table.Th>
+                <Table.Th>Protein (g)</Table.Th>
               </Table.Tr>
             </Table.Head>
             <Table.Footer>
-              <Table.Tr>
-                <Table.Td>foot1</Table.Td>
-                <Table.Td>foot2</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
-                <Table.Td>foot3</Table.Td>
+              <Table.Tr selected>
+                <Table.Td>Ice cream sandwich</Table.Td>
+                <Table.Td>237</Table.Td>
+                <Table.Td>9</Table.Td>
+                <Table.Td>37</Table.Td>
+                <Table.Td>4.3</Table.Td>
               </Table.Tr>
             </Table.Footer>
             <Table.Body>
               <Table.Tr>
-                <Table.Td>body1</Table.Td>
-                <Table.Td>bodydsa das das das das das dasd asdasdas</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
-                <Table.Td>body3</Table.Td>
+                <Table.Td>Cupcake</Table.Td>
+                <Table.Td>305</Table.Td>
+                <Table.Td>3.7</Table.Td>
+                <Table.Td>67</Table.Td>
+                <Table.Td>4.3</Table.Td>
               </Table.Tr>
             </Table.Body>
           </Table>

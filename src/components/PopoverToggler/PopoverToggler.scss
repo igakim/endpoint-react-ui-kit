@@ -1,0 +1,38 @@
+@import '../../assets/scss/mixins';
+
+.popover {
+  &-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  &-container {
+    position: absolute;
+    top: 150%;
+    box-sizing: border-box;
+    min-width: 400px;
+    max-width: 600px;
+    z-index: 120;
+    box-shadow: 0 0 40px rgba(141, 144, 146, 0.5);
+    border-radius: 5px;
+    display: none;
+    padding: 12px 8px;
+    @include theme-aware('background', 'page', 'backgrounds');
+    &-show {
+      display: block;
+    }
+  }
+  &-btn {
+  }
+  &-triangle {
+    position: absolute;
+    bottom: 100%;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 12px;
+    @include theme-aware('border-bottom-color', 'page', 'backgrounds');
+  }
+}

@@ -38,3 +38,5 @@ export { default as File } from './File';
 export { default as Trash2 } from './Trash2';
 export { default as Fingerprint } from './Fingerprint';
 export { default as FPSuccess } from './FPSuccess';
+export { default as Filter } from './Filter';
+export { default as FileText } from './FileText';

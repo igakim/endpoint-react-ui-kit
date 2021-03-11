@@ -1,0 +1,23 @@
+@import "../../assets/scss/mixins";
+
+.tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  overflow-x: auto;
+  &-item {
+    padding: 4px 6px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    cursor: pointer;
+    @include theme-aware('border-bottom-color', 'light', 'backgrounds');
+    &-active {
+      border-bottom-width: 3px;
+      @include theme-aware('border-bottom-color', 'secondary', 'buttons');
+    }
+  }
+  &-text {
+    font-size: 16px;
+    @include theme-aware('color', 'secondary', 'typography');
+  }
+}

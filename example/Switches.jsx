@@ -5,15 +5,16 @@ import { SwitchInput, Container } from '../src';
 const SwitchContainer = () => {
   const [val, setVal] = useState(false);
   const handleSwitch = (e, value) => {
+    console.log(e.target.checked, e.target);
     setVal(value);
   };
   return (
     <Container>
       <Container.Row>
         <Container.Item>
-          <SwitchInput size="small" value={val} onChange={handleSwitch} />
-          <SwitchInput value={val} onChange={handleSwitch} />
-          <SwitchInput size="large" value={val} onChange={handleSwitch} />
+          <SwitchInput size="small" checked={val} onChange={handleSwitch} />
+          <SwitchInput checked={val} onChange={handleSwitch} />
+          <SwitchInput size="large" checked={val} onChange={handleSwitch} />
         </Container.Item>
       </Container.Row>
     </Container>
