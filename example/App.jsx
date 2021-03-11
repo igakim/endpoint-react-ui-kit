@@ -17,7 +17,7 @@ import {
   Info,
   Error,
   Container,
-  Warning, BottomActionBar, ProgressBar, Fingerprint, ChipReach, FPSuccess, ChipAbsolute, PopoverToggler,
+  Warning, BottomActionBar, ProgressBar, Fingerprint, ChipReach, FPSuccess, ChipAbsolute, PopoverToggler, Empty,
 } from '../src';
 import Buttons from './Buttons';
 import Layouts from './Layouts';
@@ -241,6 +241,9 @@ const App = () => {
           </div>
           <RFFDate />
           <TabsContainer />
+          <div style={{ width: 800 }}>
+            <Empty />
+          </div>
           <PopoverToggler
             buttonText="Popover"
             label="TEST TEST TEST TEST TEST"
