@@ -178,6 +178,10 @@ $themes: (
       header: #F8F9FB,
       selected: #F2F3F5,
     ),
+    tags: (
+      background: lighten($primary-light, 40%),
+      color: lighten($primary-light, 5%),
+    ),
   ),
   dark: (
     buttons: (
@@ -256,6 +260,10 @@ $themes: (
     tables: (
       header: #F8F9FB,
       selected: #F2F3F5,
+    ),
+    tags: (
+      background: lighten($primary-dark, 40%),
+      color: lighten($primary-dark, 5%),
     ),
   ),
 );

@@ -1,0 +1,23 @@
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/theme";
+
+.tag {
+  display: inline-flex;
+  padding: 4px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px;
+  border-radius: 4px;
+  font-size: 11px;
+  &-primary {
+    @include theme-aware('background-color', 'background', 'tags');
+    @include theme-aware('color', 'color', 'tags');
+  }
+  &-close {
+    width: 11px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6px;
+  }
+}

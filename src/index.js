@@ -10,6 +10,7 @@ export { default as Text } from './components/Text';
 export { default as TextInput } from './components/TextInput';
 export { default as InputLabel } from './components/InputLabel';
 export { default as Autocomplete } from './components/Autocomplete';
+export { default as AutocompleteMultiple } from './components/AutocompleteMultiple';
 export { default as DateInput } from './components/DateInput';
 export { default as Steps } from './components/Steps';
 export { default as CheckboxInput } from './components/CheckboxInput';
@@ -35,6 +36,7 @@ export { default as ChipReach } from './components/ChipReach';
 export { default as ChipAbsolute } from './components/ChipAbsolute';
 export { default as Tabs } from './components/Tabs';
 export { default as PopoverToggler } from './components/PopoverToggler';
+export { default as Tag } from './components/Tag';
 
 export * from './components/icons';
 export * from './hooks';
