@@ -136,6 +136,9 @@ const App = () => {
             Additional Rendered Components
           </Text>
         )}
+        renderSidebarExtra={() => (
+          <div>test</div>
+        )}
       >
         <div style={{ paddingBottom: 200 }}>
           <div style={{ width: 80, color: 'red' }}>

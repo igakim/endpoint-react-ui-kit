@@ -18,6 +18,7 @@
   }
   &-text {
     font-size: 16px;
+    white-space: nowrap;
     @include theme-aware('color', 'secondary', 'typography');
   }
 }

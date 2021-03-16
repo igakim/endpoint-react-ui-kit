@@ -6,7 +6,8 @@
   top: 0;
   left: 0;
   bottom: 0;
-  //background-color: ;
+  display: flex;
+  flex-direction: column;
   @include theme-aware('background-color', 'sidebar-bg', 'navigation');
   @include theme-aware('color', 'item-color', 'navigation');
   width: $sidebar-width;
@@ -21,6 +22,9 @@
       width: 100%;
     }
   }
+  &-extra {
+    margin-top: auto;
+  }
 }
 
 .main-content {
@@ -33,5 +37,8 @@
   }
   .app-container.actionbar-show & {
     margin-left: $sidebar-width + $actionbar-width;
+    @media (max-width: 991px) {
+      margin-left: $sidebar-width;
+    }
   }
 }

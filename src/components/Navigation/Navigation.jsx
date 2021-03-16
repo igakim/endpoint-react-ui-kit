@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
 import './Navigation.scss';
+import { identity } from 'ramda';
 import SidebarItems from './SidebarItems';
 import ActionsBar from './ActionsBar';
 import ActionsBarToggler from './ActionsBarToggler';
@@ -40,6 +41,7 @@ const Navigation = ({
   children = [],
   sidebarItems = [],
   activeSidebarItem = null,
+  renderSidebarExtra = identity,
   mainActions = [],
   mainActionActiveKey = null,
   helperActions = [],
@@ -61,6 +63,9 @@ const Navigation = ({
   const contentClasses = cn(
     'main-content',
   );
+  const sidebarExtraClasses = cn(
+    'sidebar-extra',
+  );
 
   const handleClickToggler = () => {
     onTogglerClick();
@@ -76,6 +81,9 @@ const Navigation = ({
           items={sidebarItems}
           activeKey={activeSidebarItem}
         />
+        <div className={sidebarExtraClasses}>
+          {renderSidebarExtra()}
+        </div>
         <ActionsBar
           isShowActionBar={isShowActionBar}
           mainActions={mainActions}

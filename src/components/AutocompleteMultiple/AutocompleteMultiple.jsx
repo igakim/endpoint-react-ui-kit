@@ -4,7 +4,7 @@ import cn from 'classnames';
 import useAutocomplete from '@material-ui/lab/useAutocomplete';
 import './AutocompleteMultiple.scss';
 import {
-  equals, find, identity, includes, propEq, splitAt,
+  equals, filter, find, identity, includes, propEq, splitAt,
 } from 'ramda';
 import { ChevronDown, Close } from '../icons';
 import Tag from '../Tag';
@@ -50,10 +50,10 @@ const AutocompleteMultiple = ({
     setSelected([]);
   }
 
-  const activeItem = find(propEq('id', inputValue), options);
-
-  if (activeItem && !equals(activeItem, selectedOption) && !selectedOption) {
-    setSelected(activeItem);
+  // const activeItem = find(propEq('id', inputValue), options);
+  const activeItems = filter((val) => includes(val.id, inputValue), options);
+  if (activeItems && !equals(activeItems, selectedOption) && selectedOption.length === 0) {
+    setSelected(activeItems);
   }
 
   // if (!inputValue && selectedOption.length > 0) {
