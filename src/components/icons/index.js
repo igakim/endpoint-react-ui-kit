@@ -44,3 +44,5 @@ export { default as Empty } from './Empty';
 export { default as ChevronDownDouble } from './ChevronDownDouble';
 export { default as LogOut } from './LogOut';
 export { default as RefreshCW } from './RefreshCW';
+export { default as CornerLeftDown } from './CornerLeftDown';
+export { default as CornerLeftUp } from './CornerLeftUp';
