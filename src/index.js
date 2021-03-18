@@ -38,6 +38,7 @@ export { default as Tabs } from './components/Tabs';
 export { default as PopoverToggler } from './components/PopoverToggler';
 export { default as Tag } from './components/Tag';
 export { default as Timeline } from './components/Timeline';
+export { default as StateChip } from './components/StateChip';
 
 export * from './components/icons';
 export * from './hooks';

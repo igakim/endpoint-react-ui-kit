@@ -18,7 +18,16 @@ import {
   Error,
   Container,
   Timeline,
-  Warning, BottomActionBar, ProgressBar, Fingerprint, ChipReach, FPSuccess, ChipAbsolute, PopoverToggler, Empty,
+  Warning,
+  BottomActionBar,
+  ProgressBar,
+  Fingerprint,
+  ChipReach,
+  FPSuccess,
+  ChipAbsolute,
+  PopoverToggler,
+  Empty,
+  StateChip,
 } from '../src';
 import Buttons from './Buttons';
 import Layouts from './Layouts';
@@ -256,6 +265,8 @@ const App = () => {
               { id: 4, aside: '12.02.2021 19:00', content: (<div>test</div>) },
             ]}
           />
+          <StateChip state="success" />
+          <StateChip state="failure" />
           <PopoverToggler
             buttonText="Popover"
             label="TEST TEST TEST TEST TEST"

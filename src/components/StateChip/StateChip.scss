@@ -1,0 +1,18 @@
+@import '../../assets/scss/mixins';
+
+.state-chip {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  &-failure {
+    @include theme-aware('background-color', 'danger', 'buttons');
+    color: #FFF;
+  }
+  &-success {
+    @include theme-aware('background-color', 'success', 'buttons');
+    color: #FFF;
+  }
+}
