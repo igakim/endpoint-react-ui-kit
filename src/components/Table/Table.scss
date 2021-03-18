@@ -13,9 +13,9 @@
   }
   &-tr {
     padding: 6px;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    @include theme-aware('border-bottom-color', 'light', 'backgrounds');
+    border-top-width: 1px;
+    border-top-style: solid;
+    @include theme-aware('border-top-color', 'light', 'backgrounds');
     &-selected {
       @include theme-aware('background-color', 'header', 'tables');
     }

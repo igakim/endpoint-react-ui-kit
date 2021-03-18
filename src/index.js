@@ -37,6 +37,7 @@ export { default as ChipAbsolute } from './components/ChipAbsolute';
 export { default as Tabs } from './components/Tabs';
 export { default as PopoverToggler } from './components/PopoverToggler';
 export { default as Tag } from './components/Tag';
+export { default as Timeline } from './components/Timeline';
 
 export * from './components/icons';
 export * from './hooks';

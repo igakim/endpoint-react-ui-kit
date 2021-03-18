@@ -17,6 +17,7 @@ import {
   Info,
   Error,
   Container,
+  Timeline,
   Warning, BottomActionBar, ProgressBar, Fingerprint, ChipReach, FPSuccess, ChipAbsolute, PopoverToggler, Empty,
 } from '../src';
 import Buttons from './Buttons';
@@ -247,6 +248,14 @@ const App = () => {
           <div style={{ width: 800 }}>
             <Empty />
           </div>
+          <Timeline
+            items={[
+              { id: 1, aside: '12.02.2021 19:00', content: (<div>test</div>) },
+              { id: 2, aside: '12.02.2021 19:00', content: (<div>test</div>) },
+              { id: 3, aside: '12.02.2021 19:00', content: (<div>test</div>) },
+              { id: 4, aside: '12.02.2021 19:00', content: (<div>test</div>) },
+            ]}
+          />
           <PopoverToggler
             buttonText="Popover"
             label="TEST TEST TEST TEST TEST"

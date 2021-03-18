@@ -1,0 +1,58 @@
+@import "src/assets/scss/mixins";
+
+.timeline {
+  width: 100%;
+  &-item {
+    display: flex;
+  }
+
+  &-aside {
+    padding: 10px 20px;
+    max-width: 140px;
+    font-size: 14px;
+    flex: 0 0 140px;
+    box-sizing: border-box;
+    text-align: right;
+  }
+  &-progress {
+    padding: 10px 0;
+    max-width: 45px;
+    flex: 0 0 45px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    &-dot {
+      width: 20px;
+      height: 20px;
+      border-width: 4px;
+      border-style: solid;
+      border-radius: 50%;
+      box-sizing: border-box;
+      &-wrapper {
+        z-index: 1;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        @include theme-aware('background-color', 'page', 'backgrounds');
+      }
+      @include theme-aware('border-color', 'secondary', 'buttons');
+      @include theme-aware('background-color', 'page', 'backgrounds');
+    }
+    &-line {
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      z-index: 0;
+      @include theme-aware('background-color', 'light', 'backgrounds');
+    }
+  }
+  &-content {
+    padding: 10px 20px;
+    width: auto;
+    flex: 1 1 auto;
+  }
+}

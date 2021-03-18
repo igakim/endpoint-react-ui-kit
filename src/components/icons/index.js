@@ -42,3 +42,5 @@ export { default as Filter } from './Filter';
 export { default as FileText } from './FileText';
 export { default as Empty } from './Empty';
 export { default as ChevronDownDouble } from './ChevronDownDouble';
+export { default as LogOut } from './LogOut';
+export { default as RefreshCW } from './RefreshCW';
