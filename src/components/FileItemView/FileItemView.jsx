@@ -1,14 +1,15 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { File as FileIcon, Trash2 } from '../icons';
+import { Eye, File as FileIcon, Trash2 } from '../icons';
 import './FileItemView.scss';
 import { identity } from 'ramda';
 
 const FileItemView = ({
   fileName = 'fayl-bez-imeni',
   fileSize = '0kb',
-  onRemove = identity,
+  onRemove = null,
+  onView = null,
   progress = 0,
 }) => {
   const fileItemClasses = cn('file-item');
@@ -26,9 +27,22 @@ const FileItemView = ({
           <FileIcon />
         </div>
         <div className={fileItemNameClasses}>{fileName} ({fileSize})</div>
-        <div className={fileItemRemoveClasses} onClick={onRemove}>
-          <Trash2 />
-        </div>
+        {
+          onRemove
+            ? (
+              <div className={fileItemRemoveClasses} onClick={onRemove}>
+                <Trash2 />
+              </div>
+            ) : null
+        }
+        {
+          onView
+            ? (
+              <div className={fileItemRemoveClasses} onClick={onView}>
+                <Eye />
+              </div>
+            ) : null
+        }
       </div>
       <div className={fileItemProgressWrapper}>
         <div className={fileItemProgressFill} style={{ width: `${progress}%` }} />
