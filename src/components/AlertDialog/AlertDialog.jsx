@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import cn from 'classnames';
 import { identity } from 'ramda';
 import {
-  Warning, Error, Info, Close, Check,
+  Warning, Error, Info, Close, Success,
 } from '../icons';
 import Text from '../Text';
 import './AlertDialog.scss';
@@ -49,7 +49,7 @@ const AlertDialog = ({
     info: <Info />,
     warning: <Warning />,
     error: <Error />,
-    success: <Check />,
+    success: <Success />,
   };
 
   return (

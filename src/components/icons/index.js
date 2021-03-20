@@ -47,3 +47,4 @@ export { default as RefreshCW } from './RefreshCW';
 export { default as CornerLeftDown } from './CornerLeftDown';
 export { default as CornerLeftUp } from './CornerLeftUp';
 export { default as MinusCircle } from './MinusCircle';
+export { default as Success } from './Success';
