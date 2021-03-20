@@ -8,7 +8,7 @@ import './Dialog.scss';
 const Dialog = ({
   open = false,
   title = '',
-  onClose = identity,
+  onClose = null,
   renderBody = identity,
   withoutFooter = false,
   renderFooter = identity,
@@ -30,14 +30,19 @@ const Dialog = ({
 
   return open && (
     <div className={dialogClasses} onClick={() => {
+      if (!onClose) return;
       onClose();
     }}>
       <div className={dialogWrapper} onClick={(e) => e.stopPropagation()}>
         <div className={dialogHeader}>
           <Text variant="h2">{title}</Text>
-          <button type="button" className={dialogHeaderClose} onClick={onClose}>
-            <Close />
-          </button>
+          {
+            onClose && (
+              <button type="button" className={dialogHeaderClose} onClick={onClose}>
+                <Close />
+              </button>
+            )
+          }
         </div>
         <div className={dialogBody}>
           {renderBody()}

@@ -74,6 +74,9 @@ body.noscroll {
     &.warning {
       @include theme-aware('color', 'warning', 'buttons');
     }
+    &.success {
+      @include theme-aware('color', 'success', 'buttons');
+    }
   }
   &-body {
     max-width: 408px;

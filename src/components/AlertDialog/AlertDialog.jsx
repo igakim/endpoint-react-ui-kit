@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import cn from 'classnames';
 import { identity } from 'ramda';
 import {
-  Warning, Error, Info, Close, Text,
-} from '../../index';
+  Warning, Error, Info, Close, Check,
+} from '../icons';
+import Text from '../Text';
 import './AlertDialog.scss';
 
 /**
@@ -14,7 +15,7 @@ import './AlertDialog.scss';
  * @param {function} props.onClose
  * @param {function} props.renderBody
  * @param {function} props.renderFooter
- * @param {('info'|'warning'|'error')} props.type
+ * @param {('info'|'warning'|'error'|'success')} props.type
  * @returns {JSX.Element}
  * @constructor
  */
@@ -48,6 +49,7 @@ const AlertDialog = ({
     info: <Info />,
     warning: <Warning />,
     error: <Error />,
+    success: <Check />,
   };
 
   return (
