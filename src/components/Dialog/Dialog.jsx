@@ -13,7 +13,7 @@ const Dialog = ({
   withoutFooter = false,
   renderFooter = identity,
 }) => {
-  const dialogClasses = cn('dialog', open && 'show');
+  const dialogClasses = cn('dialog', 'show');
   const dialogWrapper = cn('dialog-wrapper');
   const dialogHeader = cn('dialog-header');
   const dialogHeaderClose = cn('dialog-header-close');
@@ -28,7 +28,7 @@ const Dialog = ({
     document.body.classList.remove('noscroll');
   }, [open]);
 
-  return (
+  return open && (
     <div className={dialogClasses} onClick={() => {
       onClose();
     }}>
