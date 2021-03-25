@@ -38,7 +38,8 @@ const SidebarItems = ({
             key,
             icon: Icon,
             onClick,
-          }) => (
+            shouldRender = true,
+          }) => (shouldRender ? (
             <div
               className={getSidebarItemClasses(activeKey === key)}
               key={key}
@@ -48,7 +49,7 @@ const SidebarItems = ({
                 <Icon />
               </div>
             </div>
-          ),
+          ) : null),
         )
       }
     </div>

@@ -74,7 +74,7 @@ const App = () => {
       key: 2, icon: Calendar, onClick: (e) => console.log(e), label: 'Remove user',
     },
     {
-      key: 3, icon: Lock, onClick: (e) => console.log(e), label: 'Edit user',
+      key: 3, icon: Lock, onClick: (e) => console.log(e), label: 'Edit user', shouldRender: false,
     },
     {
       key: 4, icon: AlertCircle, onClick: (e) => console.log(e), label: 'Read user',
@@ -82,7 +82,9 @@ const App = () => {
   ], []);
 
   const sidebarItems = useMemo(() => [
-    { key: 1, icon: User, onClick: (e) => console.log(e) },
+    {
+      key: 1, icon: User, onClick: (e) => console.log(e), shouldRender: false,
+    },
     { key: 2, icon: Calendar, onClick: (e) => console.log(e) },
     { key: 3, icon: Lock, onClick: (e) => console.log(e) },
     { key: 4, icon: AlertCircle, onClick: (e) => console.log(e) },
@@ -94,7 +96,7 @@ const App = () => {
       key: 1,
       navs: [
         {
-          key: 1, icon: User, onClick: (e) => console.log(e), label: 'Add user',
+          key: 1, icon: User, onClick: (e) => console.log(e), label: 'Add user', shouldRender: false,
         },
         {
           key: 2, icon: Calendar, onClick: (e) => console.log(e), label: 'Remove user',

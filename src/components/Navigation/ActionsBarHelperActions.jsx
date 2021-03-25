@@ -47,7 +47,8 @@ const ActionsBarHelperActions = ({
                 onClick,
                 icon: Icon,
                 label,
-              }) => (
+                shouldRender = true,
+              }) => (shouldRender ? (
                 <div className={getActionBarItem()} key={key} onClick={onClick}>
                   <div className={actionBarItemIcon}>
                     <Icon />
@@ -56,7 +57,7 @@ const ActionsBarHelperActions = ({
                     {label}
                   </div>
                 </div>
-              ),
+              ) : null),
             )
           }
         </div>

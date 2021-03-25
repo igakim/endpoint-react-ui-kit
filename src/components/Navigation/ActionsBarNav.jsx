@@ -42,7 +42,8 @@ const ActionsBarNav = ({
             onClick,
             icon: Icon,
             label,
-          }) => (
+            shouldRender = true,
+          }) => (shouldRender ? (
             <div
               className={getActionBarItem(activeKey === key)}
               key={key}
@@ -55,7 +56,7 @@ const ActionsBarNav = ({
                 {label}
               </div>
             </div>
-          ),
+          ) : null),
         )
       }
     </div>
