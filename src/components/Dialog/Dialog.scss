@@ -12,11 +12,12 @@ body.noscroll {
   right: 0;
   bottom: 0;
   z-index: 99;
-  justify-content: center;
-  align-items: center;
+  overflow-y: auto;
+  //justify-content: center;
+  //align-items: center;
   background-color: rgba(0, 0, 40, 0.5);
   &.show {
-    display: flex;
+    display: block;
   }
   &-wrapper {
     $min-widths: (
@@ -37,11 +38,13 @@ body.noscroll {
       xxl: 1200px,
       xxxl: 1200px,
     );
+    margin: 6% auto;
     border-radius: 5px;
-    overflow: hidden;
-    position: static;
-    max-height: calc(100% - 64px);
+    //overflow: hidden;
+    //position: static;
+    //max-height: calc(100% - 64px);
     display: flex;
+    position: relative;
     flex-direction: column;
     @each $size-name, $size-value in $breakpoints {
       @media (min-width: $size-value) {
@@ -54,7 +57,7 @@ body.noscroll {
   &-container {
     display: flex;
     flex-direction: column;
-    max-height: calc(100% - 64px);
+    //max-height: calc(100% - 64px);
   }
   &-header {
     box-sizing: border-box;
@@ -76,7 +79,7 @@ body.noscroll {
   }
   &-body {
     padding: 24px;
-    overflow-y: auto;
+    //overflow-y: auto;
     flex: 1 1 auto;
   }
   &-footer {

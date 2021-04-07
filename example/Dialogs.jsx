@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import {
-  Container, Button, Dialog, AlertDialog, Text,
+  Container, Button, Dialog, AlertDialog, Text, Autocomplete,
 } from '../src';
 
 const Dialogs = () => {
@@ -25,7 +25,45 @@ const Dialogs = () => {
               >
                 {({ handleSubmit: submit }) => (
                   <form onSubmit={submit} id="testing">
-                    <Field name="test" component="input" type="text" />
+                    <Field
+                      name="test"
+                      component={Autocomplete}
+                      options={[
+                        {
+                          label: 'fadsa',
+                          id: 1,
+                        },
+                        {
+                          label: 'fadsa',
+                          id: 12,
+                        },
+                        {
+                          label: 'fadsa',
+                          id: 2,
+                        },
+                        {
+                          label: 'fadsa',
+                          id: 3,
+                        },
+                        {
+                          label: 'fadsa',
+                          id: 4,
+                        },
+                        {
+                          label: 'fadsa',
+                          id: 5,
+                        },
+                        {
+                          label: 'fadsa',
+                          id: 6,
+                        },
+                        {
+                          label: 'fadsa',
+                          id: 7,
+                        },
+                      ]}
+                    />
+                    Lorem ipsum dolor sit amet, co
                   </form>
                 )}
               </Form>

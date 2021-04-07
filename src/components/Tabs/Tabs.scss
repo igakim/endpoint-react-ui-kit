@@ -5,13 +5,15 @@
   flex-wrap: nowrap;
   max-width: 100%;
   overflow-x: auto;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  @include theme-aware('border-bottom-color', 'light', 'backgrounds');
   &-item {
     padding: 4px 6px;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
     cursor: pointer;
     @include theme-aware('border-bottom-color', 'light', 'backgrounds');
     &-active {
+      border-bottom-style: solid;
       border-bottom-width: 3px;
       @include theme-aware('border-bottom-color', 'secondary', 'buttons');
     }
