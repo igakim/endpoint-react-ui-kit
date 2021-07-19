@@ -16,6 +16,9 @@
   font-size: 14px;
   &-label {
     //font-size: 14px;
+    span {
+      white-space: normal;
+    }
     @include theme-aware('color', 'secondary', 'typography');
   }
 }

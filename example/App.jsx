@@ -28,6 +28,7 @@ import {
   PopoverToggler,
   Empty,
   StateChip,
+  PdfIcon,
 } from '../src';
 import Buttons from './Buttons';
 import Layouts from './Layouts';
@@ -57,6 +58,7 @@ import FileItemViews from './FileItemViews';
 import Tables from './Tables';
 import RFFDate from './RFFDate';
 import TabsContainer from './TabsContainer';
+import { identity } from 'ramda';
 
 const App = () => {
   const switchTheme = useThemeSwitcher();
@@ -71,7 +73,7 @@ const App = () => {
       key: 1, icon: User, onClick: (e) => console.log(e), label: 'Add user',
     },
     {
-      key: 2, icon: Calendar, onClick: (e) => console.log(e), label: 'Remove user',
+      key: 2, icon: PdfIcon, onClick: (e) => console.log(e), label: 'Remove user',
     },
     {
       key: 3, icon: Lock, onClick: (e) => console.log(e), label: 'Edit user', shouldRender: false,
@@ -83,11 +85,17 @@ const App = () => {
 
   const sidebarItems = useMemo(() => [
     {
-      key: 1, icon: User, onClick: (e) => console.log(e), shouldRender: false,
+      key: 1, icon: User, onClick: (e) => console.log(e), shouldRender: false, popupText: 'test',
     },
-    { key: 2, icon: Calendar, onClick: (e) => console.log(e) },
-    { key: 3, icon: Lock, onClick: (e) => console.log(e) },
-    { key: 4, icon: AlertCircle, onClick: (e) => console.log(e) },
+    {
+      key: 2, icon: Calendar, onClick: (e) => console.log(e), popupText: 'создать протокол',
+    },
+    {
+      key: 3, icon: Lock, onClick: (e) => console.log(e), popupText: 'Администрирование',
+    },
+    {
+      key: 4, icon: AlertCircle, onClick: (e) => console.log(e), popupText: 'Статистика',
+    },
   ], []);
 
   const mainActions = useMemo(() => [
@@ -272,6 +280,13 @@ const App = () => {
           <PopoverToggler
             buttonText="Popover"
             label="TEST TEST TEST TEST TEST"
+            buttonProps={{
+              variant: 'filled',
+              color: 'primary',
+              size: 'medium',
+              onClick: () => setOpen(!open),
+            }}
+            open={open}
           >
             <Container>
               <Container.Row spacing={3}>
@@ -282,7 +297,9 @@ const App = () => {
           </PopoverToggler>
           <BottomActionBar>
             <div>
-              <Chip>test</Chip>
+              <Chip
+                onRemove={() => console.log('test')}
+              >test</Chip>
               <Chip>test</Chip>
               <Chip>test</Chip>
             </div>

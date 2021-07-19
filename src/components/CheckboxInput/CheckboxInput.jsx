@@ -34,7 +34,9 @@ const CheckboxInput = ({
       <input type="checkbox" {...rest} />
       <div className={iconClasses}>
         <Check className="svg svg-icon" />
-        <label className={labelClasses} {...restLabelProps}>{label}</label>
+        <label className={labelClasses} {...restLabelProps}>
+          <span>{label}</span>
+        </label>
       </div>
     </div>
   );

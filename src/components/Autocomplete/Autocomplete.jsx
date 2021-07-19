@@ -50,7 +50,7 @@ const Autocomplete = ({
 
   const activeItem = find(propEq('id', inputValue), options);
 
-  if (activeItem && !equals(activeItem, selectedOption) && !selectedOption) {
+  if (activeItem && !equals(activeItem, selectedOption)) {
     setSelected(activeItem);
   }
 

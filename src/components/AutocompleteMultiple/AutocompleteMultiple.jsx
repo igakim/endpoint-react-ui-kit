@@ -4,7 +4,7 @@ import cn from 'classnames';
 import useAutocomplete from '@material-ui/lab/useAutocomplete';
 import './AutocompleteMultiple.scss';
 import {
-  equals, filter, find, identity, includes, propEq, splitAt,
+  equals, filter, find, identity, includes, isEmpty, propEq, splitAt,
 } from 'ramda';
 import { ChevronDown, Close } from '../icons';
 import Tag from '../Tag';
@@ -49,15 +49,17 @@ const AutocompleteMultiple = ({
     setInputItems(options);
     setSelected([]);
   }
-
+  if (isEmpty(inputValue) && !isEmpty(selectedOption)) {
+    setSelected([]);
+  }
   // const activeItem = find(propEq('id', inputValue), options);
   const activeItems = filter((val) => includes(val.id, inputValue), options);
   if (activeItems && !equals(activeItems, selectedOption) && selectedOption.length === 0) {
     setSelected(activeItems);
   }
 
-  // if (!inputValue && selectedOption.length > 0) {
-  //   console.log('wiork');
+  // if (inputValue.length === 0) {
+  //   console.log('work');
   //   setSelected([]);
   // }
 
@@ -80,6 +82,7 @@ const AutocompleteMultiple = ({
     options: inputItems,
     multiple: true,
     value: selectedOption,
+    disableCloseOnSelect: true,
     getOptionSelected: (opt, val) => (val ? opt.id === val.id : val),
     getOptionLabel: (value) => (value ? value.label : ''),
     onChange: (ev, value) => {
@@ -151,7 +154,9 @@ const AutocompleteMultiple = ({
       <div className={containerWrapper} {...getRootProps()}>
         <div className={getInputWrapperClasses(focused)} ref={setAnchorEl}>
           {renderValues.map((option, index) => (
-            <Tag {...getTagProps({ index })} label={option.label} />
+            disabled
+              ? <Tag {...getTagProps({ index })} onDelete={null} label={option.label} />
+              : <Tag {...getTagProps({ index })} label={option.label} />
           ))}
           {
             restValues.length > 0
@@ -189,10 +194,10 @@ const AutocompleteMultiple = ({
                         groupedOptions.map((opt, i) => (
                           <div
                             className={getDropdownOptionClasses(focusedTag === i)}
-                            key={opt.id}
                             {...getOptionProps({ option: opt, index: i })}
                           >
-                            <CheckboxInput label={null} defaultChecked={includes(opt, value)} />
+                            <CheckboxInput label={null} defaultChecked onClick={(e) => e.preventDefault()} />
+                            <CheckboxInput label={null} defaultChecked={false} onClick={(e) => e.preventDefault()} />
                             {opt.label}
                           </div>
                         ))

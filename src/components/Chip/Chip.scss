@@ -21,7 +21,8 @@ $chips: (
 );
 
 .chip {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   border-radius: 2px;
   @each $size-name, $size-values in map-get($chips, 'sizes') {
     &-#{$size-name} {
@@ -35,6 +36,17 @@ $chips: (
       .theme-#{$theme-name} &-#{$chip-type} {
         background-color: $chip-value;
       }
+    }
+  }
+
+  &-close-btn {
+    border: none;
+    padding: 0;
+    width: 10px;
+    margin-left: 6px;
+    cursor: pointer;
+    &:focus {
+      outline: none;
     }
   }
 }

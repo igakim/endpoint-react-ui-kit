@@ -29,6 +29,9 @@ const SidebarItems = ({
   const sidebarItemIcon = cn(
     'sidebar-items-icon',
   );
+  const popupClasses = cn(
+    'sidebar-items-item-popup',
+  );
 
   return (
     <div className={sidebarItemsClasses}>
@@ -37,6 +40,7 @@ const SidebarItems = ({
           ({
             key,
             icon: Icon,
+            popupText,
             onClick,
             shouldRender = true,
           }) => (shouldRender ? (
@@ -48,6 +52,13 @@ const SidebarItems = ({
               <div className={sidebarItemIcon}>
                 <Icon />
               </div>
+              {
+                popupText && (
+                  <span className={popupClasses}>
+                    {popupText}
+                  </span>
+                )
+              }
             </div>
           ) : null),
         )

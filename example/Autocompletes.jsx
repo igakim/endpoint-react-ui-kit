@@ -1,12 +1,13 @@
 import React from 'react';
 import { Form, Field } from 'react-final-form';
+import { identity } from 'ramda';
 import {
   Container, Text, Autocomplete, AutocompleteMultiple,
 } from '../src';
 
 const MultipleAdapter = ({ input, meta, ...rest }) => (
   <AutocompleteMultiple
-    size="large"
+    size="small"
     color="secondary"
     variant="outlined"
     placeholder="Multiple"
@@ -39,11 +40,86 @@ const MultipleAdapter = ({ input, meta, ...rest }) => (
   />
 );
 
+const AutocompleteAdapter = ({
+  input, meta, onChange = identity, ...rest
+}) => {
+  const isError = meta.touched && meta.error;
+
+  return (
+    <Autocomplete
+      size="large"
+      variant="outlined"
+      color="secondary"
+      tipText={meta.error}
+      state={isError ? 'error' : null}
+      inputValue={input.value}
+      onChange={(value) => {
+        if (value) {
+          input.onChange(value.id);
+          onChange(value.id);
+          return;
+        }
+        input.onChange(undefined);
+        onChange(undefined);
+      }}
+      {...rest}
+    />
+  );
+};
+
 const Autocompletes = () => (
   <Container>
     <Container.Row>
       <Container.Item xxs={12}>
         <Text variant="h1">AUTOCOMPLETES</Text>
+      </Container.Item>
+    </Container.Row>
+    <Container.Row spacing={2}>
+      <Container.Item xxs={12}>
+        <Form
+          onSubmit={(values) => {
+            console.log(values);
+          }}
+          initialValues={{
+            test: {
+              testAuto: 1,
+              testAuto2: 1,
+            },
+          }}
+        >
+          {({ handleSubmit: submit, form, values }) => (
+            <form onSubmit={submit}>
+              <Field
+                name="test.testAuto"
+                component={AutocompleteAdapter}
+                options={[
+                  { label: 'test 1', id: 1 },
+                  { label: 'test 5', id: 5 },
+                  { label: 'test 4', id: 4 },
+                  { label: 'test 3', id: 3 },
+                  { label: 'test 2', id: 2 },
+                ]}
+              />
+              <Field
+                name="test.testAuto2"
+                component={AutocompleteAdapter}
+                options={[
+                  { label: 'test 1', id: 1 },
+                  { label: 'test 5', id: 5 },
+                  { label: 'test 4', id: 4 },
+                  { label: 'test 3', id: 3 },
+                  { label: 'test 2', id: 2 },
+                ]}
+              />
+              <button type="button" onClick={() => {
+                form.change('test.testAuto', 4);
+                form.change('test.testAuto2', 3);
+              }}>set value</button>
+
+              <pre>{JSON.stringify(values, 0, 2)}</pre>
+            </form>
+          )}
+        </Form>
       </Container.Item>
     </Container.Row>
     <Container.Row spacing={2}>
@@ -109,16 +185,39 @@ const Autocompletes = () => (
           onSubmit={(values) => {
             console.log(values);
           }}
-          initialValues={{
-            multiple: [2],
-          }}
         >
-          {({ handleSubmit: submit, values }) => (
+          {({ handleSubmit: submit, values, form }) => (
             <form onSubmit={submit}>
-              <Field
-                name="multiple"
-                component={MultipleAdapter}
-              />
+              <div style={{ display: 'flex' }}>
+                <div>
+                  <Field
+                    name="multiple"
+                    component={MultipleAdapter}
+                    size="large"
+                  />
+                </div>
+                <div>
+                  <Autocomplete
+                    size="large"
+                    color="primary"
+                    variant="outlined"
+                    tipText="test"
+                    state="error"
+                    placeholder="Error State"
+                    selectedItem={1}
+                    id="new-test"
+                    options={[
+                      { id: 1, label: 'Opt1' },
+                      { id: 2, label: 'Opt2' },
+                      { id: 3, label: 'Opt3' },
+                      { id: 4, label: 'Opt4' },
+                    ]}
+                  />
+                  <button onClick={() => {
+                    form.reset();
+                  }}>RESET</button>
+                </div>
+              </div>
               <pre>
                 {JSON.stringify(values, 0, 2)}
               </pre>

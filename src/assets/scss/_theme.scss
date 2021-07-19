@@ -113,6 +113,7 @@ $themes: (
     ),
     typography: (
       main: $main-text-light,
+      primary: $primary-light,
       secondary: $secondary-text-light,
       alter: $alter-text-light,
       contrast: $contrast-text-light,
@@ -120,6 +121,7 @@ $themes: (
       success: $success-light,
       info: $info-light,
       warning: #f6ae4f,
+      grey: #181с32,
     ),
     inputs: (
       primary: (
@@ -156,7 +158,7 @@ $themes: (
     navigation: (
       sidebar-bg: $darkblue2-light,
       item-bg: #FFF,
-      item-color: $primary-light,
+      item-color: #c6c1ff,
       actionbar-bg: $darkblue-light,
       actionbar-active-item: rgba(255, 255, 255, 0.16),
       actionbar-active-border: $primary-light,
@@ -197,6 +199,7 @@ $themes: (
     ),
     typography: (
       main: $main-text-dark,
+      primary: $primary-dark,
       secondary: $secondary-text-dark,
       alter: $alter-text-dark,
       contrast: $contrast-text-dark,
@@ -204,6 +207,7 @@ $themes: (
       success: $success-dark,
       info: $info-dark,
       warning: #f6ae4f,
+      grey: #181с32,
     ),
     inputs: (
       primary: (

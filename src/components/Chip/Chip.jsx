@@ -1,6 +1,9 @@
 import React from 'react';
 import cn from 'classnames';
 import './Chip.scss';
+import IconButton from '../IconButton';
+import Close from '../icons/Close';
+
 /**
  *
  * @param {Object} props
@@ -17,6 +20,7 @@ const Chip = ({
   size = 'small',
   children,
   className = '',
+  onRemove = null,
   ...rest
 }) => {
   const chipClasses = cn(
@@ -26,8 +30,22 @@ const Chip = ({
     className,
   );
 
+  const chipCloseBtnClasses = cn(
+    'chip-close-btn',
+  );
+
   return (
-    <span className={chipClasses} {...rest}>{children}</span>
+    <span className={chipClasses} {...rest}>
+      {children}
+      {
+        onRemove
+          ? (
+            <button onClick={onRemove} type="button" className={chipCloseBtnClasses}>
+              <Close />
+            </button>
+          ) : null
+      }
+    </span>
   );
 };
 

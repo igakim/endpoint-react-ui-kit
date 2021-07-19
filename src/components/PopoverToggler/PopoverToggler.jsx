@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cn from 'classnames';
+import { identity } from 'ramda';
 import Button from '../Button';
 import './PopoverToggler.scss';
-import { identity } from 'ramda';
 
 const PopoverToggler = ({
+  open = false,
   buttonProps = {
     variant: 'filled',
     color: 'primary',
     size: 'medium',
-    onChange: identity,
+    onClick: identity,
   },
   buttonText = '',
   children = [],
 }) => {
-  const { onChange = identity, className = '', ...rest } = buttonProps;
+  const { onClick = identity, className = '', ...rest } = buttonProps;
   const popoverWrapperClasses = cn('popover-wrapper');
   const getPopoverContainerClasses = (show) => cn({
     'popover-container': true,
@@ -23,23 +24,12 @@ const PopoverToggler = ({
   const btnClasses = cn('popover-btn', className);
   const triangleClasses = cn('popover-triangle');
 
-  const [open, setOpen] = useState(false);
-
-  const handleClick = (e) => {
-    setOpen(!open);
-    onChange(e);
-  };
-
-  const handleHide = () => {
-    setOpen(false);
-  };
-
   return (
     <div className={popoverWrapperClasses}>
       <Button
         type="button"
         {...rest}
-        onClick={handleClick}
+        onClick={onClick}
         className={btnClasses}
       >
         {buttonText}

@@ -10,7 +10,17 @@ const Checkboxes = () => {
   return (
     <Container>
       <Container.Row spacing={2}>
-        <Container.Item xxs={12}>
+      <Container.Item xxs={1}>
+        <CheckboxInput label="E-Kali dsaljkdasl dasdjasd sda dsat" />
+        <CheckboxInput label="Login" />
+        <CheckboxInput label="Password" />
+      </Container.Item>
+        <Container.Item xxs={1}>
+          <CheckboxInput label="E-Kalit" />
+          <CheckboxInput label="Login" />
+          <CheckboxInput label="Password" />
+        </Container.Item>
+        <Container.Item xxs={1}>
           <CheckboxInput label="E-Kalit" />
           <CheckboxInput label="Login" />
           <CheckboxInput label="Password" />

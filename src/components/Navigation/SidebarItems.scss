@@ -13,8 +13,31 @@
       margin-bottom: 10px;
       padding: 18px;
       cursor: pointer;
+      position: relative;
       &.active {
         @include theme-aware('background-color', 'item-bg', 'navigation');
+        @include theme-aware('color', 'actionbar-active-border', 'navigation');
+      }
+      &-popup {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        opacity: 0;
+        padding: 2px 4px;
+        border-radius: 8px;
+        font-size: 11px;
+        text-align: center;
+        transition: opacity .3s;
+        word-break: break-word;
+        z-index: 60;
+        @include theme-aware('background-color', 'item-bg', 'navigation');
+      }
+      &:hover {
+        .sidebar-items-item-popup {
+          opacity: 1;
+        }
       }
     }
     &-icon {}

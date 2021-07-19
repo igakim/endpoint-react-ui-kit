@@ -12,6 +12,7 @@ import './TextInput.scss';
  * @param {string|null} props.tipText
  * @param {string|null} props.state
  * @param {boolean} props.showTip
+ * @param {boolean} props.showErrorStateText
  * @param {boolean} props.disabled
  * @param {string} props.className
  * @param {string} props.type
@@ -32,6 +33,7 @@ const TextInput = ({
   tipText = null,
   state = null,
   showTip = false,
+  showErrorStateText = true,
   disabled = false,
   className = '',
   type = 'text',
@@ -96,9 +98,13 @@ const TextInput = ({
             ) : null
         }
       </div>
-      <div className={tipClasses}>
-        {tipText}
-      </div>
+      {
+        showErrorStateText && (
+          <div className={tipClasses}>
+            {tipText}
+          </div>
+        )
+      }
     </div>
   );
 };
