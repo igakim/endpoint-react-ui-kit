@@ -42,6 +42,10 @@ const DateInput = ({
 }) => {
   const [date, setDate] = useState(dayjs(value));
 
+  useEffect(() => {
+    setDate(dayjs(value));
+  }, [value]);
+
   const containerClasses = cn(
     'date-input',
     size,

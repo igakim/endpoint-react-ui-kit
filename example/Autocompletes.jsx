@@ -2,8 +2,21 @@ import React from 'react';
 import { Form, Field } from 'react-final-form';
 import { identity } from 'ramda';
 import {
-  Container, Text, Autocomplete, AutocompleteMultiple,
+  Container, Text, Autocomplete, AutocompleteMultiple, DateInput,
 } from '../src';
+
+const DateInputAdapter = ({ input, meta, ...rest }) => {
+  const isError = meta.touched && meta.error;
+
+  return (
+    <DateInput
+      {...rest}
+      state={isError ? 'error' : null}
+      tipText={meta.error}
+      {...input}
+    />
+  );
+};
 
 const MultipleAdapter = ({ input, meta, ...rest }) => (
   <AutocompleteMultiple
@@ -189,6 +202,12 @@ const Autocompletes = () => (
           {({ handleSubmit: submit, values, form }) => (
             <form onSubmit={submit}>
               <div style={{ display: 'flex' }}>
+                <div>
+                  <Field
+                    name="date"
+                    component={DateInputAdapter}
+                  />
+                </div>
                 <div>
                   <Field
                     name="multiple"

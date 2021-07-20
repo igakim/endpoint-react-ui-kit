@@ -11,7 +11,7 @@ const DateInputs = () => (
       </Container.Row>
       <Container.Row spacing={2}>
         <Container.Item xss={12} md={4}>
-          <DateInput size="small" variant="outlined" color="primary" />
+          <DateInput size="small" variant="outlined" color="primary" value="1990-09-30" />
         </Container.Item>
         <Container.Item xss={12} md={4}>
           <DateInput size="medium" variant="outlined" color="primary" />
