@@ -74,3 +74,4 @@ export { default as Star } from './Star';
 export { default as Chart } from './Chart';
 export { default as RotateCW } from './RotateCW';
 export { default as PdfIcon } from './PdfIcon';
+export { default as Layers } from './Layers';
