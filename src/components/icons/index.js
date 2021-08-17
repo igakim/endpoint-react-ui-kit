@@ -75,3 +75,7 @@ export { default as Chart } from './Chart';
 export { default as RotateCW } from './RotateCW';
 export { default as PdfIcon } from './PdfIcon';
 export { default as Layers } from './Layers';
+export { default as Map } from './Map';
+export { default as BarChart2 } from './BarChart2';
+export { default as Minimize2 } from './Minimize2';
+export { default as Maximize2 } from './Maximize2';
