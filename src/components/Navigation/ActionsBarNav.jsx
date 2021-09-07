@@ -53,7 +53,7 @@ const ActionsBarNav = ({
                 <Icon />
               </div>
               <div className={actionBarItemLabel}>
-                {label}
+                {label} long long label here mamama
               </div>
             </div>
           ) : null),

@@ -9,7 +9,9 @@
     overflow-x: auto;
   }
   &-head {
-    @include theme-aware('background-color', 'header', 'tables');
+    tr {
+      @include theme-aware('background-color', 'header', 'tables');
+    }
   }
   &-tr {
     padding: 6px;

@@ -79,3 +79,4 @@ export { default as Map } from './Map';
 export { default as BarChart2 } from './BarChart2';
 export { default as Minimize2 } from './Minimize2';
 export { default as Maximize2 } from './Maximize2';
+export { default as MoreVertical } from './MoreVertical';
