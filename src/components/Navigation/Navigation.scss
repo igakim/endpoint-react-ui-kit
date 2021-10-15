@@ -31,7 +31,7 @@
 .main-content {
   margin-left: $sidebar-width + $actionbar-width;
   box-sizing: border-box;
-  padding: 10px;
+  // padding: 10px;
   transition: .2s;
   .app-container & {
     margin-left: $sidebar-width;

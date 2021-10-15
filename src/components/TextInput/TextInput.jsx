@@ -91,7 +91,7 @@ const TextInput = ({
           appendButtonIcon
             ? (
               <div className={appendButtonClasses}>
-                <button type="button" {...appendButtonProps} disabled={disabled} tabIndex={-1}>
+                <button type="button" {...appendButtonProps} tabIndex={-1}>
                   {appendButtonIcon}
                 </button>
               </div>
