@@ -1,0 +1,30 @@
+@import "../../assets/scss/mixins";
+
+.icontabs {
+  &-container {
+    display: flex;
+  }
+  &-item {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-right: 30px;
+    cursor: pointer;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    border-radius: 2px;
+    &-active {
+      @include theme-aware('color', 'primary', 'typography');
+      @include theme-aware('border-bottom-color', 'primary', 'typography');
+    }
+  }
+  &-label {
+    padding: 4px;
+  }
+  &-icon {
+    display: inline-block;
+    width: 14px;
+    padding: 4px;
+  }
+}
