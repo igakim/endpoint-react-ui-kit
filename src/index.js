@@ -40,6 +40,7 @@ export { default as PopoverToggler } from './components/PopoverToggler';
 export { default as Tag } from './components/Tag';
 export { default as Timeline } from './components/Timeline';
 export { default as StateChip } from './components/StateChip';
+export { default as Alert } from './components/Alert';
 
 export * from './components/icons';
 export * from './hooks';

@@ -1,8 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import {
-  Warning, Success, Error, Info,
-} from '../icons';
+import { Info } from '../icons';
 
 import './Alert.scss';
 
@@ -17,16 +15,9 @@ const Alert = ({
     'alert-box-inline': !blocked,
   });
 
-  const icons = {
-    danger: <Error />,
-    success: <Success />,
-    info: <Info />,
-    warning: <Warning />,
-  };
-
   return (
     <div className={alertBoxClasses}>
-      <div className="alert-box-icon">{icons[type]}</div>
+      <div className="alert-box-icon"><Info /></div>
       <span className="alert-box-text">{text}</span>
     </div>
   );
