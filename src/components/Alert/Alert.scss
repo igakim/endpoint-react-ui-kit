@@ -1,0 +1,36 @@
+@import '../../assets/scss/mixins';
+
+.alert-box {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 8px;
+  border-radius: 4px;
+  &-inline {
+    display: inline-flex;
+  }
+  &-icon {
+    max-width: 30px;
+    min-width: 20px;
+    margin-right: 4px;
+  }
+  &-text {
+    font-size: 14px;
+  }
+  &-danger {
+    @include theme-aware('background-color', 'danger', 'alerts');
+    @include theme-aware('color', 'dangerText', 'alerts');
+  }
+  &-warning {
+    @include theme-aware('background-color', 'warning', 'alerts');
+    @include theme-aware('color', 'warningText', 'alerts');
+  }
+  &-info {
+    @include theme-aware('background-color', 'primary', 'alerts');
+    @include theme-aware('color', 'primaryText', 'alerts');
+  }
+  &-success {
+    @include theme-aware('background-color', 'success', 'alerts');
+    @include theme-aware('color', 'successText', 'alerts');
+  }
+}

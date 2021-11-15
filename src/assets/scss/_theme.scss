@@ -185,6 +185,16 @@ $themes: (
       background: lighten($primary-light, 40%),
       color: lighten($primary-light, 5%),
     ),
+    alerts: (
+      primary: lighten($primary-light, 40%),
+      danger: lighten($danger-light, 40%),
+      warning: lighten(#f6ae4f, 30%),
+      success: lighten($success-light, 40%),
+      primaryText: $primary-light,
+      dangerText: $danger-light,
+      warningText: #f6ae4f,
+      successText: $success-light,
+    ),
   ),
   dark: (
     buttons: (
@@ -270,6 +280,12 @@ $themes: (
     tags: (
       background: lighten($primary-dark, 40%),
       color: lighten($primary-dark, 5%),
+    ),
+    alerts: (
+      primary: lighten($primary-light, 42%),
+      danger: lighten($danger-light, 42%),
+      warning: lighten(#f6ae4f, 42%),
+      success: lighten($success-light, 42%),
     ),
   ),
 );

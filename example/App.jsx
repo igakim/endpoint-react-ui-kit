@@ -59,6 +59,7 @@ import Tables from './Tables';
 import RFFDate from './RFFDate';
 import TabsContainer from './TabsContainer';
 import { identity } from 'ramda';
+import Alert from '../src/components/Alert';
 
 const App = () => {
   const switchTheme = useThemeSwitcher();
@@ -295,6 +296,10 @@ const App = () => {
               </Container.Row>
             </Container>
           </PopoverToggler>
+          <Alert type="danger" text="Hello, World!" blocked />
+          <Alert type="info" text="Hello, World!" blocked={false} />
+          <Alert type="warning" text="Hello, World!" blocked={false} />
+          <Alert type="success" text="Hello, World!" blocked={false} />
           <BottomActionBar>
             <div>
               <Chip
