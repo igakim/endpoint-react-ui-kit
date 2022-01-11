@@ -19,6 +19,7 @@ const Dialogs = () => {
             title="TEST"
             open={open}
             onClose={() => setOpen(false)}
+            wrapperClasses="testsssss"
             renderBody={() => (
               <Form
                 onSubmit={(values) => console.log(values)}
